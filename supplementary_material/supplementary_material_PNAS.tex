@@ -1,0 +1,1968 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{lm}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Technology Adoption and Smallholder Commercialization: Panel Evidence from West Africa},
+  colorlinks=true,
+  linkcolor=Maroon,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=Blue,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage[margin=2.8cm]{geometry}
+\renewcommand{\contentsname}{Table of Contents}
+\usepackage{enumitem}
+\usepackage{pifont}
+\renewcommand{\labelitemi}{$\rightarrow$}
+\usepackage{tocloft}
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+\usepackage{hyperref}
+\hypersetup{linkcolor = blue}
+\usepackage{hanging}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs,threeparttablex}
+\usepackage{pdflscape}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\usepackage{lmodern}
+\usepackage{nimbusmono}
+\renewcommand{\thetable}{SM\arabic{table}}
+\setlength{\cfttabnumwidth}{1cm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Technology Adoption and Smallholder Commercialization: Panel Evidence from West Africa}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Supplementary Information (Full model tables and robustness check)}
+\date{Last updated: 2022-09-10 22:28:11}
+
+\begin{document}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+
+\newpage
+
+\hypertarget{descriptive-statistics}{%
+\section{Descriptive statistics}\label{descriptive-statistics}}
+
+\begin{landscape}\begin{table}[!h]
+
+\caption{\label{tab:unnamed-chunk-2}Descriptive statistics by year and adoption status}
+\centering
+\resizebox{\linewidth}{!}{
+\fontsize{6}{8}\selectfont
+\begin{tabular}[t]{lccccccccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{2017}, N = 2868} & \multicolumn{3}{c}{\textbf{2018}, N = 2868} & \multicolumn{3}{c}{\textbf{2019}, N = 2868} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
+\textbf{Characteristic} & \textbf{Non-adopter}, N = 1,809 & \textbf{Adopter}, N = 1,059 & \textbf{p-value} & \textbf{Non-adopter}, N = 1,770 & \textbf{Adopter}, N = 1,098 & \textbf{p-value} & \textbf{Non-adopter}, N = 1,670 & \textbf{Adopter}, N = 1,198 & \textbf{p-value}\\
+\midrule
+Country &  &  & <0.001 &  &  & <0.001 &  &  & <0.001\\
+\hspace{1em}Ghana & 327 (18\%) & 171 (16\%) &  & 353 (20\%) & 145 (13\%) &  & 340 (20\%) & 158 (13\%) & \\
+\hspace{1em}Mali & 697 (39\%) & 143 (14\%) &  & 693 (39\%) & 147 (13\%) &  & 642 (38\%) & 198 (17\%) & \\
+\hspace{1em}Nigeria & 785 (43\%) & 745 (70\%) &  & 724 (41\%) & 806 (73\%) &  & 688 (41\%) & 842 (70\%) & \\
+Age of household head (years) & 48 (13) & 47 (11) & 0.073 & 49 (13) & 47 (11) & <0.001 & 50 (12) & 49 (12) & 0.14\\
+\addlinespace
+Sex of household head (dummy, male=1) & 1,681 (93\%) & 1,004 (95\%) & 0.047 & 1,629 (92\%) & 1,056 (96\%) & <0.001 & 1,546 (93\%) & 1,139 (95\%) & 0.007\\
+Education level (Number of years) & 2.5 (3.8) & 3.4 (4.4) & <0.001 & 2.4 (3.8) & 3.6 (4.4) & <0.001 & 2.1 (3.3) & 3.9 (4.8) & <0.001\\
+Household size (number of persons) & 12 (7) & 10 (6) & <0.001 & 12 (7) & 10 (6) & <0.001 & 13 (10) & 10 (7) & <0.001\\
+Dependency ratio & 1.59 (1.10) & 1.77 (1.38) & 0.029 & 1.64 (1.15) & 1.69 (1.30) & 0.8 & 1.74 (1.32) & 1.95 (1.63) & 0.015\\
+Farmers group membership (dummy) & 757 (42\%) & 551 (52\%) & <0.001 & 771 (44\%) & 537 (49\%) & 0.005 & 696 (42\%) & 518 (43\%) & 0.4\\
+\addlinespace
+Training on agriculture (dummy) & 591 (33\%) & 473 (45\%) & <0.001 & 557 (31\%) & 507 (46\%) & <0.001 & 530 (32\%) & 565 (47\%) & <0.001\\
+Training on groundnut farming(dummy) & 1,020 (56\%) & 587 (55\%) & 0.6 & 1,001 (57\%) & 606 (55\%) & 0.5 & 629 (38\%) & 766 (64\%) & <0.001\\
+Public agricultural extension service (number of visits) & 1.21 (1.66) & 3.32 (3.30) & <0.001 & 1.40 (1.84) & 2.94 (3.29) & <0.001 & 1.71 (1.90) & 2.47 (2.12) & <0.001\\
+Private agricultural extension service (number of visits) & 0.58 (0.90) & 1.54 (1.89) & <0.001 & 0.62 (0.94) & 1.44 (1.88) & <0.001 & 1.11 (1.33) & 1.38 (1.57) & <0.001\\
+Cash credit for groundnut farming (dummy) & 32 (1.8\%) & 24 (2.3\%) & 0.4 & 30 (1.7\%) & 26 (2.4\%) & 0.2 & 49 (2.9\%) & 76 (6.3\%) & <0.001\\
+\addlinespace
+Credit in kind for groundnut farming (dummy) & 62 (3.4\%) & 129 (12\%) & <0.001 & 54 (3.1\%) & 137 (12\%) & <0.001 & 87 (5.2\%) & 150 (13\%) & <0.001\\
+Distance to the nearest urban market (km) & 15 (18) & 11 (11) & <0.001 & 15 (19) & 11 (11) & <0.001 & 13 (14) & 12 (14) & <0.001\\
+Distance the nearest village market (km) & 3.8 (5.3) & 3.5 (3.7) & 0.004 & 3.9 (5.4) & 3.4 (3.6) & 0.003 & 4.8 (5.0) & 3.6 (4.5) & <0.001\\
+Crop rotation (dummy) & 889 (49\%) & 397 (37\%) & <0.001 & 905 (51\%) & 381 (35\%) & <0.001 & 921 (55\%) & 393 (33\%) & <0.001\\
+Mixed Crops (dummy) & 657 (36\%) & 448 (42\%) & 0.001 & 681 (38\%) & 424 (39\%) & >0.9 & 725 (43\%) & 542 (45\%) & 0.3\\
+\addlinespace
+Labor force (man.day) & 3.9 (5.1) & 6.5 (7.4) & <0.001 & 4.4 (5.5) & 5.6 (7.1) & <0.001 & 7 (9) & 7 (6) & <0.001\\
+Unit selling price (USD/kg) & 0.53 (0.07) & 0.71 (0.08) & <0.001 & 0.53 (0.07) & 0.72 (0.08) & <0.001 & 0.53 (0.07) & 0.71 (0.09) & <0.001\\
+Seed cost (USD/ha) & 8 (16) & 27 (19) & <0.001 & 8 (17) & 25 (20) & <0.001 & 20 (21) & 23 (19) & <0.001\\
+Fertilizer cost (USD/ha) & 17 (29) & 53 (39) & <0.001 & 18 (30) & 49 (40) & <0.001 & 19 (28) & 49 (39) & <0.001\\
+Pesticide cost (USD/ha) & 4 (8) & 14 (14) & <0.001 & 4 (8) & 13 (14) & <0.001 & 6 (13) & 11 (11) & <0.001\\
+\addlinespace
+Labor cost (USD/ha) & 21 (33) & 49 (41) & <0.001 & 24 (34) & 43 (41) & <0.001 & 50 (49) & 50 (41) & 0.031\\
+Groundnut area (ha) & 1.44 (1.47) & 1.81 (1.62) & <0.001 & 1.49 (1.46) & 1.72 (1.64) & <0.001 & 1.60 (1.47) & 1.72 (1.32) & <0.001\\
+Off-farm income (dummy) & 80 (4.4\%) & 190 (18\%) & <0.001 & 85 (4.8\%) & 185 (17\%) & <0.001 & 142 (8.5\%) & 199 (17\%) & <0.001\\
+Clay soil (dummy) & 279 (15\%) & 164 (15\%) & >0.9 & 271 (15\%) & 172 (16\%) & 0.8 & 282 (17\%) & 207 (17\%) & 0.8\\
+Sandy-clay soil (dummy) & 987 (55\%) & 595 (56\%) & 0.4 & 977 (55\%) & 605 (55\%) & >0.9 & 740 (44\%) & 516 (43\%) & 0.5\\
+\addlinespace
+Silty soil (dummy) & 281 (16\%) & 162 (15\%) & 0.9 & 278 (16\%) & 165 (15\%) & 0.6 & 306 (18\%) & 200 (17\%) & 0.3\\
+\bottomrule
+\multicolumn{10}{l}{\rule{0pt}{1em}\textsuperscript{1} n (\%); Mean (SD)}\\
+\multicolumn{10}{l}{\rule{0pt}{1em}\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
+\end{tabular}}
+\end{table}
+\end{landscape}
+\newpage
+
+\hypertarget{pooled-ols-regressions}{%
+\section{Pooled OLS Regressions}\label{pooled-ols-regressions}}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-3}Full OLS estimates of the relationship between adoption and commercialization(Adoption)}\\
+\toprule
+variables & Sellers & Quantity sold & Sales value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-3}Full OLS estimates of the relationship between adoption and commercialization(Adoption) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity sold & Sales value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 0.021* & 0.145* & 0.132*\\
+ & (0.012) & (0.079) & (0.073)\\
+Age of household head (years) & -0.001** & -0.006** & -0.005***\\
+ & (0.000) & (0.002) & (0.002)\\
+Sex of household head (dummy, male=1) & -0.012 & 0.105 & 0.112\\
+\addlinespace
+ & (0.020) & (0.129) & (0.118)\\
+Education level (Number of years) & 0.001 & -0.005 & -0.005\\
+ & (0.001) & (0.006) & (0.005)\\
+Household size (number of persons) & 0.000 & 0.015*** & 0.015***\\
+ & (0.001) & (0.005) & (0.004)\\
+\addlinespace
+Farmers group membership (dummy) & 0.022*** & 0.132*** & 0.120***\\
+ & (0.004) & (0.029) & (0.027)\\
+Training on agriculture (dummy) & -0.057*** & -0.320*** & -0.282***\\
+ & (0.011) & (0.074) & (0.068)\\
+Training on groundnut farming (dummy) & -0.021*** & -0.154*** & -0.143***\\
+\addlinespace
+ & (0.004) & (0.025) & (0.023)\\
+Public agricultural extension service (number of visits) & 0.001 & -0.017 & -0.018\\
+ & (0.002) & (0.014) & (0.013)\\
+Private agricultural extension service (number of visits) & 0.007** & 0.034* & 0.027\\
+ & (0.003) & (0.020) & (0.019)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & 0.011 & 0.034 & 0.026\\
+ & (0.020) & (0.140) & (0.130)\\
+Credit in kind for groundnut farming (dummy) & -0.008 & 0.039 & 0.043\\
+ & (0.012) & (0.088) & (0.082)\\
+Distance to the nearest urban market (km) & -0.002*** & -0.015*** & -0.014***\\
+\addlinespace
+ & (0.000) & (0.002) & (0.002)\\
+Distance the nearest village market (km) & -0.004*** & -0.021*** & -0.019***\\
+ & (0.001) & (0.007) & (0.007)\\
+Crop rotation (dummy) & 0.010 & 0.085 & 0.078\\
+ & (0.010) & (0.063) & (0.057)\\
+\addlinespace
+Mixed Crops (dummy) & 0.003 & -0.095* & -0.097**\\
+ & (0.008) & (0.051) & (0.047)\\
+Labor force (man.day) & 0.002*** & 0.024*** & 0.023***\\
+ & (0.001) & (0.004) & (0.004)\\
+Unit selling price (USD/kg) & 0.068 & 0.579** & 2.001***\\
+\addlinespace
+ & (0.042) & (0.286) & (0.264)\\
+Seed cost (USD/ha) & 0.001*** & 0.010*** & 0.009***\\
+ & (0.000) & (0.002) & (0.002)\\
+Fertilizer cost (USD/ha) & 0.000 & 0.001* & 0.001*\\
+ & (0.000) & (0.001) & (0.001)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.000 & 0.003 & 0.003\\
+ & (0.000) & (0.002) & (0.002)\\
+Labor cost (USD/ha) & 0.000*** & 0.002*** & 0.002***\\
+ & (0.000) & (0.001) & (0.001)\\
+Groundnut area (ha) & 0.019*** & 0.347*** & 0.335***\\
+\addlinespace
+ & (0.003) & (0.022) & (0.021)\\
+Off-farm income (dummy) & -0.033*** & -0.151** & -0.135**\\
+ & (0.010) & (0.074) & (0.069)\\
+Dependency ratio & 0.001 & -0.002 & -0.003\\
+ & (0.003) & (0.019) & (0.017)\\
+\addlinespace
+Clay soil (dummy) & -0.008 & -0.097 & -0.095\\
+ & (0.011) & (0.077) & (0.071)\\
+Sandy-clay soil (dummy) & 0.007 & 0.035 & 0.031\\
+ & (0.009) & (0.061) & (0.056)\\
+Silty soil (dummy) & 0.008 & 0.052 & 0.046\\
+\addlinespace
+ & (0.011) & (0.076) & (0.070)\\
+Constant & 0.852*** & 5.469*** & 4.157***\\
+ & (0.038) & (0.258) & (0.236)\\
+Observations & 8,604 & 8,604 & 8,604\\
+R-squared & 0.274 & 0.421 & 0.451\\
+\addlinespace
+Robust standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+\newpage
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-4}Full OLS estimates of the relationship between adoption and commercialization (Area under Adoption)}\\
+\toprule
+variables & Sellers & Quantity sold & Sales value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-4}Full OLS estimates of the relationship between adoption and commercialization (Area under Adoption) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity sold & Sales value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Area under adoption (ha) & -0.006 & -0.021 & -0.015\\
+ & (0.004) & (0.032) & (0.031)\\
+Age of household head (years) & -0.001** & -0.006** & -0.005***\\
+ & (0.000) & (0.002) & (0.002)\\
+Sex of household head (dummy, male=1) & -0.011 & 0.110 & 0.116\\
+\addlinespace
+ & (0.020) & (0.129) & (0.118)\\
+Education level (Number of years) & 0.001 & -0.005 & -0.006\\
+ & (0.001) & (0.006) & (0.005)\\
+Household size (number of persons) & 0.000 & 0.014*** & 0.014***\\
+ & (0.001) & (0.005) & (0.004)\\
+\addlinespace
+Farmers group membership (dummy) & 0.022*** & 0.132*** & 0.120***\\
+ & (0.004) & (0.029) & (0.027)\\
+Training on agriculture (dummy) & -0.056*** & -0.319*** & -0.282***\\
+ & (0.011) & (0.074) & (0.068)\\
+Training on groundnut farming (dummy) & -0.021*** & -0.155*** & -0.144***\\
+\addlinespace
+ & (0.004) & (0.025) & (0.023)\\
+Public agricultural extension service (number of visits) & 0.001 & -0.015 & -0.016\\
+ & (0.002) & (0.014) & (0.013)\\
+Private agricultural extension service (number of visits) & 0.008*** & 0.042** & 0.033*\\
+ & (0.003) & (0.020) & (0.019)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & 0.011 & 0.038 & 0.030\\
+ & (0.020) & (0.140) & (0.131)\\
+Credit in kind for groundnut farming (dummy) & -0.006 & 0.052 & 0.053\\
+ & (0.012) & (0.087) & (0.082)\\
+Distance to the nearest urban market (km) & -0.002*** & -0.015*** & -0.014***\\
+\addlinespace
+ & (0.000) & (0.002) & (0.002)\\
+Distance the nearest village market (km) & -0.004*** & -0.021*** & -0.019***\\
+ & (0.001) & (0.007) & (0.007)\\
+Crop rotation (dummy) & 0.009 & 0.080 & 0.074\\
+ & (0.010) & (0.063) & (0.058)\\
+\addlinespace
+Mixed Crops (dummy) & 0.002 & -0.100* & -0.102**\\
+ & (0.008) & (0.051) & (0.047)\\
+Labor force (man.day) & 0.002*** & 0.023*** & 0.022***\\
+ & (0.001) & (0.004) & (0.004)\\
+Unit selling price (USD/kg) & 0.134*** & 0.982*** & 2.357***\\
+\addlinespace
+ & (0.034) & (0.235) & (0.218)\\
+Seed cost (USD/ha) & 0.001*** & 0.010*** & 0.009***\\
+ & (0.000) & (0.002) & (0.002)\\
+Fertilizer cost (USD/ha) & 0.000 & 0.002** & 0.002**\\
+ & (0.000) & (0.001) & (0.001)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.000 & 0.004 & 0.004*\\
+ & (0.000) & (0.002) & (0.002)\\
+Labor cost (USD/ha) & 0.000*** & 0.002*** & 0.002***\\
+ & (0.000) & (0.001) & (0.001)\\
+Groundnut area (ha) & 0.022*** & 0.355*** & 0.342***\\
+\addlinespace
+ & (0.003) & (0.022) & (0.021)\\
+Off-farm income (dummy) & -0.033*** & -0.150** & -0.134*\\
+ & (0.010) & (0.074) & (0.069)\\
+Dependency ratio & 0.001 & -0.003 & -0.003\\
+ & (0.003) & (0.019) & (0.017)\\
+\addlinespace
+Clay soil (dummy) & -0.009 & -0.101 & -0.099\\
+ & (0.011) & (0.077) & (0.071)\\
+Sandy-clay soil (dummy) & 0.006 & 0.032 & 0.028\\
+ & (0.009) & (0.060) & (0.055)\\
+Silty soil (dummy) & 0.008 & 0.053 & 0.046\\
+\addlinespace
+ & (0.011) & (0.076) & (0.070)\\
+Constant & 0.819*** & 5.267*** & 3.980***\\
+ & (0.036) & (0.245) & (0.225)\\
+Observations & 8,604 & 8,604 & 8,604\\
+R-squared & 0.273 & 0.421 & 0.451\\
+\addlinespace
+Robust standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\newpage
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-5} Full OLS estimates of the relationship between adoption, production and yields(Adoption)}\\
+\toprule
+variables & Production & Production value & Yields\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-5} Full OLS estimates of the relationship between adoption, production and yields(Adoption) \textit{(continued)}}\\
+\toprule
+variables & Production & Production value & Yields\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 538.366*** & 359.340*** & 283.336***\\
+ & (36.536) & (24.099) & (15.075)\\
+Age of household head (years) & 0.226 & 0.246 & -0.023\\
+ & (0.882) & (0.625) & (0.374)\\
+Sex of household head (dummy, male=1) & -17.450 & -20.938 & -24.355\\
+\addlinespace
+ & (31.798) & (23.338) & (17.706)\\
+Education level (Number of years) & 0.573 & -0.462 & 1.681\\
+ & (2.929) & (2.113) & (1.329)\\
+Household size (number of persons) & -2.087 & -3.346** & 0.531\\
+ & (1.918) & (1.312) & (0.633)\\
+\addlinespace
+Farmers group membership (dummy) & 27.503* & 23.696** & 1.717\\
+ & (14.436) & (10.143) & (5.305)\\
+Training on agriculture (dummy) & 20.058 & 10.166 & 12.945\\
+ & (28.123) & (19.713) & (11.464)\\
+Training on groundnut farming (dummy) & -2.803 & -3.008 & -2.129\\
+\addlinespace
+ & (9.558) & (6.533) & (4.027)\\
+Public agricultural extension service (number of visits) & -10.965 & -9.267* & -7.113**\\
+ & (7.583) & (5.383) & (2.889)\\
+Private agricultural extension service (number of visits) & -20.005** & -13.667** & -3.053\\
+ & (9.408) & (6.454) & (3.826)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & -116.583* & -96.283** & -3.990\\
+ & (62.411) & (42.370) & (27.589)\\
+Credit in kind for groundnut farming (dummy) & 19.798 & 39.725 & -8.167\\
+ & (52.308) & (37.817) & (19.779)\\
+Distance to the nearest urban market (km) & -0.254 & -0.150 & 0.039\\
+\addlinespace
+ & (0.828) & (0.553) & (0.353)\\
+Distance the nearest village market (km) & -3.361* & -2.097* & -1.617**\\
+ & (1.840) & (1.198) & (0.795)\\
+Crop rotation (dummy) & -54.106* & -50.565** & 1.007\\
+ & (27.676) & (19.779) & (11.600)\\
+\addlinespace
+Mixed Crops (dummy) & 40.551* & 32.475** & -1.605\\
+ & (21.514) & (15.265) & (9.425)\\
+Labor force (man.day) & -4.390 & -3.713** & -1.619**\\
+ & (2.721) & (1.808) & (0.788)\\
+Unit selling price (USD/kg) & 36.726 & 1,208.590*** & 93.809*\\
+\addlinespace
+ & (128.183) & (90.647) & (55.544)\\
+Seed cost (USD/ha) & -0.542 & -0.338 & -0.371\\
+ & (0.569) & (0.402) & (0.257)\\
+Fertilizer cost (USD/ha) & -1.346*** & -1.273*** & -0.004\\
+ & (0.440) & (0.322) & (0.199)\\
+\addlinespace
+Pesticide cost (USD/ha) & 2.260* & 2.177** & 0.024\\
+ & (1.289) & (0.999) & (0.531)\\
+Labor cost (USD/ha) & 0.075 & 0.043 & -0.082\\
+ & (0.265) & (0.191) & (0.131)\\
+Groundnut area (ha) & 698.176*** & 436.072*** & 1.376\\
+\addlinespace
+ & (20.072) & (13.993) & (3.300)\\
+Off-farm income (dummy) & -15.131 & -9.056 & -21.645\\
+ & (39.174) & (29.191) & (18.076)\\
+Dependency ratio & -10.922 & -9.494* & -1.563\\
+ & (7.625) & (5.439) & (3.538)\\
+\addlinespace
+Clay soil (dummy) & 6.092 & 0.292 & 3.708\\
+ & (29.406) & (20.300) & (13.795)\\
+Sandy-clay soil (dummy) & 28.195 & 20.606 & -1.381\\
+ & (25.243) & (17.693) & (11.221)\\
+Silty soil (dummy) & 20.218 & 14.880 & 12.882\\
+\addlinespace
+ & (30.870) & (21.598) & (13.986)\\
+Constant & -56.343 & -695.254*** & 605.495***\\
+ & (100.492) & (74.132) & (42.744)\\
+Observations & 8,604 & 8,604 & 8,604\\
+R-squared & 0.616 & 0.594 & 0.181\\
+\addlinespace
+Robust standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\newpage
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-6}OLS estimates of the relationship between adoption, production and yields(Area under Adoption)}\\
+\toprule
+variables & Production & Production value & Yields\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-6}OLS estimates of the relationship between adoption, production and yields(Area under Adoption) \textit{(continued)}}\\
+\toprule
+variables & Production & Production value & Yields\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Area under adoption (ha) & 238.550*** & 216.814*** & 57.226***\\
+ & (34.459) & (24.253) & (6.403)\\
+Age of household head (years) & 0.377 & 0.374 & 0.025\\
+ & (0.875) & (0.611) & (0.380)\\
+Sex of household head (dummy, male=1) & -17.307 & -23.796 & -20.776\\
+\addlinespace
+ & (29.621) & (20.843) & (17.751)\\
+Education level (Number of years) & 2.728 & 1.428 & 2.280*\\
+ & (2.916) & (2.076) & (1.354)\\
+Household size (number of persons) & 0.104 & -1.326 & 1.023\\
+ & (1.852) & (1.243) & (0.641)\\
+\addlinespace
+Farmers group membership (dummy) & 23.024 & 19.604* & 0.668\\
+ & (14.530) & (10.143) & (5.411)\\
+Training on agriculture (dummy) & 19.017 & 8.794 & 13.199\\
+ & (28.199) & (19.422) & (11.653)\\
+Training on groundnut farming (dummy) & -6.485 & -5.155 & -4.435\\
+\addlinespace
+ & (9.625) & (6.519) & (4.090)\\
+Public agricultural extension service (number of visits) & -5.811 & -6.431 & -3.685\\
+ & (7.401) & (5.123) & (2.924)\\
+Private agricultural extension service (number of visits) & -10.123 & -10.434* & 6.138\\
+ & (9.116) & (6.215) & (3.799)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & -87.350 & -74.251* & 8.406\\
+ & (63.173) & (42.902) & (28.328)\\
+Credit in kind for groundnut farming (dummy) & -8.897 & 6.830 & -6.967\\
+ & (50.662) & (35.263) & (20.115)\\
+Distance to the nearest urban market (km) & -0.735 & -0.486 & -0.196\\
+\addlinespace
+ & (0.826) & (0.541) & (0.363)\\
+Distance the nearest village market (km) & -3.326* & -2.099* & -1.568**\\
+ & (1.806) & (1.139) & (0.794)\\
+Crop rotation (dummy) & -42.921 & -38.056** & 0.911\\
+ & (26.863) & (18.900) & (11.740)\\
+\addlinespace
+Mixed Crops (dummy) & 34.291 & 30.585** & -7.613\\
+ & (21.331) & (14.868) & (9.562)\\
+Labor force (man.day) & -4.084 & -3.021 & -2.037**\\
+ & (2.927) & (1.994) & (0.808)\\
+Unit selling price (USD/kg) & 512.083*** & 1,339.478*** & 565.109***\\
+\addlinespace
+ & (133.797) & (96.971) & (49.594)\\
+Seed cost (USD/ha) & 0.128 & 0.059 & 0.042\\
+ & (0.546) & (0.370) & (0.259)\\
+Fertilizer cost (USD/ha) & -0.846** & -0.963*** & 0.288\\
+ & (0.431) & (0.312) & (0.201)\\
+\addlinespace
+Pesticide cost (USD/ha) & 2.188* & 1.732* & 0.456\\
+ & (1.325) & (1.024) & (0.540)\\
+Labor cost (USD/ha) & 0.010 & -0.006 & -0.110\\
+ & (0.257) & (0.179) & (0.133)\\
+Groundnut area (ha) & 634.558*** & 376.027*** & -11.249***\\
+\addlinespace
+ & (20.141) & (13.418) & (3.596)\\
+Off-farm income (dummy) & -3.625 & 0.179 & -17.434\\
+ & (38.674) & (28.513) & (18.365)\\
+Dependency ratio & -7.874 & -6.761 & -0.786\\
+ & (7.614) & (5.353) & (3.592)\\
+\addlinespace
+Clay soil (dummy) & 28.503 & 22.644 & 6.733\\
+ & (29.032) & (19.653) & (14.049)\\
+Sandy-clay soil (dummy) & 45.222* & 36.851** & 1.791\\
+ & (24.917) & (17.077) & (11.460)\\
+Silty soil (dummy) & 26.747 & 20.009 & 15.403\\
+\addlinespace
+ & (30.838) & (21.038) & (14.258)\\
+Constant & -246.760** & -720.479*** & 384.428***\\
+ & (102.298) & (74.363) & (40.954)\\
+Observations & 8,604 & 8,604 & 8,604\\
+R-squared & 0.622 & 0.613 & 0.156\\
+\addlinespace
+Robust standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+\newpage
+
+\hypertarget{panel-regression}{%
+\section{Panel Regression}\label{panel-regression}}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-7}Full 2SLS estimates of the relationship between adoption and commercialization(Adoption)}\\
+\toprule
+variables & FE-MP & RE-MP & FE-QS & RE-QS & FE-SV & RE-SV\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-7}Full 2SLS estimates of the relationship between adoption and commercialization(Adoption) \textit{(continued)}}\\
+\toprule
+variables & FE-MP & RE-MP & FE-QS & RE-QS & FE-SV & RE-SV\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 0.044** & 0.033** & 0.400*** & 0.354*** & 0.388*** & 0.346***\\
+ & (0.017) & (0.015) & (0.117) & (0.105) & (0.108) & (0.097)\\
+Age of household head (years) & 0.002 & -0.001* & -0.009 & -0.006** & -0.011 & -0.005**\\
+ & (0.003) & (0.000) & (0.024) & (0.003) & (0.022) & (0.003)\\
+Sex of household head (dummy, male=1) &  & -0.011 &  & 0.121 &  & 0.127\\
+\addlinespace
+ &  & (0.020) &  & (0.137) &  & (0.126)\\
+Education level (Number of years) &  & 0.001 &  & -0.005 &  & -0.005\\
+ &  & (0.001) &  & (0.009) &  & (0.008)\\
+Household size (number of persons) & 0.002*** & 0.001* & 0.027*** & 0.020*** & 0.026*** & 0.019***\\
+ & (0.001) & (0.001) & (0.005) & (0.004) & (0.004) & (0.004)\\
+\addlinespace
+Farmers group membership (dummy) & 0.022*** & 0.023*** & 0.126*** & 0.133*** & 0.113*** & 0.120***\\
+ & (0.005) & (0.004) & (0.035) & (0.028) & (0.032) & (0.026)\\
+Training on agriculture (dummy) & -0.043*** & -0.052*** & -0.310*** & -0.317*** & -0.284*** & -0.283***\\
+ & (0.011) & (0.009) & (0.078) & (0.064) & (0.072) & (0.059)\\
+Training on groundnut farming (dummy) & -0.025*** & -0.023*** & -0.178*** & -0.168*** & -0.164*** & -0.155***\\
+\addlinespace
+ & (0.003) & (0.003) & (0.023) & (0.021) & (0.021) & (0.019)\\
+Public agricultural extension service (number of visits) & 0.002 & 0.002 & -0.022 & -0.017 & -0.023 & -0.019\\
+ & (0.002) & (0.002) & (0.016) & (0.014) & (0.015) & (0.013)\\
+Private agricultural extension service (number of visits) & 0.004 & 0.005* & 0.051** & 0.034* & 0.048** & 0.028\\
+ & (0.003) & (0.003) & (0.024) & (0.020) & (0.022) & (0.018)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & -0.009 & 0.001 & -0.174 & -0.068 & -0.181 & -0.075\\
+ & (0.023) & (0.020) & (0.156) & (0.136) & (0.144) & (0.125)\\
+Credit in kind for groundnut farming (dummy) & -0.043*** & -0.025* & -0.035 & -0.009 & -0.011 & 0.004\\
+ & (0.016) & (0.014) & (0.109) & (0.093) & (0.100) & (0.086)\\
+Distance to the nearest urban market (km) & -0.000 & -0.001*** & -0.003* & -0.009*** & -0.003* & -0.008***\\
+\addlinespace
+ & (0.000) & (0.000) & (0.002) & (0.002) & (0.002) & (0.002)\\
+Distance the nearest village market (km) & -0.003*** & -0.003*** & -0.012* & -0.016*** & -0.011* & -0.015***\\
+ & (0.001) & (0.001) & (0.006) & (0.005) & (0.006) & (0.005)\\
+Crop rotation (dummy) & -0.025** & -0.006 & -0.158** & -0.024 & -0.147** & -0.022\\
+ & (0.011) & (0.009) & (0.072) & (0.061) & (0.066) & (0.056)\\
+\addlinespace
+Mixed Crops (dummy) & 0.004 & 0.002 & -0.065 & -0.083* & -0.067 & -0.085*\\
+ & (0.009) & (0.007) & (0.061) & (0.050) & (0.056) & (0.046)\\
+Labor force (man.day) & 0.002*** & 0.002*** & 0.026*** & 0.025*** & 0.025*** & 0.024***\\
+ & (0.001) & (0.001) & (0.005) & (0.004) & (0.004) & (0.004)\\
+Unit selling price (USD/kg) & 0.051 & 0.058 & 0.275 & 0.243 & 1.687*** & 1.648***\\
+\addlinespace
+ & (0.050) & (0.046) & (0.338) & (0.313) & (0.311) & (0.288)\\
+Seed cost (USD/ha) & 0.002*** & 0.002*** & 0.011*** & 0.010*** & 0.010*** & 0.009***\\
+ & (0.000) & (0.000) & (0.002) & (0.001) & (0.001) & (0.001)\\
+Fertilizer cost (USD/ha) & 0.000 & 0.000 & 0.001 & 0.002* & 0.001 & 0.001\\
+ & (0.000) & (0.000) & (0.001) & (0.001) & (0.001) & (0.001)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.001*** & -0.001** & -0.004 & -0.001 & -0.003 & -0.000\\
+ & (0.000) & (0.000) & (0.003) & (0.003) & (0.003) & (0.002)\\
+Labor cost (USD/ha) & 0.000*** & 0.000*** & 0.002*** & 0.002*** & 0.002*** & 0.002***\\
+ & (0.000) & (0.000) & (0.001) & (0.001) & (0.001) & (0.001)\\
+Groundnut area (ha) & 0.003 & 0.013*** & 0.200*** & 0.285*** & 0.197*** & 0.277***\\
+\addlinespace
+ & (0.003) & (0.003) & (0.023) & (0.018) & (0.021) & (0.017)\\
+Off-farm income (dummy) & -0.019 & -0.027** & -0.033 & -0.099 & -0.022 & -0.086\\
+ & (0.014) & (0.012) & (0.098) & (0.083) & (0.090) & (0.076)\\
+Dependency ratio & 0.002 & 0.001 & 0.012 & 0.003 & 0.011 & 0.002\\
+ & (0.003) & (0.003) & (0.022) & (0.018) & (0.020) & (0.016)\\
+\addlinespace
+Clay soil (dummy) & -0.017 & -0.012 & -0.164* & -0.123* & -0.158** & -0.119*\\
+ & (0.013) & (0.011) & (0.087) & (0.073) & (0.080) & (0.067)\\
+Sandy-clay soil (dummy) & 0.006 & 0.006 & 0.052 & 0.035 & 0.048 & 0.032\\
+ & (0.010) & (0.009) & (0.068) & (0.059) & (0.063) & (0.054)\\
+Silty soil (dummy) & -0.004 & 0.002 & -0.030 & 0.012 & -0.031 & 0.008\\
+\addlinespace
+ & (0.013) & (0.011) & (0.087) & (0.073) & (0.080) & (0.067)\\
+Constant & 0.770*** & 0.964*** & 6.406*** & 6.987*** & 5.192*** & 5.635***\\
+ & (0.184) & (0.052) & (1.244) & (0.355) & (1.144) & (0.326)\\
+Observations & 8,604 & 8,604 & 8,604 & 8,604 & 8,604 & 8,604\\
+Number of id & 2,868 & 2,868 & 2,868 & 2,868 & 2,868 & 2,868\\
+\addlinespace
+District FE & YES & YES & YES & YES & YES & YES\\
+Year FE & YES & YES & YES & YES & YES & YES\\
+Standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\newpage
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption and commercialization (Area under Adoption)}\\
+\toprule
+variables & FE-MP & RE-MP & FE-QS & RE-QS & FE-SV & RE-SV\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption and commercialization (Area under Adoption) \textit{(continued)}}\\
+\toprule
+variables & FE-MP & RE-MP & FE-QS & RE-QS & FE-SV & RE-SV\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Area under adoption (ha) & 0.033*** & 0.023** & 0.299*** & 0.253*** & 0.290*** & 0.247***\\
+ & (0.012) & (0.011) & (0.084) & (0.076) & (0.078) & (0.070)\\
+Age of household head (years) & 0.002 & 0.001 & -0.012 & -0.018 & -0.014 & -0.019\\
+ & (0.004) & (0.004) & (0.024) & (0.024) & (0.022) & (0.022)\\
+Sex of household head (dummy, male=1) &  & -0.014 &  & 0.069 &  & 0.078\\
+\addlinespace
+ &  & (0.020) &  & (0.139) &  & (0.127)\\
+Education level (Number of years) &  & 0.001 &  & -0.002 &  & -0.003\\
+ &  & (0.001) &  & (0.009) &  & (0.008)\\
+Household size (number of persons) & 0.002*** & 0.002*** & 0.029*** & 0.029*** & 0.028*** & 0.028***\\
+ & (0.001) & (0.001) & (0.005) & (0.005) & (0.005) & (0.005)\\
+\addlinespace
+Farmers group membership (dummy) & 0.022*** & 0.022*** & 0.122*** & 0.123*** & 0.109*** & 0.110***\\
+ & (0.005) & (0.005) & (0.035) & (0.035) & (0.032) & (0.032)\\
+Training on agriculture (dummy) & -0.043*** & -0.041*** & -0.309*** & -0.294*** & -0.283*** & -0.269***\\
+ & (0.012) & (0.012) & (0.078) & (0.078) & (0.072) & (0.072)\\
+Training on groundnut farming (dummy) & -0.025*** & -0.026*** & -0.180*** & -0.182*** & -0.166*** & -0.168***\\
+\addlinespace
+ & (0.003) & (0.003) & (0.023) & (0.023) & (0.021) & (0.021)\\
+Public agricultural extension service (number of visits) & 0.002 & 0.003 & -0.023 & -0.017 & -0.024 & -0.019\\
+ & (0.002) & (0.002) & (0.016) & (0.017) & (0.015) & (0.015)\\
+Private agricultural extension service (number of visits) & 0.004 & 0.004 & 0.051** & 0.049** & 0.048** & 0.046**\\
+ & (0.003) & (0.003) & (0.024) & (0.023) & (0.022) & (0.022)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & -0.006 & -0.005 & -0.146 & -0.140 & -0.154 & -0.149\\
+ & (0.023) & (0.023) & (0.157) & (0.156) & (0.144) & (0.144)\\
+Credit in kind for groundnut farming (dummy) & -0.046*** & -0.044*** & -0.068 & -0.058 & -0.044 & -0.035\\
+ & (0.016) & (0.016) & (0.110) & (0.111) & (0.102) & (0.102)\\
+Distance to the nearest urban market (km) & -0.000 & -0.001*** & -0.003 & -0.009*** & -0.003 & -0.008***\\
+\addlinespace
+ & (0.000) & (0.000) & (0.002) & (0.002) & (0.002) & (0.002)\\
+Distance the nearest village market (km) & -0.003*** & -0.003*** & -0.012* & -0.016*** & -0.010* & -0.015***\\
+ & (0.001) & (0.001) & (0.006) & (0.005) & (0.006) & (0.005)\\
+Crop rotation (dummy) & -0.022** & -0.021* & -0.134* & -0.121* & -0.124* & -0.112*\\
+ & (0.011) & (0.011) & (0.073) & (0.073) & (0.067) & (0.067)\\
+\addlinespace
+Mixed Crops (dummy) & 0.005 & 0.001 & -0.054 & -0.073 & -0.057 & -0.074\\
+ & (0.009) & (0.009) & (0.061) & (0.061) & (0.056) & (0.056)\\
+Labor force (man.day) & 0.002*** & 0.002*** & 0.027*** & 0.027*** & 0.026*** & 0.026***\\
+ & (0.001) & (0.001) & (0.005) & (0.005) & (0.004) & (0.004)\\
+Unit selling price (USD/kg) & 0.050 & 0.073 & 0.269 & 0.379 & 1.682*** & 1.784***\\
+\addlinespace
+ & (0.049) & (0.047) & (0.333) & (0.318) & (0.306) & (0.292)\\
+Seed cost (USD/ha) & 0.002*** & 0.002*** & 0.011*** & 0.011*** & 0.010*** & 0.010***\\
+ & (0.000) & (0.000) & (0.002) & (0.002) & (0.001) & (0.001)\\
+Fertilizer cost (USD/ha) & 0.000 & 0.000 & 0.002* & 0.002* & 0.002* & 0.002*\\
+ & (0.000) & (0.000) & (0.001) & (0.001) & (0.001) & (0.001)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.001*** & -0.001*** & -0.005* & -0.006** & -0.004 & -0.005*\\
+ & (0.000) & (0.000) & (0.003) & (0.003) & (0.003) & (0.003)\\
+Labor cost (USD/ha) & 0.000*** & 0.000*** & 0.002*** & 0.002*** & 0.002*** & 0.002***\\
+ & (0.000) & (0.000) & (0.001) & (0.001) & (0.001) & (0.001)\\
+Groundnut area (ha) & -0.006 & -0.002 & 0.118*** & 0.137*** & 0.117*** & 0.135***\\
+\addlinespace
+ & (0.005) & (0.005) & (0.033) & (0.032) & (0.031) & (0.029)\\
+Off-farm income (dummy) & -0.019 & -0.021 & -0.030 & -0.042 & -0.020 & -0.030\\
+ & (0.015) & (0.015) & (0.098) & (0.099) & (0.091) & (0.091)\\
+Dependency ratio & 0.002 & 0.002 & 0.015 & 0.018 & 0.014 & 0.017\\
+ & (0.003) & (0.003) & (0.022) & (0.022) & (0.020) & (0.020)\\
+\addlinespace
+Clay soil (dummy) & -0.015 & -0.012 & -0.151* & -0.113 & -0.145* & -0.109\\
+ & (0.013) & (0.011) & (0.087) & (0.074) & (0.080) & (0.068)\\
+Sandy-clay soil (dummy) & 0.008 & 0.007 & 0.064 & 0.053 & 0.059 & 0.049\\
+ & (0.010) & (0.009) & (0.069) & (0.059) & (0.063) & (0.054)\\
+Silty soil (dummy) & -0.004 & 0.002 & -0.032 & 0.013 & -0.032 & 0.010\\
+\addlinespace
+ & (0.013) & (0.011) & (0.087) & (0.074) & (0.080) & (0.068)\\
+Constant & 0.795*** & 1.003*** & 6.901*** & 7.211*** & 5.670*** & 5.868***\\
+ & (0.183) & (0.076) & (1.240) & (0.525) & (1.141) & (0.481)\\
+Observations & 8,604 & 8,604 & 8,604 & 8,604 & 8,604 & 8,604\\
+Number of id & 2,868 & 2,868 & 2,868 & 2,868 & 2,868 & 2,868\\
+\addlinespace
+District FE & YES & YES & YES & YES & YES & YES\\
+Year FE & YES & YES & YES & YES & YES & YES\\
+Standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\newpage
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption, production and yields}\\
+\toprule
+variables & FE-Prod & FE-ProdSUP & FE-ProdVal & FE-ProdValSup & FE-Yield & FE-YieldSup\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption, production and yields \textit{(continued)}}\\
+\toprule
+variables & FE-Prod & FE-ProdSUP & FE-ProdVal & FE-ProdValSup & FE-Yield & FE-YieldSup\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 657.610*** &  & 426.589*** &  & 333.418*** & \\
+ & (61.271) &  & (42.610) &  & (27.166) & \\
+Age of household head (years) & -5.689 & -10.898 & -0.137 & -3.517 & -1.650 & -4.244\\
+ & (12.368) & (12.411) & (8.601) & (8.439) & (5.483) & (5.772)\\
+Household size (number of persons) & 1.052 & 4.994* & -1.639 & 0.918 & 1.623 & 3.605***\\
+\addlinespace
+ & (2.522) & (2.556) & (1.754) & (1.738) & (1.118) & (1.189)\\
+Farmers group membership (dummy) & 15.416 & 9.491 & 17.999 & 14.154 & -4.231 & -7.186\\
+ & (18.035) & (18.076) & (12.542) & (12.292) & (7.996) & (8.406)\\
+Training on agriculture (dummy) & 30.407 & 32.404 & 13.535 & 14.829 & 28.002 & 29.054\\
+ & (40.632) & (40.660) & (28.257) & (27.649) & (18.015) & (18.909)\\
+\addlinespace
+Training on groundnut farming (dummy) & 9.514 & 6.534 & 5.426 & 3.493 & 1.121 & -0.409\\
+ & (12.066) & (12.062) & (8.391) & (8.202) & (5.350) & (5.609)\\
+Public agricultural extension service (number of visits) & -4.873 & -6.533 & -4.387 & -5.465 & -2.660 & -3.469\\
+ & (8.562) & (8.580) & (5.954) & (5.835) & (3.796) & (3.990)\\
+Private agricultural extension service (number of visits) & -16.058 & -15.248 & -9.929 & -9.406 & -3.798 & -3.302\\
+\addlinespace
+ & (12.279) & (12.273) & (8.539) & (8.346) & (5.444) & (5.708)\\
+Cash credit for groundnut farming (dummy) & -101.688 & -55.081 & -97.788* & -67.553 & -34.280 & -10.675\\
+ & (81.557) & (81.540) & (56.718) & (55.447) & (36.160) & (37.920)\\
+Credit in kind for groundnut farming (dummy) & 27.745 & -24.527 & 35.763 & 1.847 & -11.136 & -37.283\\
+ & (56.951) & (57.502) & (39.605) & (39.101) & (25.250) & (26.741)\\
+\addlinespace
+Distance to the nearest urban market (km) & -0.625 & -0.351 & -0.831 & -0.653 & 0.268 & 0.405\\
+ & (1.034) & (1.036) & (0.719) & (0.704) & (0.458) & (0.482)\\
+Distance the nearest village market (km) & -3.092 & -2.166 & -3.193 & -2.592 & -0.880 & -0.410\\
+ & (3.344) & (3.345) & (2.326) & (2.275) & (1.483) & (1.556)\\
+Crop rotation (dummy) & -64.875* & -28.369 & -61.367** & -37.679 & -0.107 & 18.082\\
+\addlinespace
+ & (37.660) & (38.209) & (26.190) & (25.982) & (16.697) & (17.769)\\
+Mixed Crops (dummy) & 1.058 & 17.203 & -1.179 & 9.296 & -4.068 & 4.035\\
+ & (31.642) & (31.726) & (22.005) & (21.573) & (14.029) & (14.754)\\
+Labor force (man.day) & -5.352** & -3.481 & -3.873** & -2.659 & -1.867* & -0.933\\
+ & (2.447) & (2.467) & (1.701) & (1.678) & (1.085) & (1.147)\\
+\addlinespace
+Unit selling price (USD/kg) & -214.873 & -177.766 & 1,049.099*** & 1,073.062*** & 19.080 & 43.168\\
+ & (176.487) & (173.254) & (122.735) & (117.811) & (78.249) & (80.570)\\
+Seed cost (USD/ha) & -0.937 & -0.182 & -0.627 & -0.138 & -0.299 & 0.085\\
+ & (0.815) & (0.810) & (0.567) & (0.551) & (0.361) & (0.377)\\
+Fertilizer cost (USD/ha) & -1.690*** & -0.987* & -1.585*** & -1.129*** & -0.318 & 0.038\\
+\addlinespace
+ & (0.558) & (0.557) & (0.388) & (0.379) & (0.248) & (0.259)\\
+Pesticide cost (USD/ha) & 3.015** & 1.000 & 2.605** & 1.298 & 0.533 & -0.468\\
+ & (1.532) & (1.579) & (1.065) & (1.074) & (0.679) & (0.734)\\
+Labor cost (USD/ha) & -0.134 & 0.165 & -0.225 & -0.031 & -0.134 & 0.016\\
+ & (0.406) & (0.408) & (0.282) & (0.277) & (0.180) & (0.190)\\
+\addlinespace
+Groundnut area (ha) & 712.142*** & 582.511*** & 443.194*** & 359.092*** & 4.798 & -60.396***\\
+ & (11.886) & (17.299) & (8.266) & (11.763) & (5.270) & (8.045)\\
+Off-farm income (dummy) & -49.557 & -45.223 & -29.786 & -26.974 & -32.864 & -30.659\\
+ & (51.249) & (51.289) & (35.640) & (34.876) & (22.722) & (23.851)\\
+Dependency ratio & -10.777 & -5.419 & -9.190 & -5.713 & -2.597 & 0.089\\
+\addlinespace
+ & (11.377) & (11.408) & (7.912) & (7.758) & (5.044) & (5.305)\\
+Clay soil (dummy) & -9.792 & 11.088 & -5.638 & 7.909 & -8.945 & 1.522\\
+ & (45.431) & (45.547) & (31.594) & (30.971) & (20.143) & (21.181)\\
+Sandy-clay soil (dummy) & 19.180 & 37.723 & 23.247 & 35.277 & -6.721 & 2.610\\
+ & (35.702) & (35.770) & (24.828) & (24.323) & (15.829) & (16.635)\\
+\addlinespace
+Silty soil (dummy) & 44.725 & 42.505 & 39.507 & 38.066 & 18.335 & 17.251\\
+ & (45.208) & (45.249) & (31.439) & (30.769) & (20.044) & (21.043)\\
+Constant & 130.485 & 536.181 & -704.916 & -410.969 & 568.515** & 736.882**\\
+ & (649.998) & (645.982) & (452.031) & (439.261) & (288.191) & (300.408)\\
+Observations & 8,604 & 8,604 & 8,604 & 8,604 & 8,604 & 8,604\\
+\addlinespace
+Number of id & 2,868 & 2,868 & 2,868 & 2,868 & 2,868 & 2,868\\
+District FE & YES & YES & YES & YES & YES & YES\\
+Year FE & YES & YES & YES & YES & YES & YES\\
+Standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\newpage
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-10}Full 2SLS estimates of the relationship between continous adoption, production and yields}\\
+\toprule
+variables & MP & QS & SV\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-10}Full 2SLS estimates of the relationship between continous adoption, production and yields \textit{(continued)}}\\
+\toprule
+variables & MP & QS & SV\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Three years continuous adoption & 0.002 & 0.104 & 0.118\\
+ & (0.057) & (0.358) & (0.328)\\
+Age of household head & -0.001 & -0.046 & -0.044\\
+ & (0.009) & (0.056) & (0.051)\\
+Household size & 0.003*** & 0.028*** & 0.026***\\
+\addlinespace
+ & (0.001) & (0.006) & (0.005)\\
+Farmers group membership & 0.029*** & 0.196*** & 0.179***\\
+ & (0.006) & (0.041) & (0.037)\\
+Training on agriculture & -0.033** & -0.199** & -0.179**\\
+ & (0.014) & (0.089) & (0.081)\\
+\addlinespace
+Training on groundnut farming & -0.029*** & -0.205*** & -0.191***\\
+ & (0.004) & (0.026) & (0.024)\\
+Public agricultural extension service & 0.004 & -0.015 & -0.016\\
+ & (0.003) & (0.018) & (0.016)\\
+Private agricultural extension service & 0.002 & 0.051** & 0.049**\\
+\addlinespace
+ & (0.004) & (0.026) & (0.023)\\
+Cash credit for groundnut farming & 0.031 & 0.125 & 0.087\\
+ & (0.028) & (0.178) & (0.163)\\
+Credit in kind for groundnut farming & -0.065*** & -0.134 & -0.099\\
+ & (0.020) & (0.128) & (0.117)\\
+\addlinespace
+Distance to the nearest urban market & 0.000 & -0.003 & -0.003\\
+ & (0.000) & (0.003) & (0.003)\\
+Distance the nearest village market & -0.005*** & -0.021*** & -0.018**\\
+ & (0.001) & (0.008) & (0.007)\\
+Crop rotation & -0.034*** & -0.177** & -0.162**\\
+\addlinespace
+ & (0.013) & (0.082) & (0.075)\\
+Mixed Crops & 0.008 & 0.126* & 0.116*\\
+ & (0.011) & (0.069) & (0.063)\\
+Labor force & 0.005*** & 0.045*** & 0.043***\\
+ & (0.001) & (0.006) & (0.006)\\
+\addlinespace
+Unit selling price & 0.247*** & 1.837*** & 2.978***\\
+ & (0.043) & (0.271) & (0.247)\\
+Seed cost & 0.002*** & 0.016*** & 0.015***\\
+ & (0.000) & (0.002) & (0.002)\\
+Fertilizer cost & 0.000** & 0.005*** & 0.005***\\
+\addlinespace
+ & (0.000) & (0.001) & (0.001)\\
+Pesticide cost & -0.000 & 0.001 & 0.001\\
+ & (0.001) & (0.004) & (0.004)\\
+Labor cost & 0.001*** & 0.004*** & 0.004***\\
+ & (0.000) & (0.001) & (0.001)\\
+\addlinespace
+Groundnut area & 0.015*** & 0.281*** & 0.270***\\
+ & (0.004) & (0.027) & (0.024)\\
+Off-farm income & -0.038** & -0.085 & -0.058\\
+ & (0.019) & (0.120) & (0.110)\\
+Dependency ratio & -0.012*** & -0.074*** & -0.066***\\
+\addlinespace
+ & (0.004) & (0.027) & (0.025)\\
+Clay soil & -0.016 & -0.174* & -0.168*\\
+ & (0.016) & (0.102) & (0.093)\\
+Sandy-clay soil & 0.004 & 0.028 & 0.026\\
+ & (0.013) & (0.082) & (0.075)\\
+\addlinespace
+Silty soil & 0.004 & -0.057 & -0.064\\
+ & (0.017) & (0.106) & (0.097)\\
+Constant & -0.008 & 0.101 & 0.137\\
+ & (0.113) & (0.716) & (0.654)\\
+Observations & 5,418 & 5,418 & 5,418\\
+\addlinespace
+Number of id & 2,555 & 2,555 & 2,555\\
+District FE & YES & YES & YES\\
+Year FE & YES & YES & YES\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+
+\newpage
+
+\hypertarget{correlated-random-effects}{%
+\section{Correlated random effects}\label{correlated-random-effects}}
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-11}Full Correlated random effects estimations of the relationship between adoption , commercialization and market orientation}\\
+\toprule
+variables & OLS-Share & FE-Share & RE-Share & OLS-orientation & FE-orientation & RE-orientation\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-11}Full Correlated random effects estimations of the relationship between adoption , commercialization and market orientation \textit{(continued)}}\\
+\toprule
+variables & OLS-Share & FE-Share & RE-Share & OLS-orientation & FE-orientation & RE-orientation\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & -0.030** & -0.043* & -0.058*** & -0.058*** & -0.069 & -0.093***\\
+ & (0.013) & (0.023) & (0.018) & (0.022) & (0.043) & (0.031)\\
+Age of household head (years) & -0.001** & -0.018*** & -0.017*** & -0.001** & -0.024*** & -0.025***\\
+ & (0.000) & (0.005) & (0.004) & (0.001) & (0.009) & (0.008)\\
+Sex of household head (dummy, male=1) & -0.005 &  & -0.004 & 0.013 &  & 0.012\\
+\addlinespace
+ & (0.016) &  & (0.018) & (0.024) &  & (0.029)\\
+Education level (Number of years) & -0.002* &  & -0.002* & -0.004** &  & -0.005**\\
+ & (0.001) &  & (0.001) & (0.002) &  & (0.002)\\
+Household size (number of persons) & 0.001 & 0.003*** & 0.002*** & 0.001 & 0.004** & 0.004***\\
+ & (0.001) & (0.001) & (0.001) & (0.001) & (0.002) & (0.002)\\
+\addlinespace
+Farmers group membership (dummy) & 0.013*** & 0.017** & 0.017*** & 0.013* & 0.021* & 0.018\\
+ & (0.004) & (0.007) & (0.006) & (0.008) & (0.013) & (0.011)\\
+Training on agriculture (dummy) & -0.050*** & -0.040*** & -0.044*** & -0.054*** & -0.066** & -0.071***\\
+ & (0.011) & (0.015) & (0.014) & (0.018) & (0.028) & (0.024)\\
+Training on groundnut farming (dummy) & -0.020*** & -0.023*** & -0.025*** & -0.018*** & -0.023*** & -0.026***\\
+\addlinespace
+ & (0.004) & (0.005) & (0.004) & (0.006) & (0.008) & (0.007)\\
+Public agricultural extension service (number of visits) & -0.005** & -0.007** & -0.007** & -0.007* & -0.013** & -0.012**\\
+ & (0.002) & (0.003) & (0.003) & (0.004) & (0.006) & (0.005)\\
+Private agricultural extension service (number of visits) & 0.005* & 0.008* & 0.008** & 0.004 & 0.005 & 0.009\\
+ & (0.003) & (0.004) & (0.004) & (0.005) & (0.008) & (0.007)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & -0.002 & 0.003 & -0.030 & -0.035 & -0.012 & -0.063\\
+ & (0.021) & (0.031) & (0.027) & (0.038) & (0.056) & (0.049)\\
+Credit in kind for groundnut farming (dummy) & 0.003 & -0.025 & -0.008 & -0.012 & -0.062 & -0.025\\
+ & (0.013) & (0.022) & (0.019) & (0.024) & (0.040) & (0.035)\\
+Distance to the nearest urban market (km) & -0.003*** & -0.001 & -0.002*** & -0.003*** & -0.001 & -0.003***\\
+\addlinespace
+ & (0.000) & (0.001) & (0.000) & (0.001) & (0.001) & (0.001)\\
+Distance the nearest village market (km) & -0.002** & -0.000 & -0.001 & -0.001 & 0.002 & 0.000\\
+ & (0.001) & (0.001) & (0.001) & (0.002) & (0.002) & (0.002)\\
+Crop rotation (dummy) & 0.023** & -0.000 & -0.002 & 0.013 & -0.014 & -0.023\\
+ & (0.010) & (0.014) & (0.013) & (0.016) & (0.026) & (0.023)\\
+\addlinespace
+Mixed Crops (dummy) & 0.005 & 0.016 & 0.014 & 0.010 & 0.045** & 0.036*\\
+ & (0.008) & (0.012) & (0.011) & (0.014) & (0.022) & (0.019)\\
+Labor force (man.day) & 0.003*** & 0.003*** & 0.002*** & 0.004*** & 0.003 & 0.003\\
+ & (0.001) & (0.001) & (0.001) & (0.001) & (0.002) & (0.002)\\
+Unit selling price (USD/kg) & -0.023 & 0.046 & 0.051 & -0.057 & -0.036 & -0.012\\
+\addlinespace
+ & (0.046) & (0.065) & (0.055) & (0.080) & (0.119) & (0.098)\\
+Seed cost (USD/ha) & 0.001*** & 0.002*** & 0.002*** & 0.002*** & 0.002*** & 0.002***\\
+ & (0.000) & (0.000) & (0.000) & (0.000) & (0.001) & (0.001)\\
+Fertilizer cost (USD/ha) & 0.001*** & 0.001*** & 0.001*** & 0.001*** & 0.002*** & 0.001***\\
+ & (0.000) & (0.000) & (0.000) & (0.000) & (0.000) & (0.000)\\
+\addlinespace
+Pesticide cost (USD/ha) & 0.002*** & 0.001* & 0.002*** & 0.003*** & 0.003** & 0.003***\\
+ & (0.000) & (0.001) & (0.001) & (0.001) & (0.001) & (0.001)\\
+Labor cost (USD/ha) & 0.001*** & 0.001*** & 0.001*** & 0.001*** & 0.001** & 0.001***\\
+ & (0.000) & (0.000) & (0.000) & (0.000) & (0.000) & (0.000)\\
+Groundnut area (ha) & -0.002 & -0.013*** & -0.010** & -0.014*** & -0.018** & -0.014*\\
+\addlinespace
+ & (0.002) & (0.005) & (0.004) & (0.004) & (0.008) & (0.007)\\
+Off-farm income (dummy) & 0.003 & 0.010 & -0.003 & 0.035 & 0.028 & 0.015\\
+ & (0.013) & (0.021) & (0.018) & (0.024) & (0.038) & (0.033)\\
+Dependency ratio & 0.002 & -0.003 & 0.000 & 0.003 & -0.000 & 0.002\\
+ & (0.003) & (0.005) & (0.004) & (0.005) & (0.009) & (0.007)\\
+\addlinespace
+Clay soil (dummy) & 0.015 & -0.004 & 0.006 & 0.036* & 0.011 & 0.026\\
+ & (0.012) & (0.017) & (0.012) & (0.020) & (0.032) & (0.021)\\
+Sandy-clay soil (dummy) & 0.019* & 0.013 & 0.012 & 0.020 & 0.024 & 0.013\\
+ & (0.010) & (0.014) & (0.010) & (0.017) & (0.025) & (0.017)\\
+Silty soil (dummy) & 0.010 & -0.023 & 0.001 & -0.009 & -0.055* & -0.017\\
+\addlinespace
+ & (0.012) & (0.018) & (0.012) & (0.021) & (0.033) & (0.021)\\
+Constant & 0.445*** & 1.073*** & 0.649*** & 0.461*** & 1.503*** & 0.666***\\
+ & (0.038) & (0.253) & (0.073) & (0.063) & (0.462) & (0.119)\\
+Observations & 5,418 & 5,418 & 5,418 & 5,418 & 5,418 & 5,418\\
+R-squared & 0.290 &  &  & 0.182 &  & \\
+\addlinespace
+Number of id &  & 2,555 & 2,555 &  & 2,555 & 2,555\\
+District FE &  & YES & YES &  & YES & YES\\
+Year FE &  & Yes & Yes &  & Yes & Yes\\
+Robust standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-12}Full Correlated random effects estimations of the relationship between adoption (area), commercialization and market orientation}\\
+\toprule
+variables & OLS-Share & FE-Share & RE-share & OLS-orientation & FE-orientation & RE-orientation\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-12}Full Correlated random effects estimations of the relationship between adoption (area), commercialization and market orientation \textit{(continued)}}\\
+\toprule
+variables & OLS-Share & FE-Share & RE-share & OLS-orientation & FE-orientation & RE-orientation\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Area under adoption (ha) & -0.010*** & -0.032* & -0.040*** & -0.013* & -0.051 & -0.065***\\
+ & (0.004) & (0.018) & (0.013) & (0.007) & (0.032) & (0.022)\\
+Age of household head (years) & -0.001** & -0.017*** & -0.016*** & -0.001** & -0.023** & -0.023***\\
+ & (0.000) & (0.005) & (0.004) & (0.001) & (0.009) & (0.008)\\
+Sex of household head (dummy, male=1) & -0.005 &  & -0.003 & 0.012 &  & 0.013\\
+\addlinespace
+ & (0.016) &  & (0.018) & (0.024) &  & (0.029)\\
+Education level (Number of years) & -0.002* &  & -0.003** & -0.004** &  & -0.005***\\
+ & (0.001) &  & (0.001) & (0.002) &  & (0.002)\\
+Household size (number of persons) & 0.001 & 0.003*** & 0.002** & 0.001 & 0.004** & 0.004**\\
+ & (0.001) & (0.001) & (0.001) & (0.001) & (0.002) & (0.002)\\
+\addlinespace
+Farmers group membership (dummy) & 0.014*** & 0.017** & 0.017*** & 0.014* & 0.021* & 0.018\\
+ & (0.004) & (0.007) & (0.006) & (0.008) & (0.013) & (0.011)\\
+Training on agriculture (dummy) & -0.050*** & -0.041*** & -0.045*** & -0.054*** & -0.066** & -0.074***\\
+ & (0.011) & (0.015) & (0.014) & (0.017) & (0.028) & (0.025)\\
+Training on groundnut farming (dummy) & -0.020*** & -0.023*** & -0.025*** & -0.017*** & -0.023*** & -0.026***\\
+\addlinespace
+ & (0.004) & (0.005) & (0.004) & (0.006) & (0.008) & (0.007)\\
+Public agricultural extension service (number of visits) & -0.005** & -0.008** & -0.007** & -0.008** & -0.013** & -0.012**\\
+ & (0.002) & (0.003) & (0.003) & (0.004) & (0.006) & (0.005)\\
+Private agricultural extension service (number of visits) & 0.005 & 0.008* & 0.008** & 0.002 & 0.005 & 0.009\\
+ & (0.003) & (0.004) & (0.004) & (0.005) & (0.008) & (0.007)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & -0.003 & -0.005 & -0.038 & -0.038 & -0.025 & -0.075\\
+ & (0.021) & (0.031) & (0.027) & (0.038) & (0.056) & (0.049)\\
+Credit in kind for groundnut farming (dummy) & 0.004 & -0.022 & -0.004 & -0.012 & -0.057 & -0.018\\
+ & (0.013) & (0.022) & (0.020) & (0.025) & (0.041) & (0.035)\\
+Distance to the nearest urban market (km) & -0.003*** & -0.001 & -0.002*** & -0.003*** & -0.001 & -0.003***\\
+\addlinespace
+ & (0.000) & (0.001) & (0.000) & (0.001) & (0.001) & (0.001)\\
+Distance the nearest village market (km) & -0.002** & -0.000 & -0.001 & -0.001 & 0.002 & 0.000\\
+ & (0.001) & (0.001) & (0.001) & (0.002) & (0.002) & (0.002)\\
+Crop rotation (dummy) & 0.022** & -0.002 & -0.005 & 0.013 & -0.017 & -0.028\\
+ & (0.010) & (0.014) & (0.013) & (0.016) & (0.026) & (0.023)\\
+\addlinespace
+Mixed Crops (dummy) & 0.006 & 0.015 & 0.013 & 0.011 & 0.044** & 0.035*\\
+ & (0.008) & (0.012) & (0.011) & (0.014) & (0.022) & (0.019)\\
+Labor force (man.day) & 0.003*** & 0.003*** & 0.002** & 0.004*** & 0.003 & 0.002\\
+ & (0.001) & (0.001) & (0.001) & (0.001) & (0.002) & (0.002)\\
+Unit selling price (USD/kg) & -0.055 & 0.051 & 0.055 & -0.143** & -0.030 & -0.007\\
+\addlinespace
+ & (0.040) & (0.068) & (0.056) & (0.068) & (0.123) & (0.100)\\
+Seed cost (USD/ha) & 0.001*** & 0.002*** & 0.002*** & 0.002*** & 0.002*** & 0.002***\\
+ & (0.000) & (0.000) & (0.000) & (0.000) & (0.001) & (0.001)\\
+Fertilizer cost (USD/ha) & 0.001*** & 0.001*** & 0.001*** & 0.001*** & 0.001*** & 0.001***\\
+ & (0.000) & (0.000) & (0.000) & (0.000) & (0.000) & (0.000)\\
+\addlinespace
+Pesticide cost (USD/ha) & 0.002*** & 0.001** & 0.002*** & 0.003*** & 0.003** & 0.004***\\
+ & (0.000) & (0.001) & (0.001) & (0.001) & (0.001) & (0.001)\\
+Labor cost (USD/ha) & 0.001*** & 0.001*** & 0.001*** & 0.001*** & 0.001** & 0.001***\\
+ & (0.000) & (0.000) & (0.000) & (0.000) & (0.000) & (0.000)\\
+Groundnut area (ha) & 0.000 & -0.004 & 0.002 & -0.011** & -0.004 & 0.004\\
+\addlinespace
+ & (0.003) & (0.007) & (0.006) & (0.005) & (0.012) & (0.010)\\
+Off-farm income (dummy) & 0.003 & 0.013 & 0.001 & 0.035 & 0.031 & 0.021\\
+ & (0.013) & (0.021) & (0.018) & (0.024) & (0.038) & (0.033)\\
+Dependency ratio & 0.002 & -0.003 & 0.000 & 0.003 & -0.000 & 0.002\\
+ & (0.003) & (0.005) & (0.004) & (0.005) & (0.009) & (0.007)\\
+\addlinespace
+Clay soil (dummy) & 0.014 & -0.005 & 0.001 & 0.035* & 0.010 & 0.017\\
+ & (0.012) & (0.018) & (0.012) & (0.020) & (0.032) & (0.021)\\
+Sandy-clay soil (dummy) & 0.018* & 0.013 & 0.009 & 0.019 & 0.024 & 0.007\\
+ & (0.010) & (0.014) & (0.010) & (0.017) & (0.025) & (0.017)\\
+Silty soil (dummy) & 0.009 & -0.021 & 0.000 & -0.009 & -0.053 & -0.018\\
+\addlinespace
+ & (0.012) & (0.018) & (0.012) & (0.021) & (0.033) & (0.021)\\
+Constant & 0.459*** & 1.026*** & 0.631*** & 0.499*** & 1.431*** & 0.639***\\
+ & (0.036) & (0.260) & (0.075) & (0.060) & (0.474) & (0.124)\\
+Observations & 5,418 & 5,418 & 5,418 & 5,418 & 5,418 & 5,418\\
+R-squared & 0.290 &  &  & 0.181 &  & \\
+\addlinespace
+Number of id &  & 2,555 & 2,555 &  & 2,555 & 2,555\\
+District FE &  & YES & YES &  & YES & YES\\
+Year FE &  & Yes & Yes &  & Yes & Yes\\
+Robust standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\newpage
+
+\hypertarget{causal-mediation-analysis}{%
+\section{Causal mediation analysis}\label{causal-mediation-analysis}}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-13}Linear IV mediation analysis of adoption and commercialization (production)}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-13}Linear IV mediation analysis of adoption and commercialization (production) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Total effect (TE) & 0.0422** & 0.481*** & 0.469***\\
+ & (0.0190) & (0.130) & (0.119)\\
+Direct effect & -0.0371 & -0.768** & -0.783**\\
+ & (0.0445) & (0.356) & (0.336)\\
+Indirect effect & 0.0792 & 1.249*** & 1.252***\\
+\addlinespace
+ & (0.0589) & (0.477) & (0.452)\\
+Observations & 8,604 & 8,604 & 8,604\\
+Additional controls & YES & YES & YES\\
+District dummies & YES & YES & YES\\
+Mediator share of TE (\%) & 187.9 & 259.7 & 266.8\\
+\addlinespace
+F statistic on instrument (1) & 5169 & 5169 & 5169\\
+F statistic on instruments (2) & 21.19 & 21.19 & 21.19\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-14}Linear IV mediation analysis of adoption and commercialization (Yield)}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-14}Linear IV mediation analysis of adoption and commercialization (Yield) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Total effect (TE) & 0.0422** & 0.481*** & 0.469***\\
+ & (0.0190) & (0.130) & (0.119)\\
+Direct effect & -0.0664 & -1.230** & -1.246**\\
+ & (0.0675) & (0.576) & (0.551)\\
+Indirect effect & 0.109 & 1.711** & 1.715**\\
+\addlinespace
+ & (0.0828) & (0.714) & (0.684)\\
+Observations & 8,604 & 8,604 & 8,604\\
+Additional controls & YES & YES & YES\\
+District dummies & YES & YES & YES\\
+Mediator share of TE (\%) & 257.4 & 355.8 & 365.5\\
+\addlinespace
+F statistic on instrument (1) & 5169 & 5169 & 5169\\
+F statistic on instruments (2) & 13.38 & 13.38 & 13.38\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-15}Linear IV mediation analysis of continuous adoption and commercialization (Production)}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-15}Linear IV mediation analysis of continuous adoption and commercialization (Production) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Total effect (TE) & 96.98 & 696.8 & 682.2\\
+ & (4,295) & (30,859) & (30,214)\\
+Direct effect & -0.0875*** & -0.631*** & -0.619***\\
+ & (0.0328) & (0.217) & (0.205)\\
+Indirect effect & 97.07 & 697.4 & 682.9\\
+\addlinespace
+ & (4,295) & (30,859) & (30,214)\\
+Observations & 5,418 & 5,418 & 5,418\\
+Additional controls & YES & YES & YES\\
+District dummies & YES & YES & YES\\
+Mediator share of TE (\%) & 100.1 & 100.1 & 100.1\\
+\addlinespace
+F statistic on instrument (1) & 0.000503 & 0.000503 & 0.000503\\
+F statistic on instruments (2) & 19.21 & 19.21 & 19.21\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-16}Linear IV mediation analysis of continuous adoption and commercialization (Yield)}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-16}Linear IV mediation analysis of continuous adoption and commercialization (Yield) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Total effect (TE) & 96.98 & 696.8 & 682.2\\
+ & (4,295) & (30,859) & (30,214)\\
+Direct effect & -0.0554*** & -0.401*** & -0.393***\\
+ & (0.0191) & (0.123) & (0.114)\\
+Indirect effect & 97.03 & 697.2 & 682.6\\
+\addlinespace
+ & (4,295) & (30,859) & (30,214)\\
+Observations & 5,418 & 5,418 & 5,418\\
+Additional controls & YES & YES & YES\\
+District dummies & YES & YES & YES\\
+Mediator share of TE (\%) & 100.1 & 100.1 & 100.1\\
+\addlinespace
+F statistic on instrument (1) & 0.000503 & 0.000503 & 0.000503\\
+F statistic on instruments (2) & 50.51 & 50.51 & 50.51\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+
+\hypertarget{robustness-checks}{%
+\section{Robustness checks}\label{robustness-checks}}
+
+\newpage
+
+\hypertarget{cross-country-analysis}{%
+\subsection{Cross country analysis}\label{cross-country-analysis}}
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-17}2SLS estimates of the relationship between  adoption and commercialization and yield across countries}\\
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Ghana} & \multicolumn{2}{c}{Mali} & \multicolumn{2}{c}{Nigeria} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+variables & Yield & Commercialization & Yield & Commercialization & Yield & Commercialization\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-17}2SLS estimates of the relationship between  adoption and commercialization and yield across countries \textit{(continued)}}\\
+\toprule
+variables & Yield & Commercialization & Yield & Commercialization & Yield & Commercialization\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 198.475** & -0.557 & 66.646** & -0.141 & 373.278*** & 0.301***\\
+ & (88.525) & (0.501) & (33.390) & (0.311) & (25.196) & (0.074)\\
+Age of household head (years) & 0.406 & -0.095 & 0.083 & -0.014** & -3.233 & -0.069***\\
+ & (16.311) & (0.083) & (0.475) & (0.006) & (8.937) & (0.023)\\
+Sex of household head (dummy, male=1) & -58.257** & -0.170 & 24.809 & -0.308 & 20.482 & 0.899***\\
+\addlinespace
+ & (28.936) & (0.232) & (26.855) & (0.348) & (48.954) & (0.192)\\
+Education level (Number of years) & 0.110 & 0.034 & -2.087 & -0.035 & 3.167* & -0.001\\
+ & (2.862) & (0.023) & (2.355) & (0.031) & (1.747) & (0.007)\\
+Household size (number of persons) & 0.636 & 0.021 & 1.006 & 0.004 & 0.010 & 0.043***\\
+ & (4.523) & (0.022) & (0.669) & (0.007) & (2.300) & (0.006)\\
+\addlinespace
+Farmers group membership (dummy) & 4.595 & 0.495*** & -6.867 & 0.009 & -1.255 & 0.024\\
+ & (17.846) & (0.089) & (6.863) & (0.067) & (14.136) & (0.036)\\
+Training on agriculture (dummy) & 44.591 & 0.172 & 9.263 & -0.571*** & 25.793 & -0.107\\
+ & (46.961) & (0.233) & (13.136) & (0.128) & (32.491) & (0.083)\\
+Training on groundnut farming (dummy) & 5.023 & -0.054 & 5.172 & -0.314*** & -2.818 & -0.069**\\
+\addlinespace
+ & (15.475) & (0.077) & (8.066) & (0.073) & (11.287) & (0.029)\\
+Public agricultural extension service (number of visits) & 1.280 & 0.008 & -2.751 & -0.028 & -0.229 & -0.050***\\
+ & (7.857) & (0.039) & (4.690) & (0.044) & (6.118) & (0.016)\\
+Private agricultural extension service (number of visits) & 0.680 & 0.072 & 8.931* & 0.058 & -0.805 & 0.080***\\
+ & (10.184) & (0.051) & (5.135) & (0.049) & (11.113) & (0.028)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & 109.641 & -0.111 & 8.110 & -0.290 & -96.634 & 0.106\\
+ & (91.464) & (0.455) & (32.337) & (0.297) & (59.789) & (0.153)\\
+Credit in kind for groundnut farming (dummy) & -45.602 & -1.432*** & 45.213 & 0.280 & -29.923 & 0.617***\\
+ & (64.085) & (0.319) & (27.845) & (0.268) & (37.305) & (0.095)\\
+Distance to the nearest urban market (km) & 2.369 & 0.071*** & -0.092 & -0.040*** & -0.042 & -0.003*\\
+\addlinespace
+ & (2.494) & (0.015) & (0.525) & (0.005) & (0.549) & (0.001)\\
+Distance the nearest village market (km) & -0.574 & -0.012 & -2.552*** & -0.028*** & 0.569 & 0.005\\
+ & (3.130) & (0.019) & (0.870) & (0.008) & (2.840) & (0.009)\\
+Crop rotation (dummy) & 33.715 & -0.448** & -3.575 & 0.626*** & -8.976 & -0.162**\\
+ & (36.880) & (0.185) & (16.322) & (0.160) & (26.833) & (0.069)\\
+\addlinespace
+Mixed Crops (dummy) & 1.771 & -1.206*** & -10.554 & -0.140 & 6.306 & 0.092\\
+ & (35.228) & (0.175) & (12.650) & (0.123) & (23.262) & (0.059)\\
+Labor force (man.day) & -1.087 & 0.064*** & -1.643 & 0.046*** & -1.828 & 0.019***\\
+ & (3.575) & (0.018) & (1.169) & (0.011) & (1.575) & (0.004)\\
+Unit selling price (USD/kg) & -82.306 & 1.489* & 133.283 & -0.727 & 126.910 & 0.407\\
+\addlinespace
+ & (149.874) & (0.771) & (100.291) & (0.872) & (95.094) & (0.256)\\
+Seed cost (USD/ha) & -0.075 & 0.031*** & -0.096 & 0.002 & -0.374 & 0.005**\\
+ & (0.913) & (0.005) & (0.306) & (0.003) & (0.755) & (0.002)\\
+Fertilizer cost (USD/ha) & -0.442 & 0.035** & -0.546 & 0.018*** & -0.055 & 0.001\\
+ & (2.730) & (0.015) & (0.391) & (0.004) & (0.323) & (0.001)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.643 & -0.033** & 0.307 & 0.004 & 0.147 & 0.005**\\
+ & (2.680) & (0.013) & (0.729) & (0.007) & (0.928) & (0.002)\\
+Labor cost (USD/ha) & -0.327 & 0.003 & -0.347* & 0.002 & -0.006 & 0.002**\\
+ & (0.384) & (0.002) & (0.208) & (0.002) & (0.282) & (0.001)\\
+Groundnut area (ha) & 5.053 & -0.080 & 0.561 & 0.384*** & -3.373 & 0.223***\\
+\addlinespace
+ & (13.991) & (0.070) & (3.734) & (0.037) & (9.832) & (0.025)\\
+Off-farm income (dummy) & 57.474 & -0.947** & 39.093 & -0.608 & -51.019* & 0.124*\\
+ & (93.944) & (0.466) & (39.762) & (0.411) & (27.937) & (0.071)\\
+Dependency ratio & -2.751 & -0.067 & -0.736 & -0.119** & -2.717 & 0.054***\\
+ & (14.027) & (0.070) & (5.426) & (0.053) & (7.012) & (0.018)\\
+\addlinespace
+Clay soil (dummy) & 24.369 & 0.040 & 5.305 & -0.261 & -3.759 & -0.068\\
+ & (32.001) & (0.188) & (18.647) & (0.178) & (21.723) & (0.067)\\
+Sandy-clay soil (dummy) & 4.704 & 0.134 & 1.097 & 0.055 & -6.283 & 0.013\\
+ & (26.400) & (0.156) & (15.708) & (0.149) & (16.916) & (0.051)\\
+Silty soil (dummy) & 56.265* & 0.008 & 13.858 & 0.009 & -1.547 & 0.029\\
+\addlinespace
+ & (33.087) & (0.200) & (18.359) & (0.175) & (21.509) & (0.066)\\
+Constant & 869.112*** & 0.222 & 474.191*** & 7.394*** & 540.381*** & 5.076***\\
+ & (144.262) & (1.103) & (69.625) & (0.717) & (128.192) & (0.490)\\
+Observations & 1,494 & 1,494 & 2,520 & 2,520 & 4,590 & 4,590\\
+Number of id & 498 & 498 & 840 & 840 & 1,530 & 1,530\\
+\addlinespace
+District FE & YES & YES & YES & YES & YES & YES\\
+Year FE & YES & YES & YES & YES & YES & YES\\
+Standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+
+\newpage
+
+\hypertarget{control-function-approach}{%
+\subsection{Control function approach}\label{control-function-approach}}
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-18}Full Control function estimations of the relationship between adoption and market participation}\\
+\toprule
+variables & MP-FE & MP-CRE & QS-FE & QS-CRE & SV-FE & SV-CRE\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-18}Full Control function estimations of the relationship between adoption and market participation \textit{(continued)}}\\
+\toprule
+variables & MP-FE & MP-CRE & QS-FE & QS-CRE & SV-FE & SV-CRE\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 0.073** & 0.041* & 0.598*** & 0.416*** & 0.588*** & 0.417***\\
+ & (0.029) & (0.023) & (0.187) & (0.150) & (0.171) & (0.137)\\
+Age of household head (years) & 0.002 & -0.001 & -0.031 & -0.047 & -0.033 & -0.047\\
+ & (0.006) & (0.006) & (0.039) & (0.035) & (0.035) & (0.032)\\
+Sex of household head (dummy, male=1) &  & -0.024 &  & 0.014 &  & 0.029\\
+\addlinespace
+ &  & (0.024) &  & (0.159) &  & (0.145)\\
+Education level (Number of years) &  & 0.001 &  & -0.001 &  & -0.001\\
+ &  & (0.002) &  & (0.011) &  & (0.010)\\
+Household size (number of persons) & 0.003** & 0.003** & 0.029*** & 0.027*** & 0.026*** & 0.026***\\
+ & (0.001) & (0.001) & (0.008) & (0.007) & (0.007) & (0.006)\\
+\addlinespace
+Farmers group membership (dummy) & 0.028*** & 0.031*** & 0.187*** & 0.201*** & 0.172*** & 0.183***\\
+ & (0.009) & (0.008) & (0.055) & (0.051) & (0.050) & (0.046)\\
+Training on agriculture (dummy) & -0.032* & -0.040** & -0.198 & -0.271** & -0.179 & -0.248**\\
+ & (0.019) & (0.018) & (0.121) & (0.111) & (0.110) & (0.102)\\
+Training on groundnut farming (dummy) & -0.028*** & -0.034*** & -0.197*** & -0.234*** & -0.183*** & -0.217***\\
+\addlinespace
+ & (0.006) & (0.005) & (0.036) & (0.033) & (0.033) & (0.030)\\
+Public agricultural extension service (number of visits) & 0.003 & 0.006* & -0.026 & -0.002 & -0.026 & -0.005\\
+ & (0.004) & (0.004) & (0.024) & (0.023) & (0.022) & (0.021)\\
+Private agricultural extension service (number of visits) & 0.002 & 0.001 & 0.042 & 0.035 & 0.039 & 0.033\\
+ & (0.006) & (0.005) & (0.035) & (0.033) & (0.032) & (0.030)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & 0.021 & 0.011 & 0.049 & -0.045 & 0.015 & -0.072\\
+ & (0.038) & (0.035) & (0.243) & (0.222) & (0.222) & (0.203)\\
+Credit in kind for groundnut farming (dummy) & -0.066** & -0.048* & -0.152 & -0.022 & -0.120 & 0.003\\
+ & (0.027) & (0.025) & (0.174) & (0.158) & (0.159) & (0.144)\\
+Distance to the nearest urban market (km) & -0.000 & -0.003*** & -0.004 & -0.021*** & -0.004 & -0.020***\\
+\addlinespace
+ & (0.001) & (0.000) & (0.004) & (0.003) & (0.004) & (0.003)\\
+Distance the nearest village market (km) & -0.006*** & -0.005*** & -0.026** & -0.029*** & -0.023** & -0.026***\\
+ & (0.002) & (0.001) & (0.011) & (0.008) & (0.010) & (0.007)\\
+Crop rotation (dummy) & -0.037** & -0.023 & -0.194* & -0.122 & -0.176* & -0.111\\
+ & (0.018) & (0.016) & (0.111) & (0.103) & (0.102) & (0.094)\\
+\addlinespace
+Mixed Crops (dummy) & 0.011 & 0.019 & 0.140 & 0.160* & 0.129 & 0.145*\\
+ & (0.015) & (0.014) & (0.094) & (0.087) & (0.086) & (0.080)\\
+Labor force (man.day) & 0.005*** & 0.004*** & 0.044*** & 0.036*** & 0.042*** & 0.035***\\
+ & (0.001) & (0.001) & (0.009) & (0.008) & (0.008) & (0.007)\\
+Unit selling price (USD/kg) & 0.096 & 0.156** & 0.618 & 0.957** & 1.781*** & 2.131***\\
+\addlinespace
+ & (0.082) & (0.072) & (0.521) & (0.456) & (0.476) & (0.416)\\
+Seed cost (USD/ha) & 0.002*** & 0.002*** & 0.015*** & 0.016*** & 0.014*** & 0.014***\\
+ & (0.000) & (0.000) & (0.003) & (0.002) & (0.002) & (0.002)\\
+Fertilizer cost (USD/ha) & 0.000 & 0.000 & 0.004** & 0.004** & 0.004** & 0.004**\\
+ & (0.000) & (0.000) & (0.002) & (0.002) & (0.002) & (0.002)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.000 & -0.001 & 0.001 & 0.001 & 0.000 & 0.001\\
+ & (0.001) & (0.001) & (0.006) & (0.005) & (0.005) & (0.004)\\
+Labor cost (USD/ha) & 0.001*** & 0.001*** & 0.004*** & 0.004*** & 0.004*** & 0.004***\\
+ & (0.000) & (0.000) & (0.001) & (0.001) & (0.001) & (0.001)\\
+Groundnut area (ha) & 0.014** & 0.017*** & 0.274*** & 0.303*** & 0.263*** & 0.291***\\
+\addlinespace
+ & (0.006) & (0.005) & (0.036) & (0.033) & (0.033) & (0.031)\\
+Off-farm income (dummy) & -0.041 & -0.038 & -0.110 & -0.143 & -0.082 & -0.119\\
+ & (0.026) & (0.023) & (0.164) & (0.148) & (0.150) & (0.136)\\
+Dependency ratio & -0.011* & -0.004 & -0.071* & -0.027 & -0.064* & -0.024\\
+ & (0.006) & (0.005) & (0.037) & (0.033) & (0.034) & (0.030)\\
+\addlinespace
+Clay soil (dummy) & -0.012 & -0.003 & -0.154 & -0.063 & -0.149 & -0.065\\
+ & (0.022) & (0.016) & (0.139) & (0.101) & (0.127) & (0.092)\\
+Sandy-clay soil (dummy) & 0.009 & 0.009 & 0.056 & 0.052 & 0.050 & 0.046\\
+ & (0.017) & (0.013) & (0.111) & (0.082) & (0.101) & (0.075)\\
+Silty soil (dummy) & 0.012 & 0.016 & -0.013 & 0.056 & -0.026 & 0.044\\
+\addlinespace
+ & (0.023) & (0.016) & (0.143) & (0.102) & (0.131) & (0.094)\\
+Constant & 0.509* & 0.965*** & 5.042*** & 6.685*** & 4.083** & 5.467***\\
+ & (0.305) & (0.096) & (1.932) & (0.632) & (1.766) & (0.577)\\
+Observations & 5,418 & 5,418 & 5,418 & 5,418 & 5,418 & 5,418\\
+R-squared & 0.116 &  & 0.150 &  & 0.175 & \\
+\addlinespace
+Number of id & 2,555 & 2,555 & 2,555 & 2,555 & 2,555 & 2,555\\
+District FE & YES & YES & YES & YES & YES & YES\\
+Year FE & YES & YES & YES & YES & YES & YES\\
+Standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\newpage
+
+\hypertarget{using-acesss-as-lone-iv}{%
+\subsection{Using acesss as lone IV}\label{using-acesss-as-lone-iv}}
+
+\begin{landscape}\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-19}Full 2SLS estimates of the relationship between adoption, commercialization, production and yield (instrument for access)}\\
+\toprule
+variables & MP-CRE & QS-CRE & SV-CRE & Prod-FE & ProdV-FE & Yield-FE\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-19}Full 2SLS estimates of the relationship between adoption, commercialization, production and yield (instrument for access) \textit{(continued)}}\\
+\toprule
+variables & MP-CRE & QS-CRE & SV-CRE & Prod-FE & ProdV-FE & Yield-FE\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 0.065** & 0.564*** & 0.555*** & 724.946*** & 469.954*** & 312.473***\\
+ & (0.027) & (0.172) & (0.157) & (101.622) & (71.418) & (40.778)\\
+Age of household head (years) & -0.001 & -0.050 & -0.050 & -24.420 & -13.717 & -13.525*\\
+ & (0.005) & (0.035) & (0.032) & (17.526) & (12.317) & (7.033)\\
+Sex of household head (dummy, male=1) & -0.024 & 0.012 & 0.028 &  &  & \\
+\addlinespace
+ & (0.025) & (0.163) & (0.149) &  &  & \\
+Education level (Number of years) & 0.001 & -0.001 & -0.001 &  &  & \\
+ & (0.002) & (0.011) & (0.010) &  &  & \\
+Household size (number of persons) & 0.003*** & 0.027*** & 0.026*** & 7.038** & 2.586 & 3.529***\\
+ & (0.001) & (0.007) & (0.006) & (3.410) & (2.396) & (1.368)\\
+\addlinespace
+Farmers group membership (dummy) & 0.031*** & 0.201*** & 0.183*** & 36.491 & 27.391 & -1.659\\
+ & (0.008) & (0.050) & (0.046) & (24.841) & (17.458) & (9.968)\\
+Training on agriculture (dummy) & -0.040** & -0.267** & -0.245** & 44.605 & 23.344 & 28.040\\
+ & (0.017) & (0.109) & (0.100) & (54.430) & (38.252) & (21.841)\\
+Training on groundnut farming (dummy) & -0.033*** & -0.229*** & -0.212*** & -0.632 & -2.097 & -7.340\\
+\addlinespace
+ & (0.005) & (0.032) & (0.030) & (16.208) & (11.391) & (6.504)\\
+Public agricultural extension service (number of visits) & 0.006 & -0.005 & -0.007 & -37.303*** & -27.114*** & -13.457***\\
+ & (0.004) & (0.022) & (0.021) & (10.990) & (7.724) & (4.410)\\
+Private agricultural extension service (number of visits) & 0.000 & 0.029 & 0.028 & -0.691 & 2.166 & 3.688\\
+ & (0.005) & (0.033) & (0.030) & (16.044) & (11.276) & (6.438)\\
+\addlinespace
+Cash credit for groundnut farming (dummy) & 0.011 & -0.042 & -0.069 & -165.336 & -169.693** & -8.697\\
+ & (0.034) & (0.218) & (0.200) & (109.825) & (77.183) & (44.070)\\
+Credit in kind for groundnut farming (dummy) & -0.051** & -0.041 & -0.015 & 57.123 & 45.060 & 13.322\\
+ & (0.024) & (0.156) & (0.142) & (78.836) & (55.404) & (31.634)\\
+Distance to the nearest urban market (km) & -0.003*** & -0.020*** & -0.019*** & -0.580 & -1.119 & 0.608\\
+\addlinespace
+ & (0.000) & (0.003) & (0.003) & (1.928) & (1.355) & (0.774)\\
+Distance the nearest village market (km) & -0.005*** & -0.029*** & -0.026*** & -2.888 & -3.766 & 0.084\\
+ & (0.001) & (0.008) & (0.007) & (4.782) & (3.361) & (1.919)\\
+Crop rotation (dummy) & -0.023 & -0.119 & -0.108 & -25.995 & -31.067 & 2.525\\
+ & (0.016) & (0.101) & (0.093) & (50.161) & (35.252) & (20.128)\\
+\addlinespace
+Mixed Crops (dummy) & 0.018 & 0.161* & 0.146* & -49.338 & -42.325 & -18.569\\
+ & (0.013) & (0.086) & (0.079) & (42.612) & (29.947) & (17.099)\\
+Labor force (man.day) & 0.004*** & 0.037*** & 0.035*** & 9.352** & 5.658** & 2.204\\
+ & (0.001) & (0.008) & (0.007) & (3.883) & (2.729) & (1.558)\\
+Unit selling price (USD/kg) & 0.108 & 0.659 & 1.853*** & -298.709 & 1,284.525*** & 28.298\\
+\addlinespace
+ & (0.075) & (0.482) & (0.441) & (260.167) & (182.839) & (104.397)\\
+Seed cost (USD/ha) & 0.002*** & 0.015*** & 0.014*** & -0.520 & -0.525 & -0.283\\
+ & (0.000) & (0.002) & (0.002) & (1.147) & (0.806) & (0.460)\\
+Fertilizer cost (USD/ha) & 0.000 & 0.004** & 0.003** & -2.554*** & -2.740*** & 0.212\\
+ & (0.000) & (0.002) & (0.001) & (0.833) & (0.586) & (0.334)\\
+\addlinespace
+Pesticide cost (USD/ha) & -0.001 & 0.000 & 0.001 & 6.536*** & 5.991*** & 3.357***\\
+ & (0.001) & (0.005) & (0.004) & (2.496) & (1.754) & (1.002)\\
+Labor cost (USD/ha) & 0.001*** & 0.004*** & 0.004*** & -0.013 & -0.164 & -0.000\\
+ & (0.000) & (0.001) & (0.001) & (0.570) & (0.401) & (0.229)\\
+Groundnut area (ha) & 0.017*** & 0.300*** & 0.289*** & 745.783*** & 460.858*** & -5.427\\
+\addlinespace
+ & (0.005) & (0.033) & (0.030) & (16.342) & (11.485) & (6.558)\\
+Off-farm income (dummy) & -0.039* & -0.146 & -0.123 & -90.713 & -51.820 & -25.487\\
+ & (0.023) & (0.146) & (0.134) & (74.325) & (52.234) & (29.824)\\
+Dependency ratio & -0.004 & -0.028 & -0.025 & -6.288 & -3.957 & -4.791\\
+ & (0.005) & (0.032) & (0.030) & (16.715) & (11.747) & (6.707)\\
+\addlinespace
+Clay soil (dummy) & -0.004 & -0.065 & -0.067 & -51.543 & -35.999 & -37.126\\
+ & (0.016) & (0.101) & (0.092) & (62.532) & (43.946) & (25.092)\\
+Sandy-clay soil (dummy) & 0.009 & 0.050 & 0.045 & 24.169 & 27.638 & -23.155\\
+ & (0.013) & (0.082) & (0.075) & (49.907) & (35.074) & (20.026)\\
+Silty soil (dummy) & 0.015 & 0.050 & 0.039 & 108.827* & 70.832 & 25.685\\
+\addlinespace
+ & (0.016) & (0.102) & (0.094) & (64.731) & (45.491) & (25.974)\\
+Constant & 0.996*** & 6.875*** & 5.643*** & 1,362.136 & 30.664 & 1,357.141***\\
+ & (0.101) & (0.656) & (0.599) & (897.819) & (630.966) & (360.267)\\
+Observations & 5,418 & 5,418 & 5,418 & 5,418 & 5,418 & 5,418\\
+Number of id & 2,555 & 2,555 & 2,555 & 2,555 & 2,555 & 2,555\\
+\addlinespace
+District FE & YES & YES & YES & YES & YES & YES\\
+Year FE & YES & YES & YES & YES & YES & YES\\
+Standard errors in parentheses &  &  &  &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\newpage
+
+\hypertarget{hausman-taylor-iv}{%
+\subsection{Hausman Taylor IV}\label{hausman-taylor-iv}}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-20}Full HAUSMAN TAYLOR IV estimations}\\
+\toprule
+variables & MP & QS & SV\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-20}Full HAUSMAN TAYLOR IV estimations \textit{(continued)}}\\
+\toprule
+variables & MP & QS & SV\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Age of household head (years) & -0.004*** & -0.031*** & -0.031***\\
+ & (0.001) & (0.005) & (0.005)\\
+Household size (number of persons) & 0.000 & 0.007 & 0.007\\
+ & (0.001) & (0.005) & (0.005)\\
+Farmers group membership (dummy) & 0.015** & 0.110*** & 0.110***\\
+\addlinespace
+ & (0.006) & (0.040) & (0.040)\\
+Training on agriculture (dummy) & -0.063*** & -0.385*** & -0.385***\\
+ & (0.014) & (0.089) & (0.089)\\
+Training on groundnut farming (dummy) & -0.017*** & -0.096*** & -0.096***\\
+ & (0.004) & (0.028) & (0.028)\\
+\addlinespace
+Public agricultural extension service (number of visits) & -0.007** & -0.065*** & -0.065***\\
+ & (0.003) & (0.018) & (0.018)\\
+Private agricultural extension service (number of visits) & -0.004 & -0.026 & -0.026\\
+ & (0.004) & (0.027) & (0.027)\\
+Cash credit for groundnut farming (dummy) & 0.057** & 0.304 & 0.304\\
+\addlinespace
+ & (0.029) & (0.188) & (0.188)\\
+Credit in kind for groundnut farming (dummy) & -0.058*** & -0.117 & -0.117\\
+ & (0.020) & (0.131) & (0.131)\\
+Distance to the nearest urban market (km) & -0.001*** & -0.006** & -0.006**\\
+ & (0.000) & (0.003) & (0.003)\\
+\addlinespace
+Distance the nearest village market (km) & -0.007*** & -0.041*** & -0.041***\\
+ & (0.001) & (0.008) & (0.008)\\
+Crop rotation (dummy) & -0.047*** & -0.434*** & -0.434***\\
+ & (0.012) & (0.079) & (0.079)\\
+Mixed Crops (dummy) & 0.051*** & 0.382*** & 0.382***\\
+\addlinespace
+ & (0.011) & (0.070) & (0.070)\\
+Labor force (man.day) & 0.006*** & 0.053*** & 0.053***\\
+ & (0.001) & (0.006) & (0.006)\\
+Unit selling price (USD/kg) & -0.044 & -0.152 & -0.152\\
+ & (0.065) & (0.411) & (0.411)\\
+\addlinespace
+Seed cost (USD/ha) & 0.003*** & 0.018*** & 0.018***\\
+ & (0.000) & (0.002) & (0.002)\\
+Fertilizer cost (USD/ha) & 0.001*** & 0.010*** & 0.010***\\
+ & (0.000) & (0.001) & (0.001)\\
+Pesticide cost (USD/ha) & -0.001 & 0.003 & 0.003\\
+\addlinespace
+ & (0.001) & (0.004) & (0.004)\\
+Labor cost (USD/ha) & 0.001*** & 0.002** & 0.002**\\
+ & (0.000) & (0.001) & (0.001)\\
+Groundnut area (ha) & 0.039*** & 0.457*** & 0.457***\\
+ & (0.004) & (0.025) & (0.025)\\
+\addlinespace
+Off-farm income (dummy) & -0.036* & -0.051 & -0.051\\
+ & (0.018) & (0.121) & (0.121)\\
+Dependency ratio & 0.000 & -0.012 & -0.012\\
+ & (0.004) & (0.027) & (0.027)\\
+Clay soil (dummy) & -0.020 & -0.187* & -0.187*\\
+\addlinespace
+ & (0.017) & (0.108) & (0.108)\\
+Sandy-clay soil (dummy) & -0.003 & -0.019 & -0.019\\
+ & (0.013) & (0.088) & (0.088)\\
+Silty soil (dummy) & 0.003 & -0.061 & -0.061\\
+ & (0.017) & (0.111) & (0.111)\\
+\addlinespace
+Adoption dummy & 0.087*** & 0.656*** & 0.656***\\
+ & (0.019) & (0.123) & (0.123)\\
+Sex of household head (dummy, male=1) & -0.048 & -0.065 & -0.065\\
+ & (0.029) & (0.207) & (0.207)\\
+Education level (Number of years) & 0.002 & 0.012 & 0.012\\
+\addlinespace
+ & (0.002) & (0.013) & (0.013)\\
+Constant & 0.933*** & 5.857*** & 5.857***\\
+ & (0.066) & (0.445) & (0.445)\\
+Observations & 5,418 & 5,418 & 5,418\\
+Number of id & 2,555 & 2,555 & 2,555\\
+\addlinespace
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+\newpage
+
+\hypertarget{lewbels-test}{%
+\subsection{Lewbels Test}\label{lewbels-test}}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrrlrr}
+\caption{\label{tab:unnamed-chunk-21}Full Lewbel instrumental variable estimations of the relationship between adoption and commercialization}\\
+\toprule
+variables & MP & QS & SV & MP-Access & QS-Access & SV-Access\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-21}Full Lewbel instrumental variable estimations of the relationship between adoption and commercialization \textit{(continued)}}\\
+\toprule
+variables & MP & QS & SV & MP-Access & QS-Access & SV-Access\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Adoption dummy & 0.108*** & 0.769*** & 0.718*** & 0.108*** & 0.769*** & 0.718***\\
+ & (0.026) & (0.162) & (0.149) & (0.026) & (0.162) & (0.149)\\
+Age of household head & -0.002 & -0.050 & -0.049 & -0.002 & -0.050 & -0.049\\
+ & (0.006) & (0.041) & (0.038) & (0.006) & (0.041) & (0.038)\\
+Household size & 0.003* & 0.027** & 0.025** & 0.003* & 0.027** & 0.025**\\
+\addlinespace
+ & (0.002) & (0.011) & (0.010) & (0.002) & (0.011) & (0.010)\\
+Farmers group membership & 0.030** & 0.207*** & 0.189*** & 0.030** & 0.207*** & 0.189***\\
+ & (0.012) & (0.078) & (0.071) & (0.012) & (0.078) & (0.071)\\
+Training on agriculture & -0.035 & -0.212 & -0.191 & -0.035 & -0.212 & -0.191\\
+ & (0.027) & (0.171) & (0.157) & (0.027) & (0.171) & (0.157)\\
+\addlinespace
+Training on groundnut farming & -0.026*** & -0.188*** & -0.175*** & -0.026*** & -0.188*** & -0.175***\\
+ & (0.008) & (0.050) & (0.045) & (0.008) & (0.050) & (0.045)\\
+Public agricultural extension service & 0.004 & -0.019 & -0.020 & 0.004 & -0.019 & -0.020\\
+ & (0.005) & (0.031) & (0.028) & (0.005) & (0.031) & (0.028)\\
+Private agricultural extension service & -0.002 & 0.022 & 0.022 & -0.002 & 0.022 & 0.022\\
+\addlinespace
+ & (0.007) & (0.046) & (0.042) & (0.007) & (0.046) & (0.042)\\
+Cash credit for groundnut farming & 0.026 & 0.089 & 0.053 & 0.026 & 0.089 & 0.053\\
+ & (0.049) & (0.318) & (0.292) & (0.049) & (0.318) & (0.292)\\
+Credit in kind for groundnut farming & -0.073* & -0.189 & -0.151 & -0.073* & -0.189 & -0.151\\
+ & (0.038) & (0.248) & (0.231) & (0.038) & (0.248) & (0.231)\\
+\addlinespace
+Distance to the nearest urban market & 0.000 & -0.002 & -0.003 & 0.000 & -0.002 & -0.003\\
+ & (0.001) & (0.005) & (0.005) & (0.001) & (0.005) & (0.005)\\
+Distance the nearest village market & -0.005* & -0.023 & -0.020 & -0.005* & -0.023 & -0.020\\
+ & (0.003) & (0.018) & (0.017) & (0.003) & (0.018) & (0.017)\\
+Crop rotation & -0.030 & -0.144 & -0.132 & -0.030 & -0.144 & -0.132\\
+\addlinespace
+ & (0.025) & (0.152) & (0.138) & (0.025) & (0.152) & (0.138)\\
+Mixed Crops & 0.008 & 0.120 & 0.111 & 0.008 & 0.120 & 0.111\\
+ & (0.021) & (0.134) & (0.123) & (0.021) & (0.134) & (0.123)\\
+Labor force & 0.005*** & 0.044*** & 0.042*** & 0.005*** & 0.044*** & 0.042***\\
+ & (0.002) & (0.012) & (0.011) & (0.002) & (0.012) & (0.011)\\
+\addlinespace
+Unit selling price & 0.031 & 0.287 & 1.535*** & 0.031 & 0.287 & 1.535***\\
+ & (0.081) & (0.511) & (0.469) & (0.081) & (0.511) & (0.469)\\
+Seed cost & 0.002*** & 0.015*** & 0.013*** & 0.002*** & 0.015*** & 0.013***\\
+ & (0.001) & (0.004) & (0.004) & (0.001) & (0.004) & (0.004)\\
+Fertilizer cost & 0.000 & 0.004** & 0.004** & 0.000 & 0.004** & 0.004**\\
+\addlinespace
+ & (0.000) & (0.002) & (0.002) & (0.000) & (0.002) & (0.002)\\
+Pesticide cost & -0.001 & -0.001 & -0.001 & -0.001 & -0.001 & -0.001\\
+ & (0.001) & (0.007) & (0.006) & (0.001) & (0.007) & (0.006)\\
+Labor cost & 0.001** & 0.004** & 0.004** & 0.001** & 0.004** & 0.004**\\
+ & (0.000) & (0.002) & (0.002) & (0.000) & (0.002) & (0.002)\\
+\addlinespace
+Groundnut area & 0.015** & 0.278*** & 0.268*** & 0.015** & 0.278*** & 0.268***\\
+ & (0.007) & (0.055) & (0.051) & (0.007) & (0.055) & (0.051)\\
+Off-farm income & -0.044 & -0.129 & -0.098 & -0.044 & -0.129 & -0.098\\
+ & (0.030) & (0.212) & (0.198) & (0.030) & (0.212) & (0.198)\\
+Dependency ratio & -0.012 & -0.075 & -0.067 & -0.012 & -0.075 & -0.067\\
+\addlinespace
+ & (0.008) & (0.047) & (0.043) & (0.008) & (0.047) & (0.043)\\
+Clay soil & -0.016 & -0.174 & -0.167 & -0.016 & -0.174 & -0.167\\
+ & (0.032) & (0.202) & (0.184) & (0.032) & (0.202) & (0.184)\\
+Sandy-clay soil & 0.004 & 0.027 & 0.024 & 0.004 & 0.027 & 0.024\\
+ & (0.024) & (0.150) & (0.137) & (0.024) & (0.150) & (0.137)\\
+\addlinespace
+Silty soil & 0.003 & -0.063 & -0.069 & 0.003 & -0.063 & -0.069\\
+ & (0.032) & (0.199) & (0.181) & (0.032) & (0.199) & (0.181)\\
+Observations & 5,418 & 5,418 & 5,418 & 5,418 & 5,418 & 5,418\\
+R-squared & 0.092 & 0.129 & 0.156 & 0.092 & 0.129 & 0.156\\
+Robust standard errors in parentheses &  &  &  &  &  & \\
+\addlinespace
+*** p<0.01, ** p<0.05, * p<0.1 &  &  &  &  &  & \\*
+\end{longtable}
+\endgroup{}
+\newpage
+
+\hypertarget{continuous-adoption-2-years}{%
+\subsection{Continuous adoption (2 years)}\label{continuous-adoption-2-years}}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-22}Full 2SLS estimates of the relationship between continuous adoption (two-year) and commercialization}\\
+\toprule
+variables & MP & QS & SV\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-22}Full 2SLS estimates of the relationship between continuous adoption (two-year) and commercialization \textit{(continued)}}\\
+\toprule
+variables & MP & QS & SV\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Two years continuous adoption & 0.005 & 0.104 & 0.114\\
+ & (0.043) & (0.270) & (0.246)\\
+Age of household head & -0.001 & -0.049 & -0.048\\
+ & (0.009) & (0.056) & (0.051)\\
+Household size & 0.003*** & 0.028*** & 0.026***\\
+\addlinespace
+ & (0.001) & (0.006) & (0.005)\\
+Farmers group membership & 0.029*** & 0.196*** & 0.179***\\
+ & (0.006) & (0.041) & (0.037)\\
+Training on agriculture & -0.033** & -0.199** & -0.179**\\
+ & (0.014) & (0.089) & (0.081)\\
+\addlinespace
+Training on groundnut farming & -0.029*** & -0.205*** & -0.191***\\
+ & (0.004) & (0.026) & (0.024)\\
+Public agricultural extension service & 0.004 & -0.015 & -0.016\\
+ & (0.003) & (0.018) & (0.016)\\
+Private agricultural extension service & 0.002 & 0.051** & 0.049**\\
+\addlinespace
+ & (0.004) & (0.026) & (0.023)\\
+Cash credit for groundnut farming & 0.031 & 0.125 & 0.087\\
+ & (0.028) & (0.178) & (0.163)\\
+Credit in kind for groundnut farming & -0.065*** & -0.134 & -0.099\\
+ & (0.020) & (0.128) & (0.117)\\
+\addlinespace
+Distance to the nearest urban market & 0.000 & -0.003 & -0.003\\
+ & (0.000) & (0.003) & (0.003)\\
+Distance the nearest village market & -0.005*** & -0.021*** & -0.018**\\
+ & (0.001) & (0.008) & (0.007)\\
+Crop rotation & -0.034*** & -0.177** & -0.162**\\
+\addlinespace
+ & (0.013) & (0.082) & (0.075)\\
+Mixed Crops & 0.008 & 0.126* & 0.116*\\
+ & (0.011) & (0.069) & (0.063)\\
+Labor force & 0.005*** & 0.045*** & 0.043***\\
+ & (0.001) & (0.006) & (0.006)\\
+\addlinespace
+Unit selling price & 0.247*** & 1.836*** & 2.978***\\
+ & (0.043) & (0.271) & (0.247)\\
+Seed cost & 0.002*** & 0.016*** & 0.015***\\
+ & (0.000) & (0.002) & (0.002)\\
+Fertilizer cost & 0.000** & 0.005*** & 0.005***\\
+\addlinespace
+ & (0.000) & (0.001) & (0.001)\\
+Pesticide cost & -0.000 & 0.001 & 0.001\\
+ & (0.001) & (0.004) & (0.004)\\
+Labor cost & 0.001*** & 0.004*** & 0.004***\\
+ & (0.000) & (0.001) & (0.001)\\
+\addlinespace
+Groundnut area & 0.015*** & 0.281*** & 0.270***\\
+ & (0.004) & (0.027) & (0.024)\\
+Off-farm income & -0.038** & -0.086 & -0.058\\
+ & (0.019) & (0.120) & (0.110)\\
+Dependency ratio & -0.012*** & -0.074*** & -0.066***\\
+\addlinespace
+ & (0.004) & (0.027) & (0.025)\\
+Clay soil & -0.016 & -0.174* & -0.168*\\
+ & (0.016) & (0.102) & (0.093)\\
+Sandy-clay soil & 0.004 & 0.029 & 0.026\\
+ & (0.013) & (0.082) & (0.075)\\
+\addlinespace
+Silty soil & 0.004 & -0.057 & -0.063\\
+ & (0.017) & (0.106) & (0.097)\\
+Constant & -0.004 & 0.076 & 0.101\\
+ & (0.082) & (0.517) & (0.473)\\
+Observations & 5,418 & 5,418 & 5,418\\
+\addlinespace
+Number of id & 2,555 & 2,555 & 2,555\\
+District FE & YES & YES & YES\\
+Year FE & YES & YES & YES\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-23}Linear IV mediation analysis of continuous adoption (2 Years) and commercialization (Production)}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-23}Linear IV mediation analysis of continuous adoption (2 Years) and commercialization (Production) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Total effect (TE) & 54.00 & 388.0 & 379.9\\
+ & (1,344) & (9,656) & (9,454)\\
+Direct effect & -0.0946*** & -0.683*** & -0.670***\\
+ & (0.0353) & (0.234) & (0.221)\\
+Indirect effect & 54.10 & 388.7 & 380.6\\
+\addlinespace
+ & (1,344) & (9,657) & (9,455)\\
+Observations & 5,418 & 5,418 & 5,418\\
+Additional controls & YES & YES & YES\\
+District dummies & YES & YES & YES\\
+Mediator share of TE (\%) & 100.2 & 100.2 & 100.2\\
+\addlinespace
+F statistic on instrument (1) & 0.00159 & 0.00159 & 0.00159\\
+F statistic on instruments (2) & 19.30 & 19.30 & 19.30\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:unnamed-chunk-24}Linear IV mediation analysis of continuous adoption (2 Years) and commercialization (Yield)}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:unnamed-chunk-24}Linear IV mediation analysis of continuous adoption (2 Years) and commercialization (Yield) \textit{(continued)}}\\
+\toprule
+variables & Sellers & Quantity Sold & Sales Value\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Total effect (TE) & 54.00 & 388.0 & 379.9\\
+ & (1,344) & (9,656) & (9,454)\\
+Direct effect & -0.0552*** & -0.400*** & -0.393***\\
+ & (0.0191) & (0.123) & (0.114)\\
+Indirect effect & 54.06 & 388.4 & 380.3\\
+\addlinespace
+ & (1,344) & (9,656) & (9,455)\\
+Observations & 5,418 & 5,418 & 5,418\\
+Additional controls & YES & YES & YES\\
+District dummies & YES & YES & YES\\
+Mediator share of TE (\%) & 100.1 & 100.1 & 100.1\\
+\addlinespace
+F statistic on instrument (1) & 0.00159 & 0.00159 & 0.00159\\
+F statistic on instruments (2) & 50.51 & 50.51 & 50.51\\
+Standard errors in parentheses &  &  & \\
+*** p<0.01, ** p<0.05, * p<0.1 &  &  & \\*
+\end{longtable}
+\endgroup{}
+
+\end{document}
