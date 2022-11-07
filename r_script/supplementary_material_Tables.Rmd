@@ -1,5 +1,5 @@
 ---
-title: "Technology Adoption and Smallholder Commercialization: Panel Evidence from West Africa"
+title: "The Adoption of Improved Climate-smart Crop Varieties Increases Agricultural Production and Smallholder Commercialization in West Africa"
 subtitle: "Supplementary Information (Full model tables and robustness check)"
 date: "Last updated: `r Sys.time()`"
 output: 
