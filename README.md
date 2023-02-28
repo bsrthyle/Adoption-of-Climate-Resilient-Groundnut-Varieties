@@ -1,5 +1,5 @@
-# Technology Adoption and Smallholder Commercialization: Panel Evidence from West Africa
-The repository contains the code and supplementary material for the paper titled "Technology Adoption and Smallholder Commercialization: Panel Evidence from West Africa"
+# The Adoption of Climate-Resilient Groundnut Varieties Increases Agricultural Production and Smallholder Commercialization in West Africa
+The repository contains the code and supplementary material for the paper titled "The Adoption of Climate-Resilient Groundnut Varieties Increases Agricultural Production and Smallholder Commercialization in West Africa"
 
 ---
 - The data is available on request
