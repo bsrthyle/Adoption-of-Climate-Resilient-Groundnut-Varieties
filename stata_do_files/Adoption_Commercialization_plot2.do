@@ -2,7 +2,7 @@
 
 *===================================================================================================================================================
 * Project : 	USPCALING GROUNDNUT PRODUCTIVITY
-* Program:		TECHNOLOGY ADOPTION AND SMALLHOLDER COMMERCIALIZATION IN GHANA, MALI AND NIGERIA
+* Program:		The Adoption of Climate-Resilient Groundnut Varieties Increases Agricultural Production and Smallholder Commercialization in West Africa
 * ==================================================================================================================================================
  
  *This was perfored in STATA 17

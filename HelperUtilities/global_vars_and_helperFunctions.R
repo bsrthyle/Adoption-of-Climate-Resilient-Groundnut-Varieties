@@ -1,6 +1,3 @@
-
-
-
 # Global variables, Data and Functions
 
 # define font
