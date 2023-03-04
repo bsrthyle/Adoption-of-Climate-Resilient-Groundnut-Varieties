@@ -1,0 +1,18 @@
+	(1)	(2)	(3)
+VARIABLES	Sellers	Quantity Sold	Sales Value
+			
+total	0.0422**	0.481***	0.469***
+	(0.0190)	(0.130)	(0.119)
+effect	-0.0664	-1.230**	-1.246**
+	(0.0675)	(0.576)	(0.551)
+direct	0.109	1.711**	1.715**
+	(0.0828)	(0.714)	(0.684)
+			
+Observations	8,604	8,604	8,604
+Additional controls	YES	YES	YES
+District dummies	YES	YES	YES
+Mediator share of TE (%)	257.4	355.8	365.5
+F statistic on instrument (1)	5169	5169	5169
+F statistic on instruments (2)	13.38	13.38	13.38
+Standard errors in parentheses			
+*** p<0.01, ** p<0.05, * p<0.1			

@@ -1,0 +1,64 @@
+		(1)	(2)	(3)	(4)	(5)	(6)
+VARIABLES	LABELS	MP	QS	SV	MP_Access	QS_Access	SV_Access
+							
+adopt	Adoption dummy (centered) (centered) (centered) (centered) (centered) (centered)	0.108***	0.769***	0.718***	0.108***	0.769***	0.718***
+		(0.026)	(0.162)	(0.149)	(0.026)	(0.162)	(0.149)
+age	Age of household head (years) (centered) (centered) (centered) (cente (centered)	-0.002	-0.050	-0.049	-0.002	-0.050	-0.049
+		(0.006)	(0.041)	(0.038)	(0.006)	(0.041)	(0.038)
+o.sexe	Sex of household head (dummy, male=1) (centered) (centered) (centered (centered) = o,	-	-	-	-	-	-
+							
+o.nbschool	Education level (Number of years) (centered) (centered) (centered) (c (centered) = o,	-	-	-	-	-	-
+							
+hhsize	Household size (number of persons) (centered) (centered) (centered) ( (centered)	0.003*	0.027**	0.025**	0.003*	0.027**	0.025**
+		(0.002)	(0.011)	(0.010)	(0.002)	(0.011)	(0.010)
+cooperative	Farmers group membership (dummy)  (centered) (centered) (centered) (c (centered)	0.030**	0.207***	0.189***	0.030**	0.207***	0.189***
+		(0.012)	(0.078)	(0.071)	(0.012)	(0.078)	(0.071)
+formagri	Training on agriculture (dummy) (centered) (centered) (centered) (cen (centered)	-0.035	-0.212	-0.191	-0.035	-0.212	-0.191
+		(0.027)	(0.171)	(0.157)	(0.027)	(0.171)	(0.157)
+formarrach	Training on groundnut farming (dummy) (centered) (centered) (centered (centered)	-0.026***	-0.188***	-0.175***	-0.026***	-0.188***	-0.175***
+		(0.008)	(0.050)	(0.045)	(0.008)	(0.050)	(0.045)
+visitpublic	Public agricultural extension service (number of visits) (centered) ( (centered)	0.004	-0.019	-0.020	0.004	-0.019	-0.020
+		(0.005)	(0.031)	(0.028)	(0.005)	(0.031)	(0.028)
+extension	Private agricultural extension service (number of visits) (centered)  (centered)	-0.002	0.022	0.022	-0.002	0.022	0.022
+		(0.007)	(0.046)	(0.042)	(0.007)	(0.046)	(0.042)
+credite	Cash credit for groundnut farming (dummy) (centered) (centered) (cent (centered)	0.026	0.089	0.053	0.026	0.089	0.053
+		(0.049)	(0.318)	(0.292)	(0.049)	(0.318)	(0.292)
+creditn	Credit in kind for groundnut farming (dummy) (centered) (centered) (c (centered)	-0.073*	-0.189	-0.151	-0.073*	-0.189	-0.151
+		(0.038)	(0.248)	(0.231)	(0.038)	(0.248)	(0.231)
+dmurbain	Distance to the nearest urban market (km) (centered) (centered) (cent (centered)	0.000	-0.002	-0.003	0.000	-0.002	-0.003
+		(0.001)	(0.005)	(0.005)	(0.001)	(0.005)	(0.005)
+dmvillage	Distance the nearest village market (km) (centered) (centered) (cente (centered)	-0.005*	-0.023	-0.020	-0.005*	-0.023	-0.020
+		(0.003)	(0.018)	(0.017)	(0.003)	(0.018)	(0.017)
+crotation	Crop rotation (dummy) (centered) (centered) (centered) (centered) (ce (centered)	-0.030	-0.144	-0.132	-0.030	-0.144	-0.132
+		(0.025)	(0.152)	(0.138)	(0.025)	(0.152)	(0.138)
+cmixt	Mixed Crops (dummy) (centered) (centered) (centered) (centered) (cent (centered)	0.008	0.120	0.111	0.008	0.120	0.111
+		(0.021)	(0.134)	(0.123)	(0.021)	(0.134)	(0.123)
+nbrhoejour	Labor force (man.day) (centered) (centered) (centered) (centered) (ce (centered)	0.005***	0.044***	0.042***	0.005***	0.044***	0.042***
+		(0.002)	(0.012)	(0.011)	(0.002)	(0.012)	(0.011)
+uprice	Unit selling price (USD/kg) (centered) (centered) (centered) (centere (centered)	0.031	0.287	1.535***	0.031	0.287	1.535***
+		(0.081)	(0.511)	(0.469)	(0.081)	(0.511)	(0.469)
+cseed_ha	Seed cost (USD/ha) (centered) (centered) (centered) (centered) (cente (centered)	0.002***	0.015***	0.013***	0.002***	0.015***	0.013***
+		(0.001)	(0.004)	(0.004)	(0.001)	(0.004)	(0.004)
+cfert_ha	Fertilizer cost (USD/ha) (centered) (centered) (centered) (centered)  (centered)	0.000	0.004**	0.004**	0.000	0.004**	0.004**
+		(0.000)	(0.002)	(0.002)	(0.000)	(0.002)	(0.002)
+cpest_ha	Pesticide cost (USD/ha) (centered) (centered) (centered) (centered) ( (centered)	-0.001	-0.001	-0.001	-0.001	-0.001	-0.001
+		(0.001)	(0.007)	(0.006)	(0.001)	(0.007)	(0.006)
+clabor_ha	Labor cost (USD/ha) (centered) (centered) (centered) (centered) (cent (centered)	0.001**	0.004**	0.004**	0.001**	0.004**	0.004**
+		(0.000)	(0.002)	(0.002)	(0.000)	(0.002)	(0.002)
+gsize	Groundnut area (ha) (centered) (centered) (centered) (centered) (cent (centered)	0.015**	0.278***	0.268***	0.015**	0.278***	0.268***
+		(0.007)	(0.055)	(0.051)	(0.007)	(0.055)	(0.051)
+off_farm	Off-farm income (dummy) (centered) (centered) (centered) (centered) ( (centered)	-0.044	-0.129	-0.098	-0.044	-0.129	-0.098
+		(0.030)	(0.212)	(0.198)	(0.030)	(0.212)	(0.198)
+dratio	Dependency ratio (centered) (centered) (centered) (centered) (centere (centered)	-0.012	-0.075	-0.067	-0.012	-0.075	-0.067
+		(0.008)	(0.047)	(0.043)	(0.008)	(0.047)	(0.043)
+typsoil1	Clay soil (dummy) (centered) (centered) (centered) (centered) (center (centered)	-0.016	-0.174	-0.167	-0.016	-0.174	-0.167
+		(0.032)	(0.202)	(0.184)	(0.032)	(0.202)	(0.184)
+typsoil2	Sandy-clay soil (dummy) (centered) (centered) (centered) (centered) ( (centered)	0.004	0.027	0.024	0.004	0.027	0.024
+		(0.024)	(0.150)	(0.137)	(0.024)	(0.150)	(0.137)
+typsoil3	Silty soil (dummy) (centered) (centered) (centered) (centered) (cente (centered)	0.003	-0.063	-0.069	0.003	-0.063	-0.069
+		(0.032)	(0.199)	(0.181)	(0.032)	(0.199)	(0.181)
+							
+Observations		5,418	5,418	5,418	5,418	5,418	5,418
+R-squared		0.092	0.129	0.156	0.092	0.129	0.156
+Robust standard errors in parentheses							
+*** p<0.01, ** p<0.05, * p<0.1							

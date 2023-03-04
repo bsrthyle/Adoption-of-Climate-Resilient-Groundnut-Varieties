@@ -1,0 +1,66 @@
+		(1)	(2)	(3)
+VARIABLES	LABELS	MP	QS	SV
+				
+age	Age of household head (years)	-0.004***	-0.031***	-0.031***
+		(0.001)	(0.005)	(0.005)
+hhsize	Household size (number of persons)	0.000	0.007	0.007
+		(0.001)	(0.005)	(0.005)
+cooperative	Farmers group membership (dummy)	0.015**	0.110***	0.110***
+		(0.006)	(0.040)	(0.040)
+formagri	Training on agriculture (dummy)	-0.063***	-0.385***	-0.385***
+		(0.014)	(0.089)	(0.089)
+formarrach	Training on groundnut farming (dummy)	-0.017***	-0.096***	-0.096***
+		(0.004)	(0.028)	(0.028)
+visitpublic	Public agricultural extension service (number of visits)	-0.007**	-0.065***	-0.065***
+		(0.003)	(0.018)	(0.018)
+extension	Private agricultural extension service (number of visits)	-0.004	-0.026	-0.026
+		(0.004)	(0.027)	(0.027)
+credite	Cash credit for groundnut farming (dummy)	0.057**	0.304	0.304
+		(0.029)	(0.188)	(0.188)
+creditn	Credit in kind for groundnut farming (dummy)	-0.058***	-0.117	-0.117
+		(0.020)	(0.131)	(0.131)
+dmurbain	Distance to the nearest urban market (km)	-0.001***	-0.006**	-0.006**
+		(0.000)	(0.003)	(0.003)
+dmvillage	Distance the nearest village market (km)	-0.007***	-0.041***	-0.041***
+		(0.001)	(0.008)	(0.008)
+crotation	Crop rotation (dummy)	-0.047***	-0.434***	-0.434***
+		(0.012)	(0.079)	(0.079)
+cmixt	Mixed Crops (dummy)	0.051***	0.382***	0.382***
+		(0.011)	(0.070)	(0.070)
+nbrhoejour	Labor force (man.day)	0.006***	0.053***	0.053***
+		(0.001)	(0.006)	(0.006)
+uprice	Unit selling price (USD/kg)	-0.044	-0.152	-0.152
+		(0.065)	(0.411)	(0.411)
+cseed_ha	Seed cost (USD/ha)	0.003***	0.018***	0.018***
+		(0.000)	(0.002)	(0.002)
+cfert_ha	Fertilizer cost (USD/ha)	0.001***	0.010***	0.010***
+		(0.000)	(0.001)	(0.001)
+cpest_ha	Pesticide cost (USD/ha)	-0.001	0.003	0.003
+		(0.001)	(0.004)	(0.004)
+clabor_ha	Labor cost (USD/ha)	0.001***	0.002**	0.002**
+		(0.000)	(0.001)	(0.001)
+gsize	Groundnut area (ha)	0.039***	0.457***	0.457***
+		(0.004)	(0.025)	(0.025)
+off_farm	Off-farm income (dummy)	-0.036*	-0.051	-0.051
+		(0.018)	(0.121)	(0.121)
+dratio	Dependency ratio	0.000	-0.012	-0.012
+		(0.004)	(0.027)	(0.027)
+typsoil1	Clay soil (dummy)	-0.020	-0.187*	-0.187*
+		(0.017)	(0.108)	(0.108)
+typsoil2	Sandy-clay soil (dummy)	-0.003	-0.019	-0.019
+		(0.013)	(0.088)	(0.088)
+typsoil3	Silty soil (dummy)	0.003	-0.061	-0.061
+		(0.017)	(0.111)	(0.111)
+adopt	Adoption dummy	0.087***	0.656***	0.656***
+		(0.019)	(0.123)	(0.123)
+sexe	Sex of household head (dummy, male=1)	-0.048	-0.065	-0.065
+		(0.029)	(0.207)	(0.207)
+nbschool	Education level (Number of years)	0.002	0.012	0.012
+		(0.002)	(0.013)	(0.013)
+Constant	Constant	0.933***	5.857***	5.857***
+		(0.066)	(0.445)	(0.445)
+				
+Observations		5,418	5,418	5,418
+Number of id		2,555	2,555	2,555
+Standard errors in parentheses				
+*** p<0.01, ** p<0.05, * p<0.1				

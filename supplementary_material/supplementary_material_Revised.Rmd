@@ -222,7 +222,7 @@ We present the results of the estimation using the pooled FE-OLS model. Figure S
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{plots/old/plt2.png}
+\includegraphics[width=\textwidth]{figures/fig_SM1.png}
 \caption{OLS estimates of the relationship between adoption and commercialization}
 \end{figure}
 Note: Full models are reported in SM2. Robust standard errors in parentheses. Additional controls include age and educational level of the household head, dependency ratio, whether the household head is male, household size, cooperative membership, training, access to public and private extension, access to credits both in 
@@ -231,7 +231,7 @@ Estimating the relationship between adoption of improved groundnuts, production,
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{plots/old/plt3.png}
+\includegraphics[width=\textwidth]{figures/fig_SM2.png}
 \caption{OLS estimates of the relationship between adoption and commercialization}
 \end{figure}
 Note: Full models are reported in SM4. Robust standard errors in parentheses). Additional controls include age and educational level of the household head, dependency ratio, whether the household head is male, household size, cooperative membership, training, access to public and private extension, access to credits both in cash and kind, distance to nearest urban and village market, crop rotation, mixed cropping, labour, market price, input costs, area of cultivation, off-farm income and soil type (*** p<0.01, ** p<0.05, * p<0.1)
@@ -240,7 +240,7 @@ Note: Full models are reported in SM4. Robust standard errors in parentheses). A
 \newpage
 # Descriptive statistics
 
-```{r}
+```{r, cache=TRUE}
 Groundnut_new_2 <- Groundnut_new%>%
   mutate(cooperative_2 = case_when(
     str_detect(cooperative, "Yes") ~ 1,
@@ -278,8 +278,7 @@ disc_tbl <- tbl_strata_ex1%>%
   # reduce font size to make table fit. 
   # you may also use the `latex_options =  c( c("scale_down", "hold_position"), "hold_position")` argument here.
   kableExtra::kable_styling(font_size = 6, latex_options =  c("scale_down", "hold_position", "repeat_header"))%>%
-  kableExtra::landscape()%>%
-  row_spec(33, hline_after  = T)
+  kableExtra::landscape()
 disc_tbl
 
 ```
@@ -289,7 +288,7 @@ disc_tbl
 
 ```{r}
 
-df <- list_of_tables$SM1_Table3%>%
+df <- list_of_tables$Table_SM2%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -302,7 +301,7 @@ df <- list_of_tables$SM1_Table3%>%
 
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full OLS estimates of the relationship between adoption and commercialization(Adoption)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Full OLS estimates of the relationship between adoption and commercialization(Adoption)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
   kableExtra::kable_paper()
 ```
@@ -310,7 +309,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 
 ```{r}
 
-df <- list_of_tables$SM1_Table3_Area%>%
+df <- list_of_tables$Table_SM3%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -322,7 +321,7 @@ df <- list_of_tables$SM1_Table3_Area%>%
 
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full OLS estimates of the relationship between adoption and commercialization (Area under Adoption)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full OLS estimates of the relationship between adoption and commercialization (Area under Adoption)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
@@ -330,7 +329,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))
 
 ```{r}
 
-df <- list_of_tables$SM2_Table4%>%
+df <- list_of_tables$Table_SM4%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -341,7 +340,7 @@ df <- list_of_tables$SM2_Table4%>%
   rename(variables = LABELS)
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = " Full OLS estimates of the relationship between adoption, production and yields(Adoption)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" , caption = " Full OLS estimates of the relationship between adoption, production and yields(Adoption)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
@@ -349,7 +348,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))
 
 ```{r}
 
-df <- list_of_tables$SM2_Table4_Area%>%
+df <- list_of_tables$Table_SM5%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -360,7 +359,7 @@ df <- list_of_tables$SM2_Table4_Area%>%
   rename(variables = LABELS)
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr",  caption = "OLS estimates of the relationship between adoption, production and yields(Area under Adoption)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" , caption = "OLS estimates of the relationship between adoption, production and yields(Area under Adoption)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 kable_classic("striped", full_width = F)
 ```
@@ -369,7 +368,7 @@ kable_classic("striped", full_width = F)
 
 ```{r}
 
-df <- list_of_tables$SM3_Table5%>%
+df <- list_of_tables$Table_SM5%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -382,14 +381,14 @@ df <- list_of_tables$SM3_Table5%>%
 
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full 2SLS estimates of the relationship between adoption and commercialization(Adoption)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full 2SLS estimates of the relationship between adoption and commercialization(Adoption)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 \newpage
 
 ```{r}
 
-df <- list_of_tables$SM4_Table6%>%
+df <- list_of_tables$Table_SM6%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -400,7 +399,7 @@ df <- list_of_tables$SM4_Table6%>%
   rename(variables = LABELS)
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full 2SLS estimates of the relationship between adoption and commercialization (Area under Adoption)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Full 2SLS estimates of the relationship between adoption and commercialization")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
@@ -408,7 +407,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))
 
 ```{r}
 
-df <- list_of_tables$SM5_Table7%>%
+df <- list_of_tables$Table_SM7%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -420,7 +419,7 @@ df <- list_of_tables$SM5_Table7%>%
 
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full 2SLS estimates of the relationship between adoption, production and yields")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full 2SLS estimates of the relationship between adoption (Area), production and yields")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 landscape()
 ```
@@ -428,7 +427,7 @@ landscape()
 
 ```{r}
 
-df <- list_of_tables$SM6_adopt_3y%>%
+df <- list_of_tables$Table_SM8%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -443,17 +442,39 @@ df <- list_of_tables$SM6_adopt_3y%>%
 
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full 2SLS estimates of the relationship between continous adoption, production and yields")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Full 2SLS estimates of the relationship between adoption, production and yields")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 landscape()
 ```
 
-
 \newpage
+```{r}
+
+df <- list_of_tables$Table_SM9%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  mutate(
+   variables = gsub("\\(.*", "", variables)
+  )
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = " Full 2SLS estimates of the relationship between continous adoption,production and yields")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+landscape()
+```
+\newpage
+
 # Correlated random effects
 
 ```{r}
-df <- list_of_tables$cre_tbl_adopt%>%
+df <- list_of_tables$Table_SM10%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -463,13 +484,13 @@ df <- list_of_tables$cre_tbl_adopt%>%
   select(-VARIABLES)%>%
   rename(variables = LABELS)
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full Correlated random effects estimations of the relationship between adoption , commercialization and market orientation")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full Correlated random effects estimations of the relationship between adoption , commercialization and market orientation")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
   landscape()
 ```
 
 ```{r}
-df <- list_of_tables$cre_tbl_area%>%
+df <- list_of_tables$Table_SM11%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -479,7 +500,7 @@ df <- list_of_tables$cre_tbl_area%>%
   select(-VARIABLES)%>%
   rename(variables = LABELS)
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full Correlated random effects estimations of the relationship between adoption (area), commercialization and market orientation")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Full Correlated random effects estimations of the relationship between adoption (area), commercialization and market orientation")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
   landscape()
 ```
@@ -488,7 +509,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 # Causal mediation analysis
 
 ```{r}
-df <- list_of_tables$mediation_prod%>%
+df <- list_of_tables$Table_SM12%>%
   rename(variables = VARIABLES)%>%
   mutate(variables = case_when(
     variables == "total" ~ "Total effect (TE)",
@@ -497,12 +518,12 @@ df <- list_of_tables$mediation_prod%>%
     TRUE ~ variables
   ))
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Linear IV mediation analysis of adoption and commercialization (production)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Linear IV mediation analysis of adoption and commercialization (production)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
 ```{r}
-df <- list_of_tables$mediation_yield%>%
+df <- list_of_tables$Table_SM13%>%
   rename(variables = VARIABLES)%>%
   mutate(variables = case_when(
     variables == "total" ~ "Total effect (TE)",
@@ -511,7 +532,7 @@ df <- list_of_tables$mediation_yield%>%
     TRUE ~ variables
   ))
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Linear IV mediation analysis of adoption and commercialization (Yield)")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Linear IV mediation analysis of adoption and commercialization (Yield)")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 \newpage
@@ -519,7 +540,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))
 # Cross country analysis
 
 ```{r}
-df <- list_of_tables$cross_country_t%>%
+df <- list_of_tables$Table_SM14%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -530,7 +551,7 @@ df <- list_of_tables$cross_country_t%>%
   rename(variables = LABELS)
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F,col.names = c("variables", "Yield", "Commercialization", "Yield", "Commercialization", "Yield", "Commercialization"), align="lrrr", caption = "2SLS estimates of the relationship between  adoption and commercialization and yield across countries")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F,col.names = c("variables", "Yield", "Commercialization", "Yield", "Commercialization", "Yield", "Commercialization"), align="lrrr", linesep ="" ,caption = "2SLS estimates of the relationship between adoption and commercialization and yield across countries")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
   landscape()%>%
 add_header_above(c(" ", "Ghana" = 2, "Mali" = 2, "Nigeria" = 2)) 
@@ -547,7 +568,7 @@ add_header_above(c(" ", "Ghana" = 2, "Mali" = 2, "Nigeria" = 2))
 
 ```{r}
 
-df <- list_of_tables$SM7_CF_Ro%>%
+df <- list_of_tables$Table_SM15%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -558,7 +579,7 @@ df <- list_of_tables$SM7_CF_Ro%>%
   rename(variables = LABELS)
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full Control function estimations of the relationship between adoption and market participation")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full Control function estimations of the relationship between adoption and market participation")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
   landscape()
 ```
@@ -568,7 +589,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 
 ```{r}
 
-df <- list_of_tables$SM9_HTIV_Ro%>%
+df <- list_of_tables$Table_SM16%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -579,7 +600,7 @@ df <- list_of_tables$SM9_HTIV_Ro%>%
   rename(variables = LABELS)
 
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full HAUSMAN TAYLOR IV estimations")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full HAUSMAN TAYLOR IV estimations")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 \newpage
@@ -587,7 +608,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))
 
 ```{r}
 
-df <- list_of_tables$SM10_LT%>%
+df <- list_of_tables$Table_SM17%>%
   mutate(
     LABELS = case_when(
       LABELS=="" ~ VARIABLES,
@@ -604,7 +625,7 @@ df <- list_of_tables$SM10_LT%>%
   )%>%
   filter(MP != "-")
 
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", caption = "Full Lewbel instrumental variable estimations of the relationship between adoption and commercialization")%>%
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Full Lewbel instrumental variable estimations of the relationship between adoption and commercialization")%>%
 kable_styling(font_size = 7, latex_options = c("repeat_header"))
 ```
 
