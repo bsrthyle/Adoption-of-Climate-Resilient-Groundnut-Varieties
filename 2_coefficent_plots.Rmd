@@ -179,7 +179,7 @@ plot_coefficents <- function(tbl_Num=2, X="inters_var"){
 df_gprod <- Groundnut_new%>%
   select(gprod,adopt)%>%
   filter(gprod < 5000)
-df_gprod$adopt <- factor(df$adopt, levels = c(0,1), labels = c("Non-adopters","Adopters"))
+df_gprod$adopt <- factor(df_gprod$adopt, levels = c(0,1), labels = c("Non-adopters","Adopters"))
 
 mean_data <- aggregate(gprod ~ adopt, data = df_gprod, FUN = mean)
 
@@ -347,7 +347,7 @@ df_tbl_4 <- df_plot%>%
   filter(tbl_no==4)%>%
   mutate(inters_var = factor(inters_var, labels = c(`Adoption dummy` = "Adoption\n(Yes/No)" , 
         `Area under adoption (ha)`="Area under\n adoption (ha)")))%>%
-  mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity Sold", "[C] Sales value")))
+  mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity sold", "[C] Sales value")))
 plt_tbl_4 <- 
     ggplot(df_tbl_4, aes_string(x = "model_type", y = "coef", color="model_type")) +
     geom_hline(
@@ -402,7 +402,7 @@ ggsave("figures/fig_4.pdf", plt_tbl_4, width = 24, height = 16, units = "cm",dev
 ```{r}
 df_tbl_5 <- df_plot%>%
   filter(tbl_no==5)%>%
-  mutate(dep_var=factor(dep_var, levels = c("Yield", "Consumption","Quantity Sold"),labels  = c("[A] Yield", "[B] Consumption","[C] Quantity Sold")))
+  mutate(dep_var=factor(dep_var, levels = c("Yield", "Consumption","Quantity Sold"),labels  = c("[A] Yield", "[B] Consumption","[C] Quantity sold")))
 
 
 plt_tbl_5 <- 
@@ -461,7 +461,7 @@ ggsave("figures/fig_5.pdf", plt_tbl_5, width = 26, height = 12, units = "cm",dev
 
 df_tbl_6 <- df_plot%>%
   filter(tbl_no==6)%>%
-  mutate(dep_var=factor(dep_var, levels = c("Yield", "Consumption", "Quantity Sold"),labels = c("[A] Yield", "[B] Consumption", "[C] Quantity Sold")))
+  mutate(dep_var=factor(dep_var, levels = c("Yield", "Consumption", "Quantity Sold"),labels = c("[A] Yield", "[B] Consumption", "[C] Quantity sold")))
 
   plt_tbl_6 <- 
     ggplot(df_tbl_6, aes_string(x = "country", y = "coef", color="country")) +
@@ -574,7 +574,7 @@ ggsave("figures/fig_7.pdf", plt_tbl_10, width = 26, height = 18, units = "cm",de
 
 ```{r}
  df_tbl_sm1 <- df_plot%>%
-  filter(tbl_no==1) %>% mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity Sold", "[C] Sales value")))
+  filter(tbl_no==1) %>% mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity sold", "[C] Sales value")))
 
 
   plt_tbl_sm1 <- 
