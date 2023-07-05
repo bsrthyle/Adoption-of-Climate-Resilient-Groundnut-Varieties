@@ -1,0 +1,49 @@
+﻿dep_var,inters_var,coef,se,pval,aster,ci_low,ci_high,tbl_no,r_sqr,model_type,country
+Market participation,Adoption dummy,0.020844,0.011536,0.070816,*,-0.001769,0.043457,1,0.273525,,
+Quantity Sold,Adoption dummy,0.144722,0.078715,0.066015,*,-0.009578,0.299021,1,0.420965,,
+Sale Value,Adoption dummy,0.132235,0.07282,0.069418,*,-0.01051,0.274979,1,0.451161,,
+Market participation,Area under adoption (ha),-0.005674,0.003751,0.130425,,-0.013027,0.001679,1,0.273405,,
+Quantity Sold,Area under adoption (ha),-0.020883,0.031972,0.513673,,-0.083555,0.04179,1,0.420778,,
+Sale Value,Area under adoption (ha),-0.015384,0.030586,0.61499,,-0.075341,0.044572,1,0.450974,,
+Production,Adoption dummy,538.366455,36.535774,0,***,466.747488,609.985423,2,0.616205,,
+Production value,Adoption dummy,359.339966,24.098564,0,***,312.100943,406.578989,2,0.593745,,
+Yield,Adoption dummy,283.33609,15.07487,0,***,253.785693,312.886487,2,0.181067,,
+Production,Area under adoption (ha),238.550262,34.459335,0,***,171.001618,306.098907,2,0.621579,,
+Production value,Area under adoption (ha),216.813904,24.253115,0,***,169.271924,264.355883,2,0.612736,,
+Yield,Area under adoption (ha),57.225677,6.402504,0,***,44.675218,69.776137,2,0.156439,,
+Yield,Adoption dummy,344.491,31.119,0,***,283.499,405.483,3,,,
+Yield,Area under adoption (ha),240.044,22.765,0,***,195.426,284.663,3,,,
+Production value,Adoption dummy,476.159,48.846,0,***,380.423,571.895,3,,,
+Production value,Area under adoption (ha),331.791,33.348,0,***,266.43,397.153,3,,,
+Consumption,Adoption dummy,213.525,73.166,0.004,***,70.122,356.929,3,,,
+Consumption,Area under adoption (ha),148.786,51.027,0.004,***,48.775,248.798,3,,,
+Market participation,Area under adoption (ha),0.044,0.014,0.001,***,0.017,0.072,4,,FE,
+Quantity Sold,Area under adoption (ha),0.406,0.078,0,***,0.252,0.559,4,,CRE,
+Quantity Sold,Area under adoption (ha),0.414,0.094,0,***,0.229,0.599,4,,FE,
+Sale Value,Area under adoption (ha),0.39,0.072,0,***,0.248,0.531,4,,CRE,
+Sale Value,Area under adoption (ha),0.397,0.087,0,***,0.227,0.568,4,,FE,
+Market participation,Area under adoption (ha),0.044,0.011,0,***,0.022,0.067,4,,CRE,
+Market participation,Adoption dummy,0.063,0.016,0,***,0.031,0.095,4,,CRE,
+Market participation,Adoption dummy,0.064,0.02,0.001,***,0.025,0.103,4,,FE,
+Quantity Sold,Adoption dummy,0.583,0.11,0,***,0.367,0.799,4,,CRE,
+Quantity Sold,Adoption dummy,0.594,0.134,0,***,0.33,0.857,4,,FE,
+Sale Value,Adoption dummy,0.56,0.101,0,***,0.362,0.759,4,,CRE,
+Sale Value,Adoption dummy,0.57,0.124,0,***,0.328,0.813,4,,FE,
+Yield,Three years continuous adoption,"1,241.56",109.207,0,***,"1,027.52","1,455.60",5,,,
+Consumption,Three years continuous adoption,442.096,232.261,0.057,*,-13.128,897.32,5,,,
+Quantity Sold,Three years continuous adoption,3.459,0.843,0,***,1.807,5.11,5,,,
+Yield,Adoption dummy,379.921,147.299,0.01,***,91.22,668.622,6,,,Ghana
+Consumption,Adoption dummy,154.917,386.3,0.688,,-602.217,912.052,6,,,Ghana
+Quantity Sold,Adoption dummy,0.934,0.999,0.35,,-1.024,2.892,6,,,Ghana
+Yield,Adoption dummy,36.417,67.499,0.59,,-95.878,168.712,6,,,Mali
+Consumption,Adoption dummy,3.92,276.291,0.989,,-537.6,545.439,6,,,Mali
+Quantity Sold,Adoption dummy,0.156,0.72,0.829,,-1.256,1.567,6,,,Mali
+Yield,Adoption dummy,376.238,25.809,0,***,325.653,426.822,6,,,Nigeria
+Consumption,Adoption dummy,326.944,77.817,0,***,174.425,479.462,6,,,Nigeria
+Quantity Sold,Adoption dummy,0.435,0.088,0,***,0.263,0.608,6,,,Nigeria
+Market participation,Quantity harvested,0.000032,0.000004,0,***,0.000024,0.00004,7,,,
+Market participation,Quantity Consumed,-0.000065,0.000004,0,***,-0.000072,-0.000057,7,,,
+Quantity Sold,Quantity harvested,0.000332,0.00003,0,***,0.000274,0.00039,7,,,
+Quantity Sold,Quantity Consumed,-0.000628,0.000028,0,***,-0.000683,-0.000574,7,,,
+Sale Value,Quantity harvested,0.000315,0.000027,0,***,0.000261,0.000368,7,,,
+Sale Value,Quantity Consumed,-0.000597,0.000026,0,***,-0.000647,-0.000546,7,,,

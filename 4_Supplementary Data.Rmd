@@ -1,0 +1,307 @@
+---
+title: "Adoption of Climate-Resilient Groundnut Varieties Increases Agricultural Production, Consumption, and Smallholder Commercialization in West Africa"
+subtitle: "Supplementary Data"
+author: 'Martin Paul Jr. Tabe-Ojong, Jourdain Lokossou, Bisrat Gebrekidan, Hippolyte D. Affognon'
+date: "Last updated: `r Sys.time()`"
+output: 
+ bookdown::pdf_document2:
+    keep_tex: true
+    template: HelperUtilities/my_templet.tex
+    #highlight: zenburn
+header-includes:
+   - \usepackage[margin=2.8cm]{geometry}
+   - \renewcommand{\contentsname}{Table of Contents}
+   - \usepackage{enumitem}
+   - \usepackage{pifont}
+   - \renewcommand{\labelitemi}{$\rightarrow$}
+   - \usepackage{tocloft}
+   - \renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+   - \usepackage{hyperref}
+   - \hypersetup{linkcolor = blue}
+   - \usepackage{hanging}
+   - \usepackage[T1]{fontenc}
+   - \usepackage{graphicx}
+   - \usepackage{booktabs,threeparttablex}
+   - \usepackage{pdflscape}
+   - \usepackage{fvextra}
+   - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+   #- \usepackage{lmodern}
+   - \usepackage{fouriernc}
+   - \usepackage{caption}
+   - \usepackage{nimbusmono}
+   - \renewcommand{\thetable}{S\arabic{table}}
+   - \renewcommand{\thefigure}{S\arabic{figure}}
+   - \setlength{\cfttabnumwidth}{1cm}
+
+toc: false
+toccolor: 'blue'
+mainfont: 'lm'
+toc-title: "Table of Contents"
+---
+
+```{r setup, include=FALSE, warning=FALSE, comment=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  echo = FALSE,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 60),
+  out.width = "100%"
+)
+
+options(width = 100)
+# load the required libraries
+
+
+
+# load the required libraries
+pacman::p_load(
+jsonlite,
+sjlabelled,
+labelled,
+dataMaid,
+plotly,
+wesanderson,
+ggthemes,
+hrbrthemes,
+sjmisc,
+expss,
+haven,
+knitr,
+kableExtra,
+ggstream,
+ggstatsplot,
+gtsummary,
+highcharter,
+tidyverse
+)
+```
+\newpage
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+
+
+
+
+
+
+
+
+
+\newpage
+```{r, echo=FALSE}
+list_of_tables <- list()
+file_names <- list.files(here::here("stata_outputs", "SM_tables"), pattern = "*.txt")
+
+for(i in 1:length(file_names)){
+  list_of_tables[[i]] <- readr::read_delim(here::here("stata_outputs", "SM_tables", file_names[[i]]), delim = "\t", escape_double = FALSE, trim_ws = TRUE, skip = 1,na = "empty" )
+}
+
+
+names(list_of_tables) <- str_replace(file_names, ".txt", "")
+
+
+change_names <- function(df){
+  names(df) <- str_replace(names(df), "_", "-")
+  return(df)
+}
+
+list_of_tables <- purrr::map(list_of_tables, change_names)
+
+clean_space <- function(df) {
+  df %>%
+    mutate_all(~ (str_replace_all(., "%", "\\\\%")))
+}
+
+list_of_tables <- purrr::map(list_of_tables, clean_space)
+
+clean_slash <- function(df){
+  df %>%
+    mutate_all(~ (str_replace_all(., "/", "\\\\/")))
+}
+
+list_of_tables <- purrr::map(list_of_tables, clean_slash)
+
+color_significance <- function(df){
+  df[-1] <- lapply(
+  df[-1], function(x){
+    cell_spec(x, background = ifelse(str_count(x, "\\*")==1, "#8C298133", ifelse(str_count(x, "\\*")==2, "#641A8033", ifelse(str_count(x, "\\*")==3, "#3C0F7033", "white"))),color = ifelse(str_count(x, "\\*")>=1, "White", "black" ),bold = ifelse(str_count(x, "\\*")>=1,T, F ))
+  }
+)
+  
+  return(df)
+}
+
+Groundnut_new <- read_dta("data/data_for_descriptive.dta")%>%
+  sjlabelled::var_labels(
+    year = "Waves of the study",
+    country = "Country",
+    sales_value = "Sales value",
+    prod_value = "Production value",
+    gprod = "Total quantity of groundnut harvested",
+    formarrach = "Training on groundnut farming",
+    cooperative = "Farmers group membership"
+  )%>%
+  mutate(
+    formarrach = haven::as_factor(formarrach),
+    cooperative = haven::as_factor(cooperative)
+    
+  )
+my_vars <- c(
+  "country",
+  "year",
+  "adopt",
+  "improvsup",
+  "sellers",
+  "qsale",
+  "sales_value",
+  "gprod",
+  "prod_value",
+  "gyield",
+  "age",
+  "sexe",
+  "nbschool",
+  "hhsize",
+  "cooperative",
+  "formagri",
+  "formarrach",
+  "visitpublic",
+  "extension",
+  "credite",
+  "creditn",
+  "dmurbain",
+  "dmvillage",
+  "crotation",
+  "cmixt",
+  "nbrhoejour",
+  "uprice",
+  "cseed_ha",
+  "cfert_ha",
+  "cpest_ha",
+  "clabor_ha",
+  "gsize",
+  "off_farm",
+  "dratio",
+  "typsoil1",
+  "typsoil2",
+  "typsoil3",
+  "adopt2y",
+  "adopt3y"
+)
+
+my_vars_2 <- c(
+  "country",
+  "year",
+  "adopt",
+  "age",
+  "sexe",
+  "nbschool",
+  "hhsize",
+  "dratio",
+  "cooperative_2",
+  "formagri",
+  "formarrach_2",
+  "visitpublic",
+  "extension",
+  "credite",
+  "creditn",
+  "dmurbain",
+  "dmvillage",
+  "crotation",
+  "cmixt",
+  "nbrhoejour",
+  "uprice",
+  "cseed_ha",
+  "cfert_ha",
+  "cpest_ha",
+  "clabor_ha",
+  "gsize",
+  "off_farm",
+  "typsoil1",
+  "typsoil2",
+  "typsoil3"
+)
+
+```
+
+# Robustness checks
+
+## Control function approach
+
+```{r}
+
+df <- list_of_tables$Table_SM12%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", col.names = c("variables", "FE","CRE","FE","CRE","FE","CRE") ,caption = "Control function estimations of the relationship between adoption and market participation")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  #landscape()%>%
+add_header_above(c(" ", "Market participation" = 2, "Quantity sold" = 2, "Sales value" = 2)) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of ontrol function estimations, which investigates the relationship between adoption and various factors related to Market participation, quantity sold, and Sales value under both Fixed effects (FE) and corrolated randome effect (CRE) specifications. Robust standard errors are reported in brackets to account for potential heteroscedasticity. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects.")
+```
+\newpage
+
+## Hausman Taylor IV
+
+```{r}
+
+df <- list_of_tables$Table_SM13%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  slice(76:78, 1:75,79:91)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", col.names = c("variables","Market participation","Quantity sold", "Sales value") ,caption = "HAUSMAN TAYLOR IV estimations")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header")) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of the HAUSMAN TAYLOR IV model, which investigates the relationship between adoption and various factors related to Market participation, quantity sold, and Sales value. Robust standard errors are reported in brackets to account for potential heteroscedasticity. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects.")
+```
+\newpage
+
+## Lewbels Test
+
+```{r}
+
+df <- list_of_tables$Table_SM14%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  mutate(
+    #variables = str_remove_all(variables, "(centered)"),
+    #variables = str_remove_all(variables, "()"),
+    #variables = str_remove_all(variables, "cen"),
+    variables = gsub("\\(.*", "", variables)
+  )%>%
+  filter(MP != "-")
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="",col.names = c("variables","Market participation","Quantity sold", "Sales value","Market participation","Quantity sold", "Sales value"), caption = "Lewbel instrumental variable estimations of the relationship between adoption and commercialization")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  #landscape()%>%
+  add_header_above(c(" ", " ", " "," ", "Acess (IV)" = 3)) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of Lewbel instrumental variable (IV) estimations, which investigate the relationship between adoption and several factors associated with market participation, quantity sold, and sales value. The Lewbel IV approach extends the standard instrumental variable technique by addressing the endogeneity issue that arises when the adoption decision and commercialization are jointly determined. Robust standard errors are reported in brackets to account for potential heteroscedasticity and model misspecification. Statistical tests were conducted using two-sided t-tests, and p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). Additionally, to control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects, capturing the district-specific characteristics that may affect the adoption and market outcomes.")
+```
+
+ 

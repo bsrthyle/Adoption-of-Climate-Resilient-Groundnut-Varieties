@@ -1,0 +1,703 @@
+---
+title: "Adoption of Climate-Resilient Groundnut Varieties Increases Agricultural Production, Consumption, and Smallholder Commercialization in West Africa"
+subtitle: "Code to reproduce figures"
+author: 'Martin Paul Jr. Tabe-Ojong, Jourdain Lokossou, Bisrat Gebrekidan, Hippolyte D. Affognon'
+date: "Last updated: `r Sys.time()`"
+output: 
+
+ bookdown::pdf_document2:
+    keep_tex: true
+    template: HelperUtilities/my_templet.tex
+ odt_document:
+header-includes:
+   - \usepackage[margin=2.8cm]{geometry}
+   - \renewcommand{\contentsname}{Table of Contents}
+   - \usepackage{enumitem}
+   - \usepackage{pifont}
+   - \renewcommand{\labelitemi}{$\rightarrow$}
+   - \usepackage{tocloft}
+   - \renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+   - \usepackage{hyperref}
+   - \hypersetup{linkcolor = blue}
+   - \usepackage{hanging}
+   - \usepackage[T1]{fontenc}
+   - \usepackage{graphicx}
+   - \usepackage{booktabs,threeparttablex}
+   - \usepackage{pdflscape}
+   - \usepackage{fvextra}
+   - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+   - \usepackage{lmodern}
+   - \usepackage{nimbusmono}
+   - \renewcommand{\thetable}{SM\arabic{table}}
+   - \setlength{\cfttabnumwidth}{1cm}
+
+toc: false
+toccolor: 'blue'
+mainfont: 'lm'
+toc-title: "-"
+---
+\newpage
+\listoftables
+\newpage
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  echo = FALSE,
+  warning = FALSE,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 10),
+  # if knitting to html disable the following line
+  dev = "cairo_pdf",
+  out.width = "100%"
+)
+
+options(width = 100)
+# load the required libraries
+extrafont::loadfonts()
+
+# load the required libraries
+pacman::p_load(
+  sjlabelled,
+  labelled,
+  ggthemes,
+  haven,
+  openxlsx,
+  tidyverse
+)
+
+#ggthemr(palette = 'light')
+#my_font <- font_an
+```
+
+
+```{r}
+source("HelperUtilities/Utils.R", local = knitr::knit_global())
+my_font <- "Frutiger"
+```
+
+```{r}
+data_for_plotting_ori <- read_csv("stata_outputs/figures_table/coefficent_plot_table.csv")%>%
+  janitor::clean_names()
+
+Groundnut_new <- read_dta("data/Groundnut.dta")
+```
+
+```{r}
+df_plot <- data_for_plotting_ori%>%
+  mutate(p.label = case_when(
+    !is.na(aster) ~paste0(round(coef,3), aster) ,
+    TRUE ~ paste0(round(coef,3), "")
+  ) )
+```
+
+# Write a generic function
+
+The `plot_coefficents` function allows to generate a coefficient plot with customizable aesthetics and filtering options, providing a visual representation of coefficient estimates, confidence intervals, and significance levels for different variables using the ggplot2 package in R. 
+
+1. The function takes two arguments: `tbl_Num` and `X`, which determine the filtering and aesthetics of the plot, respectively.
+
+2. The function filters the data frame `df_plot` based on the value of `tbl_Num`, keeping only the rows where the `tbl_no` variable matches `tbl_Num`.
+
+3. The ggplot object `plt_tbl_1` is created, specifying the data frame `df_tbl_1` as the data and defining the aesthetics using `aes_string`. The `x` axis is set to the variable passed to the `X` argument, and the `y` axis is set to "coef". The color of the points is determined by the "inters_var" variable.
+
+4. Several ggplot layers are added to the plot:
+   - `geom_hline`: Adds a horizontal line at y = 0, representing the baseline/reference line.
+   - `geom_point`: Adds points to the plot, representing coefficient estimates. The `position_dodge` function is used to separate the points based on the "inters_var" variable.
+   - `geom_errorbar`: Adds error bars to the points, representing confidence intervals for the coefficient estimates.
+   - `geom_text`: Adds text labels to the plot,  containing coefficient estimate and significance level . The labels are positioned using `position_dodge` to align them with the points.
+
+5. Axis labels, facetting, and theme customization are applied:
+   - `scale_x_discrete`: Sets custom labels for the x-axis categories.
+   - `facet_wrap`: Creates separate plots for different levels of the `dep_var` variable.
+   - `labs`: Sets the labels for the y-axis, title, subtitle, and x-axis.
+   - `ggthemes::theme_base`: Applies a basic theme to the plot.
+   - `theme`: Customizes various aspects of the plot, such as the legend position, text size and font, and panel appearance.
+
+6. Finally, it returns the created plot object `plt_tbl_1`.
+
+
+
+```{r}
+plot_coefficents <- function(tbl_Num=2, X="inters_var"){
+  
+  df_tbl_1 <- df_plot%>%
+  filter(tbl_no==tbl_Num)
+
+  plt_tbl_1 <- 
+    ggplot(df_tbl_1, aes_string(x = X, y = "coef", colour = "inters_var")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.2,
+      show.legend = FALSE,
+      size = 4,
+      family = my_font
+    ) +
+  scale_x_discrete(labels=c("Adoption", "Area under\nadoption (ha)")) +
+    facet_wrap(~dep_var, scales = "free_y") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+       strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black" ))
+  
+  return(plt_tbl_1)
+  
+}
+```
+
+# Figure 1. Kernel density distribution outcome variables
+
+```{r}
+
+# gprod
+df_gprod <- Groundnut_new%>%
+  select(gprod,adopt)%>%
+  filter(gprod < 5000)
+df_gprod$adopt <- factor(df$adopt, levels = c(0,1), labels = c("Non-adopters","Adopters"))
+
+mean_data <- aggregate(gprod ~ adopt, data = df_gprod, FUN = mean)
+
+
+
+
+fig_gprod <- ggplot(df_gprod, aes(x = gprod, fill = factor(adopt), color = factor(adopt)), show.legend = T) +
+  geom_density(alpha = 0.06,kernel="epanechnikov", bw=200, show.legend = T) +
+  geom_vline(data = mean_data, aes(xintercept = gprod), size = 1, alpha=0.2, show.legend = F) +
+geom_text(data = mean_data, aes(x = gprod, label = paste("μ", ifelse(adopt == "Adopters", "adopters", "non-adopters"), "=", round(gprod, 2)), y = 0.0009), vjust = -0.5, angle = 90,family=my_font, show.legend = F, size=4) +
+  ylim(c(0, 0.00118))+
+  labs(x = "Production(Kg)", y = "Density", fill = "Adopt") +
+  #scale_fill_manual(values = c("blue", "red")) +
+  scale_color_brewer(palette="Set1")+ 
+  guides(fill = "none")+
+  #scale_fill_brewer(palette="Set1")+
+  #scale_color_manual(values = c("non-adopters" = "blue", "adopters" = "red")) +
+  theme_base(base_family = my_font)+
+  theme(panel.grid.major.y = element_blank(),
+          legend.position = c(0.80,0.8),
+          legend.title = element_blank())
+
+fig_gprod
+# qsale
+df_qsale <- Groundnut_new%>%
+  select(adopt,qsale)%>%
+  filter(qsale < 4000)
+df_qsale$adopt <- factor(df_qsale$adopt, levels = c(0,1), labels = c("Non-adopters","Adopters"))
+
+mean_data <- aggregate(qsale ~ adopt, data = df_qsale, FUN = mean)
+
+
+
+
+fig_qsale <- ggplot(df_qsale, aes(x = qsale, fill = factor(adopt), color = factor(adopt)), show.legend = T) +
+  geom_density(alpha = 0.06,kernel="epanechnikov", bw=200, show.legend = F) +
+  geom_vline(data = mean_data, aes(xintercept = qsale), size = 1, alpha=0.2, show.legend = F) +
+geom_text(data = mean_data, aes(x = qsale, label = paste("μ", ifelse(adopt == "Adopters", "adopters", "non-adopters"), "=", round(qsale, 2)), y = 0.0009), vjust = -0.5, angle = 90,family=my_font, show.legend = F, size=4) +
+  ylim(c(0, 0.00118))+
+  labs(x = "Commercialization(Kg)", y = "", fill = "Adopt") +
+  #scale_fill_manual(values = c("blue", "red")) +
+  scale_color_brewer(palette="Set1")+ 
+  guides(fill = "none")+
+  #scale_fill_brewer(palette="Set1")+
+  #scale_color_manual(values = c("non-adopters" = "blue", "adopters" = "red")) +
+  theme_base(base_family = my_font)+
+  theme(panel.grid.major.y = element_blank(),
+        text = element_text(size = 14),
+          legend.position = "bottom",
+          legend.title = element_blank())
+fig_qsale
+
+fig_1 <- fig_gprod + fig_gprod+ 
+  patchwork::plot_annotation(tag_levels = 'I')
+ggsave("figures/fig_1.pdf", plot = fig_1, width = 35, height = 15, units = "cm",device = cairo_pdf)
+```
+
+
+
+# Figure 2. Adoption rate over time
+
+```{r}
+adoption_data <- Groundnut_new%>%
+  select(year, country, adopt)
+
+df <- adoption_data%>%
+  group_by(year, country, adopt)%>%
+  summarise(count = n()) %>%
+   mutate(ptg = round(prop.table(count) *
+        100, 1))%>%
+  filter(adopt==1)%>%
+  mutate(year= factor(year))%>%
+  mutate(my_lable =case_when(
+    (ptg==17 || ptg == 55) ~  paste0(ptg, ".0"),
+    TRUE ~  paste0(ptg)
+  ))
+
+ss <- ggplot(df, aes(x = country,
+    y = ptg)) + geom_bar(aes(fill = year),
+    stat = "identity",
+    color = "white",
+    position = position_dodge(0.8),
+    size = 0.3, alpha = 0.9,
+    width = 0.7) + 
+  geom_text(aes(
+    label = my_lable,group=year), color = "black",  vjust=-0.3, family=my_font,size=5,
+    position = position_dodge(.8)) +
+    theme_bw(base_family = my_font,
+    base_size = 16) +
+  labs(y="Percent of households", x=NULL)+
+    scale_y_continuous(labels = scales::label_percent(scale = 1)) +
+    scale_fill_manual(values = c("#30469c","#8c0049", "#EEAB73")) +
+    #scale_fill_manual(values = c("#305596", "#305596", "#305596"))+
+  ylim(c(0,60)) +
+    theme(panel.grid.major.y = element_blank(),
+          legend.position = "bottom",
+          legend.title = element_blank(),
+          axis.title = element_text(color = "#51585F"),
+        panel.grid.major.x = element_line(size = 0.3),
+        panel.grid.minor.y = element_line(size = 0.3), panel.border = element_rect(colour = "grey60"))
+
+ss
+
+ggsave("figures/fig_2.pdf", plot = ss, width = 20, height = 15, units = "cm",device = cairo_pdf)
+```
+# Figure 3. 2SLS estimates of the relationship between adoption, production, and yields
+
+```{r}
+ df_tbl_3 <- df_plot%>%
+  filter(tbl_no==3)%>%
+  mutate(dep_var=factor(dep_var, levels = c("Yield","Production value", "Consumption"),labels  = c("[A] Yield","[B] Production value", "[C] Consumption")))
+
+  
+plt_tbl_3 <- 
+    ggplot(df_tbl_3, aes_string(x = "inters_var", y = "coef", colour = "inters_var")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.2,
+      show.legend = FALSE,
+      size = 4,
+      family = my_font
+    ) +
+  scale_x_discrete(labels=c("Adoption\n(Yes/No) ", "Area under\nadoption (ha)")) +
+  scale_color_manual(values = c("#30469c","#8c0049", "#EEAB73"))+
+    facet_wrap(~dep_var, scales = "free_y") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+      strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black" ))
+  plt_tbl_3
+  
+  ggsave("figures/fig_3.pdf", plt_tbl_3, width = 32, height = 18, units = "cm",device = cairo_pdf)
+```
+
+# Figure 4. 2SLS estimates of the relationship between adoption and commercialization.
+
+```{r}
+df_tbl_4 <- df_plot%>%
+  filter(tbl_no==4)%>%
+  mutate(inters_var = factor(inters_var, labels = c(`Adoption dummy` = "Adoption\n(Yes/No)" , 
+        `Area under adoption (ha)`="Area under\n adoption (ha)")))%>%
+  mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity Sold", "[C] Sales value")))
+plt_tbl_4 <- 
+    ggplot(df_tbl_4, aes_string(x = "model_type", y = "coef", color="model_type")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.2,
+      show.legend = FALSE,
+      size = 3.5,
+      family = my_font
+    ) +
+    scale_x_discrete(labels=c("Correlated\nrandom effects ", "Fixed\nEffects")) +
+    facet_grid(inters_var~dep_var, scales = "free") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+     scale_color_manual(values = c("#30469c","#8c0049", "#EEAB73"))+
+
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+      strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black"
+      ),strip.text.y = element_text(family = my_font, size = 12))
+
+plt_tbl_4
+
+ggsave("figures/fig_4.pdf", plt_tbl_4, width = 24, height = 16, units = "cm",device = cairo_pdf)
+
+```
+# Figure 5. 2SLS estimates of the relationship between continuous adoption and commercialization.
+
+```{r}
+df_tbl_5 <- df_plot%>%
+  filter(tbl_no==5)%>%
+  mutate(dep_var=factor(dep_var, levels = c("Yield", "Consumption","Quantity Sold"),labels  = c("[A] Yield", "[B] Consumption","[C] Quantity Sold")))
+
+
+plt_tbl_5 <- 
+    ggplot(df_tbl_5, aes_string(x = "inters_var", y = "coef", color="inters_var")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.2,
+      show.legend = FALSE,
+      size = 4,
+      family = my_font
+    ) +
+    scale_x_discrete(labels=c("Sustained adoption\n(3 years)")) +
+       scale_color_manual(values = c("#30469c","#8c0049", "#EEAB73"))+
+
+    facet_wrap(~dep_var, scales = "free_y") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+    ggthemes::theme_base() +
+    theme(
+     legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+       strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black"
+      ))
+
+
+plt_tbl_5
+ggsave("figures/fig_5.pdf", plt_tbl_5, width = 26, height = 12, units = "cm",device = cairo_pdf)
+
+```
+# Figure 6. Cross-country analysis of adoption and commercialization
+
+```{r}
+
+
+df_tbl_6 <- df_plot%>%
+  filter(tbl_no==6)%>%
+  mutate(dep_var=factor(dep_var, levels = c("Yield", "Consumption", "Quantity Sold"),labels = c("[A] Yield", "[B] Consumption", "[C] Quantity Sold")))
+
+  plt_tbl_6 <- 
+    ggplot(df_tbl_6, aes_string(x = "country", y = "coef", color="country")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.8),
+      #vjust = 0.5 * -1.5,
+      
+      hjust = 1.2,
+      show.legend = FALSE,
+      size = 3.5,
+      family = my_font
+    ) +
+    #scale_x_discrete(labels=c("Commercialization", "Yield")) +
+    scale_color_manual(values = c("#30469c","#8c0049", "#EEAB73"))+
+
+    facet_wrap(~dep_var, scales = "free_y") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+       strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black" ))
+  
+  
+  plt_tbl_6
+  ggsave("figures/fig_6_new.svg", plt_tbl_6, width = 35, height = 18, units = "cm", dpi = 300)
+  ggsave("figures/fig_6.pdf", plt_tbl_6, width = 40, height = 16, units = "cm", dpi = 300,device = cairo_pdf)
+```
+
+# Figure 7 2SLS estimates of the relationship between adoption and commercialization.
+
+```{r}
+df_tbl_10 <- df_plot%>%
+  filter(tbl_no==7)%>%
+  mutate(inters_var=factor(inters_var, levels=c("Quantity harvested", "Quantity Consumed"), labels=c("Quantity\nHarvested", "Quantity\nConsumed")))%>%
+  mutate(coef2 = formatC(coef, format = "e", digits=2)    )%>%
+  mutate(p_label2 = paste0(coef2,aster))
+plt_tbl_10 <- 
+    ggplot(df_tbl_10, aes_string(x = "inters_var", y = "coef")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p_label2"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.2,
+      show.legend = FALSE,
+      size = 3,
+      family = my_font
+    ) +
+    #scale_x_discrete(labels=c("Correlated\nrandom effects ", "Fixed\nEffects")) +
+    facet_grid(.~dep_var, scales = "free") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+  scale_y_continuous(labels = scales::scientific_format())+
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+       strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black"
+      ),strip.text.y = element_text(family = my_font, size = 12))
+
+plt_tbl_10
+
+ggsave("figures/fig_7.pdf", plt_tbl_10, width = 26, height = 18, units = "cm",device = cairo_pdf)
+
+```
+
+# Figure SM1. OLS estimates of the relationship between adoption and commercialization
+
+```{r}
+ df_tbl_sm1 <- df_plot%>%
+  filter(tbl_no==1) %>% mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity Sold", "[C] Sales value")))
+
+
+  plt_tbl_sm1 <- 
+    ggplot(df_tbl_sm1, aes_string(x = "inters_var", y = "coef",color = "inters_var")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.2,
+      show.legend = FALSE,
+      size = 4,
+      family = my_font
+    ) +
+  scale_x_discrete(labels=c("Adoption", "Area under\nadoption (ha)")) +
+        scale_color_manual(values = c("#30469c","#8c0049", "#EEAB73"))+
+
+    facet_wrap(~dep_var, scales = "free_y") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+       strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black" ))
+  plt_tbl_sm1
+  
+  ggsave("figures/fig_SM1.pdf", plt_tbl_sm1, width = 30, height = 15, units = "cm",device = cairo_pdf)
+```
+
+# Figure SM2. OLS estimates of the relationship between adoption, production, and yields
+
+```{r}
+ df_tbl_sm2 <- df_plot%>%
+  filter(tbl_no==2)%>%
+  mutate(dep_var=factor(dep_var, levels = c("Yield","Production", "Production value"),labels  = c("[A] Yield","[B] Production", "[C] Production value")))
+
+  plt_tbl_sm2 <- 
+    ggplot(df_tbl_sm2, aes_string(x = "inters_var", y = "coef", colour = "inters_var")) +
+    geom_hline(
+      yintercept = 0,
+      size = 0.3,
+      color = "grey"
+    ) +
+    geom_point(position = position_dodge(0.3), size = 3) +
+    geom_errorbar(
+      aes_string(ymin = "ci_low", ymax = "ci_high"), 
+      position = position_dodge(0.4),
+      width = 0.1
+    ) +
+    geom_text(
+      aes_string(label = "p.label"),
+      position = position_dodge(0.6),
+      #vjust = 0.5 * -1.5,
+      hjust = -0.15,
+      show.legend = FALSE,
+      size = 4.5,
+      family = my_font
+    ) +
+    scale_color_manual(values = c("#30469c","#8c0049", "#EEAB73"))+
+    
+  scale_x_discrete(labels=c("Adoption", "Area under\nadoption (ha)")) +
+    facet_wrap(~dep_var, scales = "free_y") +
+    labs(
+      y = "Estimates(95% Robust CI)",
+      title = "",
+      subtitle = "",
+      x = ""
+    ) +
+    ggthemes::theme_base() +
+    theme(
+      legend.position = "none",
+      text = element_text(family = my_font, size = 14),
+      axis.text = element_text(family = my_font, size = 14),
+       strip.background = element_rect(fill = adjustcolor("#0F75E0", alpha.f = 0.8), color = "#0F75E0"),
+      panel.border = element_rect(size = 0, fill = NA),
+      strip.text = element_text(
+        family = my_font,
+        size = 14, color = "black" ))
+  plt_tbl_sm2
+  
+  ggsave("figures/fig_SM2.pdf", plt_tbl_sm2, width = 35, height = 15, units = "cm",device = cairo_pdf)
+```
+```{r}
+library(openxlsx)
+# Split the data frame based on Category column
+
+df_export <- data_for_plotting_ori%>%
+  rename(`Interest variables` = inters_var, `Outcome variables` = dep_var, Coefficent = coef, `Robust standard error`=se, `P-Value` = pval, Significance = aster, `Confidence Interval (lower)`= ci_low,`Confidence Interval (upper)`=ci_high, `R-Square`= r_sqr, `Model type` = model_type, Country = country)
+
+df_list <- split(df_export, df_export$tbl_no)
+
+# Create a new workbook
+wb <- createWorkbook()
+
+# Save each subset as an Excel sheet
+for (i in seq_along(df_list)) {
+  sheet_name <- paste("Figure_", names(df_list)[i], sep = "")
+  addWorksheet(wb, sheetName = sheet_name)
+  writeData(wb, sheet = sheet_name, x = df_list[[i]])
+}
+
+# Save the workbook as an Excel file
+saveWorkbook(wb, "Source_Data_2_0.xlsx", overwrite = TRUE)
+```
+
+
