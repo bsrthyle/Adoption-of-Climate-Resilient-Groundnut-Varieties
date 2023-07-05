@@ -11,12 +11,8 @@ The repository is organized as follows:
 ```
 |-- 1_Main_Analysis.do
 |-- 2_coefficent_plots.Rmd
-|-- 3_supplementary_material.Rmd
 |-- 3_Supplementary_Tables.Rmd
-|-- 3_Supplementary-Tables.pdf
-|-- 3_Supplementary-Tables.tex
 |-- 4_Supplementary_Data.Rmd
-|-- 4_Supplementary-Data.pdf
 |-- Code_Base.Rproj
 |-- HelperUtilities/
 |   |-- Utils.R
@@ -34,56 +30,9 @@ The repository is organized as follows:
 |   |-- data_for_descriptive.dta
 |   |-- geonear.dta
 |-- figures/
-|   |-- fig_1.pdf
-|   |-- fig_2.pdf
-|   |-- fig_3.pdf
-|   |-- fig_4.pdf
-|   |-- fig_5.pdf
-|   |-- fig_6.pdf
-|   |-- fig_6_new.svg
-|   |-- fig_7.pdf
-|   |-- fig_8.gph
-|   |-- fig_9.pdf
-|   |-- fig_SM1.pdf
-|   |-- fig_SM2.pdf
 |-- stata_outputs/
 |   |-- SM_tables/
-|   |   |-- Table_SM10.tex
-|   |   |-- Table_SM10.txt
-|   |   |-- Table_SM11.tex
-|   |   |-- Table_SM11.txt
-|   |   |-- Table_SM12.tex
-|   |   |-- Table_SM12.txt
-|   |   |-- Table_SM13.tex
-|   |   |-- Table_SM13.txt
-|   |   |-- Table_SM14.tex
-|   |   |-- Table_SM14.txt
-|   |   |-- Table_SM2.tex
-|   |   |-- Table_SM2.txt
-|   |   |-- Table_SM3.tex
-|   |   |-- Table_SM3.txt
-|   |   |-- Table_SM4.tex
-|   |   |-- Table_SM4.txt
-|   |   |-- Table_SM5.tex
-|   |   |-- Table_SM5.txt
-|   |   |-- Table_SM6.tex
-|   |   |-- Table_SM6.txt
-|   |   |-- Table_SM7.tex
-|   |   |-- Table_SM7.txt
-|   |   |-- Table_SM8.tex
-|   |   |-- Table_SM8.txt
-|   |   |-- Table_SM9.tex
-|   |   └── Table_SM9.txt
 |   |-- figures_table/
-|       |-- Figure3.txt
-|       |-- Figure4.txt
-|       |-- Figure5.txt
-|       |-- Figure6.txt
-|       |-- Figure7.txt
-|       |-- Figure_S1.txt
-|       |-- Figure_S2.txt
-|       |-- coefficent_plot_table.csv
-|       └── coefficent_plot_table.xlsx
 
 ```
 
