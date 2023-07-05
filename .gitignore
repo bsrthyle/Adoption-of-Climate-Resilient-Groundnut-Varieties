@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-
+.DS_Store
 HelperUtilities/SegoeWP.ttf
 HelperUtilities/segoe.woff
 ## Core latex/pdflatex auxiliary files:
