@@ -232,7 +232,7 @@ geom_text(data = mean_data, aes(x = qsale, label = paste("μ", ifelse(adopt == "
           legend.title = element_blank())
 fig_qsale
 
-fig_1 <- fig_gprod + fig_gprod+ 
+fig_1 <- fig_gprod + fig_qsale+ 
   patchwork::plot_annotation(tag_levels = 'I')
 ggsave("figures/fig_1.pdf", plot = fig_1, width = 35, height = 15, units = "cm",device = cairo_pdf)
 ```
@@ -520,7 +520,8 @@ df_tbl_10 <- df_plot%>%
   filter(tbl_no==7)%>%
   mutate(inters_var=factor(inters_var, levels=c("Quantity harvested", "Quantity Consumed"), labels=c("Quantity\nHarvested", "Quantity\nConsumed")))%>%
   mutate(coef2 = formatC(coef, format = "e", digits=2)    )%>%
-  mutate(p_label2 = paste0(coef2,aster))
+  mutate(p_label2 = paste0(coef2,aster))%>%
+  mutate(dep_var=factor(dep_var, levels = c("Market participation","Quantity Sold", "Sale Value"),labels  = c("[A] Market participation","[B] Quantity sold", "[C] Sales value")))
 plt_tbl_10 <- 
     ggplot(df_tbl_10, aes_string(x = "inters_var", y = "coef")) +
     geom_hline(
