@@ -226,7 +226,7 @@ my_vars_2 <- c(
 
 ```
 \newpage 
-# Supplementary Tabels
+# Supplementary Tables
 ## Supplementary Note
 We present the results of the estimation using the pooled FE-OLS model. Figure S1 presents the results of the relationship between the adoption of climate-resilient groundnut varieties and commercialization where we employ the linear probability model for binary outcomes. We present results when we consider adoption as a dummy and the extent of adoption of climate-resilient groundnut varieties. Considering adoption as a dummy, we establish a positive association with the commercialization outcomes; market participation, quantity of groundnut sold, and sales. Considering the area under adoption, we obtain negative estimates that are not statistically significant. However, this result could mean that increasing the area of cultivation of improved climate-resilient groundnut varieties is negatively correlated with market participation, quantity sold and the associated sales value. This negative relationship although not statistically significant could be due to diminishing returns when we consider the area under adoption. Otherwise, these negative results could be due to endogeneity issues which could lead to biased estimates. Given that we control for these endogeneity issues using the 2SLS and both household fixed effects and the correlated random effects model, we only use these results for comparison with the main estimation results.
 
