@@ -1,0 +1,658 @@
+---
+title: "Adoption of Climate-Resilient Groundnut Varieties Increases Agricultural Production, Consumption, and Smallholder Commercialization in West Africa"
+subtitle: "Supplementary Information"
+author: 'Martin Paul Jr. Tabe-Ojong, Jourdain Lokossou, Bisrat Gebrekidan, Hippolyte D. Affognon'
+output: 
+ bookdown::pdf_document2:
+    keep_tex: true
+    template: HelperUtilities/my_templet.tex
+    #highlight: zenburn
+header-includes:
+   - \usepackage[margin=2.8cm]{geometry}
+   - \renewcommand{\contentsname}{Table of Contents}
+   - \usepackage{enumitem}
+   - \usepackage{pifont}
+   - \renewcommand{\labelitemi}{$\rightarrow$}
+   - \usepackage{tocloft}
+   - \renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+   - \usepackage{hyperref}
+   - \hypersetup{linkcolor = blue}
+   - \usepackage{hanging}
+   - \usepackage[T1]{fontenc}
+   - \usepackage{graphicx}
+   - \usepackage{booktabs,threeparttablex}
+   - \usepackage{pdflscape}
+   - \usepackage{fvextra}
+   - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+   #- \usepackage{lmodern}
+   - \usepackage{pdfpages}
+   - \usepackage{fouriernc}
+   - \usepackage{caption}
+   - \usepackage{nimbusmono}
+   - \renewcommand{\thetable}{S\arabic{table}}
+   - \renewcommand{\thefigure}{S\arabic{figure}}
+   - \setlength{\cfttabnumwidth}{1cm}
+
+toc: false
+toccolor: 'blue'
+mainfont: 'lm'
+toc-title: "Table of Contents"
+---
+
+```{r setup, include=FALSE, warning=FALSE, comment=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  echo = FALSE,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 60),
+  out.width = "100%"
+)
+
+options(width = 100)
+# load the required libraries
+
+
+
+# load the required libraries
+pacman::p_load(
+jsonlite,
+sjlabelled,
+labelled,
+dataMaid,
+plotly,
+wesanderson,
+ggthemes,
+hrbrthemes,
+sjmisc,
+expss,
+haven,
+knitr,
+kableExtra,
+ggstream,
+ggstatsplot,
+gtsummary,
+highcharter,
+tidyverse
+)
+```
+\newpage
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+
+
+
+
+
+
+
+
+
+\newpage
+```{r, echo=FALSE}
+list_of_tables <- list()
+file_names <- list.files(here::here("stata_outputs", "SM_tables"), pattern = "*.txt")
+
+for(i in 1:length(file_names)){
+  list_of_tables[[i]] <- readr::read_delim(here::here("stata_outputs", "SM_tables", file_names[[i]]), delim = "\t", escape_double = FALSE, trim_ws = TRUE, skip = 1,na = "empty" )
+}
+
+
+names(list_of_tables) <- str_replace(file_names, ".txt", "")
+
+
+change_names <- function(df){
+  names(df) <- str_replace(names(df), "_", "-")
+  return(df)
+}
+
+list_of_tables <- purrr::map(list_of_tables, change_names)
+
+clean_space <- function(df) {
+  df %>%
+    mutate_all(~ (str_replace_all(., "%", "\\\\%")))
+}
+
+list_of_tables <- purrr::map(list_of_tables, clean_space)
+
+clean_slash <- function(df){
+  df %>%
+    mutate_all(~ (str_replace_all(., "/", "\\\\/")))
+}
+
+list_of_tables <- purrr::map(list_of_tables, clean_slash)
+
+color_significance <- function(df){
+  df[-1] <- lapply(
+  df[-1], function(x){
+    cell_spec(x, background = ifelse(str_count(x, "\\*")==1, "#8C298133", ifelse(str_count(x, "\\*")==2, "#641A8033", ifelse(str_count(x, "\\*")==3, "#3C0F7033", "white"))),color = ifelse(str_count(x, "\\*")>=1, "White", "black" ),bold = ifelse(str_count(x, "\\*")>=1,T, F ))
+  }
+)
+  
+  return(df)
+}
+
+Groundnut_new <- read_dta("data/data_for_descriptive.dta")%>%
+  sjlabelled::var_labels(
+    year = "Waves of the study",
+    country = "Country",
+    sales_value = "Sales value",
+    prod_value = "Production value",
+    gprod = "Total quantity of groundnut harvested",
+    formarrach = "Training on groundnut farming",
+    cooperative = "Farmers group membership"
+  )%>%
+  mutate(
+    formarrach = haven::as_factor(formarrach),
+    cooperative = haven::as_factor(cooperative)
+    
+  )
+my_vars <- c(
+  "country",
+  "year",
+  "adopt",
+  "improvsup",
+  "sellers",
+  "qsale",
+  "sales_value",
+  "gprod",
+  "prod_value",
+  "gyield",
+  "age",
+  "sexe",
+  "nbschool",
+  "hhsize",
+  "cooperative",
+  "formagri",
+  "formarrach",
+  "visitpublic",
+  "extension",
+  "credite",
+  "creditn",
+  "dmurbain",
+  "dmvillage",
+  "crotation",
+  "cmixt",
+  "nbrhoejour",
+  "uprice",
+  "cseed_ha",
+  "cfert_ha",
+  "cpest_ha",
+  "clabor_ha",
+  "gsize",
+  "off_farm",
+  "dratio",
+  "typsoil1",
+  "typsoil2",
+  "typsoil3",
+  "adopt2y",
+  "adopt3y"
+)
+
+my_vars_2 <- c(
+  "country",
+  "year",
+  "adopt",
+  "age",
+  "sexe",
+  "nbschool",
+  "hhsize",
+  "dratio",
+  "cooperative_2",
+  "formagri",
+  "formarrach_2",
+  "visitpublic",
+  "extension",
+  "credite",
+  "creditn",
+  "dmurbain",
+  "dmvillage",
+  "crotation",
+  "cmixt",
+  "nbrhoejour",
+  "uprice",
+  "cseed_ha",
+  "cfert_ha",
+  "cpest_ha",
+  "clabor_ha",
+  "gsize",
+  "off_farm",
+  "typsoil1",
+  "typsoil2",
+  "typsoil3"
+)
+
+```
+\newpage 
+# Supplementary Tables
+## Supplementary Note
+We present the results of the estimation using the pooled FE-OLS model. Figure S1 presents the results of the relationship between the adoption of climate-resilient groundnut varieties and commercialization where we employ the linear probability model for binary outcomes. We present results when we consider adoption as a dummy and the extent of adoption of climate-resilient groundnut varieties. Considering adoption as a dummy, we establish a positive association with the commercialization outcomes; market participation, quantity of groundnut sold, and sales. Considering the area under adoption, we obtain negative estimates that are not statistically significant. However, this result could mean that increasing the area of cultivation of improved climate-resilient groundnut varieties is negatively correlated with market participation, quantity sold and the associated sales value. This negative relationship although not statistically significant could be due to diminishing returns when we consider the area under adoption. Otherwise, these negative results could be due to endogeneity issues which could lead to biased estimates. Given that we control for these endogeneity issues using the 2SLS and both household fixed effects and the correlated random effects model, we only use these results for comparison with the main estimation results.
+
+
+\begin{figure}[htbp]
+\centering
+\caption{OLS estimates of the relationship between adoption and commercialization}
+\includegraphics[width=\textwidth]{figures/fig_SM1.pdf}
+
+\caption*{
+Note: The graph displays coefficients along with their corresponding 95\% confidence intervals as error bars. The coefficents are estimated using OLS with n=8604 observation.The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1).Statistical tests are two-sided t-tests. Full models are reported in S2 \& S3 with  Robust standard errors in parentheses and P-values in square brackets. Additional controls include age and educational level of the household head, dependency ratio, whether the household head is male, household size, cooperative membership, training, access to public and private extension, access to credits both in cash and kind, distance to nearest urban and village market, crop rotation, mixed cropping, labour, market price, input costs, area of cultivation, off-farm income and soil type.
+}
+\end{figure}
+\newpage
+Estimating the relationship between adoption of improved groundnuts, production, production value and land productivity using the FE-OLS model (Figure S2), we obtain positive coefficients for all outcomes. When we consider adoption as a dummy, we observe production and productivity increases of about 540Kg and 285Kg/ha respectively. Considering the scale of adoption, we observe that adoption of improved climate-smart groundnut varieties increases groundnut production by 240Kg and land productivity by approximately 60Kg/ha. The magnitudes here are positive indicating that adoption both when considered as a dummy as well as extent increases yield, production, and production value. The smaller magnitudes here might be indicative of diminishing returns as early highlighted. The positive and significant estimates of the area under adoption variable aligns with the tenets of the non-separable agricultural household model where the production, consumption and ultimately commercialization decisions of households are non-separable. This suggests that households would only participate in markets to the extent that the household food production and consumption needs are met. 
+
+\begin{figure}[htbp]
+\centering
+\caption{OLS estimates of the relationship between adoption and commercialization}
+\includegraphics[width=\textwidth]{figures/fig_SM2.pdf}
+\caption*{
+Note: The graph displays coefficients along with their corresponding 95\% confidence intervals as error bars. The coefficents are estimated using OLS with n=8604 observation.The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). Statistical tests are two-sided t-tests. Full models are reported in S4 \& S5 with  Robust standard errors in parentheses and P-values in square brackets. Additional controls include age and educational level of the household head, dependency ratio, whether the household head is male, household size, cooperative membership, training, access to public and private extension, access to credits both in  cash and kind, distance to nearest urban and village market, crop rotation, mixed cropping, labour, market price, input costs, area of cultivation, off-farm income and soil type.
+}
+\end{figure}
+
+
+
+\newpage
+## Descriptive statistics
+
+```{r, cache=TRUE}
+Groundnut_new_2 <- Groundnut_new%>%
+  mutate(cooperative_2 = case_when(
+    str_detect(cooperative, "Yes") ~ 1,
+    TRUE ~ 0
+  ),
+  formarrach_2 = case_when(
+    formarrach=="No" ~ 0,
+    TRUE ~ 1
+  ))%>%
+  sjlabelled::var_labels(
+    cooperative_2= "Farmers group membership (dummy)",
+    formarrach_2 = "Training on groundnut farming(dummy)"
+  )
+
+tbl_strata_ex1 <-
+  Groundnut_new_2 %>%
+  select(my_vars_2, -c(cooperative,formarrach))%>%
+  mutate(adopt = factor(adopt, labels=c("Non-adopter", "Adopter")))%>%
+  tbl_strata(
+    strata = year,
+    .tbl_fun =
+      ~ .x %>%
+        tbl_summary(
+    by=adopt,
+    type = list(c(sexe,credite,creditn,formagri) ~ "dichotomous", c(extension)~"continuous"),
+    missing = "no",
+    statistic = list(all_continuous() ~ "{mean} ({sd})")
+  )%>% add_p(),
+    .header = "**{strata}**, N = {n}"
+  )
+
+disc_tbl <- tbl_strata_ex1%>%
+  # convert to kableExtra
+  as_kable_extra(booktabs = TRUE, longtable = F,caption="Descriptive statistics by year and adoption status") %>%
+  # reduce font size to make table fit. 
+  # you may also use the `latex_options =  c( c("scale_down", "hold_position"), "hold_position")` argument here.
+  kableExtra::kable_styling(font_size = 6, latex_options =  c("scale_down", "hold_position", "repeat_header"))%>%
+  kableExtra::landscape()%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE, general="The table below presents a comparison between adopters and non-adopters over time. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented in the last column. The tests performed are Pearsons Chi-squared test for categorical variables and the Wilcoxon rank sum test for continuous variables." )
+disc_tbl
+
+```
+\newpage
+
+## Pooled OLS Regressions
+
+```{r}
+
+df <- list_of_tables$Table_SM2%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F,col.names = c("variables", "Market participation", "Quantity Sold", "Sales value"), align="lrrr", linesep ="", caption = "Full OLS estimates of the relationship between adoption and commercialization(Adoption)")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  add_header_above(c(" ", "(1)", "(2)", "(3)"))%>%
+  kableExtra::kable_paper()%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of OLS regressions between adoption decision (`Adoption dummy`) and market participation(1), quantity sold(2) and Sales value(3). with robust standard errors, where the standard errors are clustered. The statistical tests conducted are two-sided t-tests. P-values are denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.")
+```
+
+\newpage
+
+```{r}
+
+df <- list_of_tables$Table_SM3%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F,col.names = c("variables", "Market participation", "Quantity Sold", "Sales value"), align="lrrr", linesep ="" ,caption = "Full OLS estimates of the relationship between adoption and commercialization (Area under Adoption)")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  add_header_above(c(" ", "(1)", "(2)", "(3)"))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of OLS regressions between area under adoption in ha (`Area under adoption`) and market participation(1), quantity sold(2) and Sales value(3). Robust standard errors are in brackates. The statistical tests conducted are two-sided t-tests. P-values, denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.")
+```
+
+\newpage
+
+```{r}
+
+df <- list_of_tables$Table_SM4%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" , caption = " Full OLS estimates of the relationship between adoption, production yields and consumption(Adoption)")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  add_header_above(c(" ", "(1)", "(2)", "(3)", "(4)"))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of OLS regressions between area under adoption in ha (`Adoption dummy`) and Production(1), production value(2) , Yield(3) and Consumption(4).Robust standard errors are in brackates. The statistical tests conducted are two-sided t-tests. P-values is denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.")
+```
+
+\newpage
+
+```{r}
+
+df <- list_of_tables$Table_SM5%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" , caption = "OLS estimates of the relationship between adoption, production , yields and consumption(Area under Adoption)")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  add_header_above(c(" ", "(1)", "(2)", "(3)", "(4)"))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of OLS regressions between area under adoption in ha (`Area under adoption`) and Production(1), production value(2) , Yield(3) and Consumption(4).Robust standard errors are in brackates. The statistical tests conducted are two-sided t-tests. P-values are denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.")
+```
+\newpage
+## Panel Regression
+
+```{r}
+
+df <- list_of_tables$Table_SM5%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  filter(!stringr::str_detect(variables, 'district') )
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full 2SLS estimates of the relationship between adoption , commercialization, yield and consumption(Area under Adoption)")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  add_header_above(c("","(1)","(2)","(3)","(4)"))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of 2SLS regressions between area under adoption in ha (`Area under adoption`) and Production (1), production value (2) , Yield (3) and Consumption (4).Robust standard errors are in brackates. The statistical tests conducted are two-sided t-tests. P-values is denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.")
+```
+\newpage
+
+```{r}
+
+df <- list_of_tables$Table_SM6%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "Full 2SLS estimates of the relationship between adoption and commercialization", col.names = c("variables","FE", "RE","FE", "RE","FE", "RE"))%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+add_header_above(c(" ", "Market participation" = 2, "Quantity sold" = 2, "Sales value" = 2))%>%
+add_header_above(c(" ", "(1)" = 2, "(2)" = 2, "(3)" = 2))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of 2SLS regressions examining the relationship between adoption decision (`Adoption dummy`) and various factors related to Market participation (1), Quantity sold (2), and Sales value (3). The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.")
+```
+
+\newpage
+
+```{r}
+
+df <- list_of_tables$Table_SM7%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full 2SLS estimates of the relationship between adoption (Area), production and yields",col.names = c("variables","FE", "RE","FE", "RE","FE", "RE"))%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+add_header_above(c(" ", "Market participation" = 2, "Quantity sold" = 2, "Sales value" = 2))%>%
+add_header_above(c(" ", "(1)" = 2, "(2)" = 2, "(3)" = 2))%>%
+landscape()%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of 2SLS regressions examining the relationship between area of adoption in ha (`Area under adoption`) and various factors related to Market participation (1), Quantity sold (2), and Sales value (3). The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.")
+```
+\newpage
+
+```{r}
+
+df <- list_of_tables$Table_SM8%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  mutate(
+   variables = gsub("\\(.*", "", variables)
+  )%>%
+  select(c(variables,"FE-Yield","FE-ProdVal", "FE-Consumption"  , "RE-YieldSup",  "RE-ProdValSup",    "FE-Consumption_sup"))%>%
+  slice(1:3,85:87, 4:84,89:96)
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="",col.names=c("variables","Yield","Production value","Consumption","Yield","Production value",  "Consumption"), caption = "Full 2SLS estimates of the relationship between adoption, production , consumption and yields")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+landscape()%>%
+  add_header_above(c(" ", "FE" = 3, "RE" = 2 , "FE"))%>%
+  add_header_above(c(" ", "(1)" = 3, "(2)" = 3))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of 2SLS regressions examining the relationship between adoption decision (`Adoption dummy`) and area of adoption in ha (`Area under adoption`) and various factors related to Yield, production and Consumption. The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.")
+```
+
+\newpage
+```{r}
+
+df <- list_of_tables$Table_SM9%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  mutate(
+   variables = gsub("\\(.*", "", variables)
+  )
+
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", col.names=c("variable","Yield", "Consumption", "Quantity sold"), caption = " Full 2SLS estimates of the relationship between continous adoption,quantity sold, consumption and yields")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+add_header_above(c(" ", "(1)", "(2)", "(3)"))%>%
+landscape()%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of 2SLS regressions, which were conducted to examine the relationship between continuous adoption (Three years) and various factors associated with Yield (1), Consumption (2), and quantity sold (3). The regressions employed Random Effect (RE) specifications, and robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.")
+```
+\newpage
+
+
+
+
+
+
+
+## Cross country analysis
+
+```{r}
+df <- list_of_tables$Table_SM10%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F,col.names = c("variables", "Yield", "Consumption","Sales value",  "Yield", "Consumption","Sales value", "Yield", "Consumption","Sales value"), align="lrrr", linesep ="" ,caption = "2SLS estimates of the relationship between adoption and commercialization and yield across countries")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  landscape()%>%
+add_header_above(c(" ", "Ghana" = 3, "Mali" = 3, "Nigeria" = 3)) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of 2SLS regressions, which examine the relationship between  adoption decision  and various factors associated with Yield (1), Consumption (2), and Sales value (3) across the three study countries. The regressions employed Random Effect (RE) specifications for the yield variable, while Fixed Effect (FE) specifications were used for the Sales value and consumption variables. Robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.")
+```
+
+
+\newpage
+
+
+```{r}
+df <- list_of_tables$Table_SM11%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", caption = "2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  #landscape()%>%
+  add_header_above(c(" ", "(1)", "(2)", "(3)"))%>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table presents the results of 2SLS regressions, which examine the relationship between  production and consumption of Groundnuts and various factors associated with Market participation (1), quantity sold (2), and Sales value (3). Robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.")
+```
+
+# Robustness checks
+
+## Control function approach
+
+```{r}
+
+df <- list_of_tables$Table_SM12%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", col.names = c("variables", "FE","CRE","FE","CRE","FE","CRE") ,caption = "Control function estimations of the relationship between adoption and market participation")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  #landscape()%>%
+add_header_above(c(" ", "Market participation" = 2, "Quantity sold" = 2, "Sales value" = 2)) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of ontrol function estimations, which investigates the relationship between adoption and various factors related to Market participation, quantity sold, and Sales value under both Fixed effects (FE) and corrolated randome effect (CRE) specifications. Robust standard errors are reported in brackets to account for potential heteroscedasticity. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects.")
+```
+\newpage
+
+## Hausman Taylor IV
+
+```{r}
+
+df <- list_of_tables$Table_SM13%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  slice(76:78, 1:75,79:91)
+
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="", col.names = c("variables","Market participation","Quantity sold", "Sales value") ,caption = "HAUSMAN TAYLOR IV estimations")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header")) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of the HAUSMAN TAYLOR IV model, which investigates the relationship between adoption and various factors related to Market participation, quantity sold, and Sales value. Robust standard errors are reported in brackets to account for potential heteroscedasticity. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects.")
+```
+\newpage
+
+## Lewbels Test
+
+```{r}
+
+df <- list_of_tables$Table_SM14%>%
+  mutate(
+    LABELS = case_when(
+      LABELS=="" ~ VARIABLES,
+      TRUE ~ LABELS
+    )
+  )%>%
+  select(-VARIABLES)%>%
+  rename(variables = LABELS)%>%
+  mutate(
+    #variables = str_remove_all(variables, "(centered)"),
+    #variables = str_remove_all(variables, "()"),
+    #variables = str_remove_all(variables, "cen"),
+    variables = gsub("\\(.*", "", variables)
+  )%>%
+  filter(MP != "-")
+
+kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="",col.names = c("variables","Market participation","Quantity sold", "Sales value","Market participation","Quantity sold", "Sales value"), caption = "Lewbel instrumental variable estimations of the relationship between adoption and commercialization")%>%
+kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
+  #landscape()%>%
+  add_header_above(c(" ", " ", " "," ", "Acess (IV)" = 3)) %>%
+  footnote(footnote_as_chunk = TRUE,
+           threeparttable = TRUE,general = "The table provides the results of Lewbel instrumental variable (IV) estimations, which investigate the relationship between adoption and several factors associated with market participation, quantity sold, and sales value. The Lewbel IV approach extends the standard instrumental variable technique by addressing the endogeneity issue that arises when the adoption decision and commercialization are jointly determined. Robust standard errors are reported in brackets to account for potential heteroscedasticity and model misspecification. Statistical tests were conducted using two-sided t-tests, and p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). Additionally, to control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects, capturing the district-specific characteristics that may affect the adoption and market outcomes.")
+```
+\newpage
+# Questionnaire 
+
+\includepdf[pages=-, pagecommand={}]{Questionnaire.pdf}
+
+

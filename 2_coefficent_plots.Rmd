@@ -177,7 +177,7 @@ plot_coefficents <- function(tbl_Num=2, X="inters_var"){
 
 # gprod
 df_gprod <- Groundnut_new%>%
-  select(gprod,adopt)%>%
+  select(id, gprod,adopt)%>%
   filter(gprod < 5000)
 df_gprod$adopt <- factor(df_gprod$adopt, levels = c(0,1), labels = c("Non-adopters","Adopters"))
 
@@ -205,14 +205,19 @@ geom_text(data = mean_data, aes(x = gprod, label = paste("μ", ifelse(adopt == "
 fig_gprod
 # qsale
 df_qsale <- Groundnut_new%>%
-  select(adopt,qsale)%>%
+  select(id, adopt,qsale)%>%
   filter(qsale < 4000)
 df_qsale$adopt <- factor(df_qsale$adopt, levels = c(0,1), labels = c("Non-adopters","Adopters"))
 
 mean_data <- aggregate(qsale ~ adopt, data = df_qsale, FUN = mean)
 
 
+df_export <- Groundnut_new%>%
+  select(adopt,qsale,gprod)%>%
+  filter(qsale < 4000 & gprod < 5000)%>%
+  mutate(adopt=factor(adopt, levels = c(0,1), labels = c("Non-adopter","Adopter")))
 
+write_csv(df_export, "stata_outputs/figures_table/Figure1.csv")
 
 fig_qsale <- ggplot(df_qsale, aes(x = qsale, fill = factor(adopt), color = factor(adopt)), show.legend = T) +
   geom_density(alpha = 0.06,kernel="epanechnikov", bw=200, show.legend = F) +
@@ -234,6 +239,7 @@ fig_qsale
 
 fig_1 <- fig_gprod + fig_qsale+ 
   patchwork::plot_annotation(tag_levels = 'I')
+fig_1
 ggsave("figures/fig_1.pdf", plot = fig_1, width = 35, height = 15, units = "cm",device = cairo_pdf)
 ```
 
