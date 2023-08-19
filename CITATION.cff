@@ -1,0 +1,65 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Climate-Resilient Groundnut Varieties: datasets, software
+  and projects metadata.
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Tabe-Ojong
+    family-names: 'Martin Paul Jr. '
+    name-suffix: Dr.
+    affiliation: >-
+      Development Strategy and Governance Unit,
+      International Food Policy Research Institute (IFPRI),
+      Cairo, Egypt
+  - given-names: 'Jourdain C. '
+    family-names: Lokossou
+    affiliation: >-
+      Department of Agri-Food Economics and Consumer
+      Sciences, Faculty of Food Science and Agriculture,
+      Laval University, Quebec, Canada
+  - given-names: Gebrekidan
+    family-names: Bisrat
+    name-suffix: Dr
+    affiliation: >-
+      Institute for Food and Resource Economics, University
+      of Bonn. Nußallee 19-21, 53115 Bonn, Germany
+  - given-names: 'Hippolyte D. '
+    family-names: Affognon
+    affiliation: >-
+      West and Central African Council for Agricultural
+      Research and Development (CORAF), Dakar, Senegal
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.8265183
+repository-code: >-
+  https://github.com/bsrthyle/Adoption-of-Climate-Resilient-Groundnut-Varieties
+abstract: >-
+  Adoption of climate-resilient crop varieties has the
+  potential to build farmers’ climate resilience but could
+  also induce agricultural transformation in developing
+  nations. We investigate the relationship between adoption
+  of climate-resilient groundnut varieties and production,
+  consumption, and smallholder commercialization using panel
+  data from Ghana, Mali, and Nigeria. We find adoption of
+  climate-resilient groundnut varieties to increase
+  smallholder production, consumption, and
+  commercialization. The biggest adoption impact gains are
+  observed under the sustained use of these
+  climate-resilient varieties. We show that adoption
+  benefits all households at different quantiles of the
+  conditional distribution of commercialization, but the
+  biggest gains are found among smaller producers,
+  suggesting that adoption is inclusive. Furthermore, we
+  provide suggestive evidence that yield increases could
+  explain commercialization, although household consumption
+  also matters. We conclude that adoption of
+  climate-resilient groundnut varieties can at least
+  partially reduce production constraints and promote
+  smallholder consumption and commercialization, with
+  implications for agricultural transformation.
