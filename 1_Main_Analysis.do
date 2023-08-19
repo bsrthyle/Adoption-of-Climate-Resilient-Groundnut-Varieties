@@ -20,7 +20,7 @@ set seed 2038947
 ****************************************************************************************************************************************************
 * SET FILE PATHS
 **************************************************
-cd "."
+cd "/Users/bisrat/Library/CloudStorage/Dropbox/Commercialization/Final revision/Adoption-of-Climate-Resilient-Groundnut-Varieties/"
 
 
 ** Loading the data**
@@ -323,6 +323,7 @@ foreach var of varlist improvsup {
 keep q _b_* _lb_* _ub_*
 keep in 1/9
 reshape long _b_ _lb_ _ub_, i(q) j(var) string
+export excel _b_ _lb_ _ub_ using "extract1.xlsx", firstrow(variables) replace
 set scheme s1color
 twoway rarea _lb_ _ub_ q, astyle(ci) yline(0) acolor(%90) || ///
    line _b_ q,                                               ///
