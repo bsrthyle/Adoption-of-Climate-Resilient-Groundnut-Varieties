@@ -397,28 +397,7 @@ kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
 \newpage
 ## Panel Regression
 
-```{r}
 
-df <- list_of_tables$Table_SM5%>%
-  mutate(
-    LABELS = case_when(
-      LABELS=="" ~ VARIABLES,
-      TRUE ~ LABELS
-    )
-  )%>%
-  select(-VARIABLES)%>%
-  rename(variables = LABELS)%>%
-  filter(!stringr::str_detect(variables, 'district') )
-
-
-
-kableExtra::kbl(df, longtable = T, booktabs = T, escape=F, align="lrrr", linesep ="" ,caption = "Full 2SLS estimates of the relationship between adoption , commercialization, yield and consumption(Area under Adoption)")%>%
-kable_styling(font_size = 7, latex_options = c("repeat_header"))%>%
-  add_header_above(c("","(1)","(2)","(3)","(4)"))%>%
-  footnote(footnote_as_chunk = TRUE,
-           threeparttable = TRUE,general = "The table presents the results of 2SLS regressions between area under adoption in ha (`Area under adoption`) and Production (1), production value (2) , Yield (3) and Consumption (4).Robust standard errors are in brackates. The statistical tests conducted are two-sided t-tests. P-values is denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.")
-```
-\newpage
 
 ```{r}
 

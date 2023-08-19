@@ -709,127 +709,10 @@ F test & 64.51 & 71.32 & 16.55 & 14.65\\*
 \begin{ThreePartTable}
 \begin{TableNotes}[para]
 \item \textit{Note: } 
-\item The table presents the results of 2SLS regressions between area under adoption in ha (`Area under adoption`) and Production (1), production value (2) , Yield (3) and Consumption (4).Robust standard errors are in brackates. The statistical tests conducted are two-sided t-tests. P-values is denoted in square brackets. The presence of an asterisk (*) above a coefficient indicates that the coefficient is statistically different from zero at a predetermined level of significance (*** p<0.01, ** p<0.05, * p<0.1). All regressions include a comprehensive set of district fixed effects to control for potential unobserved heterogeneity.
-\end{TableNotes}
-\begin{longtable}[t]{lrrrl}
-\caption{\label{tab:unnamed-chunk-7}Full 2SLS estimates of the relationship between adoption , commercialization, yield and consumption(Area under Adoption)}\\
-\toprule
-\multicolumn{1}{c}{} & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
-\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5}
-variables & Production & Production value & Yield & Consumption\\
-\midrule
-\endfirsthead
-\caption[]{\label{tab:unnamed-chunk-7}Full 2SLS estimates of the relationship between adoption , commercialization, yield and consumption(Area under Adoption) \textit{(continued)}}\\
-\toprule
-variables & Production & Production value & Yield & Consumption\\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\insertTableNotes
-\endlastfoot
-Area under adoption (ha) & 238.550*** & 216.814*** & 57.226*** & 20.643\\
- & (34.459) & (24.253) & (6.403) & (38.366)\\
- & {}[0.000] & {}[0.000] & {}[0.000] & {}[0.591]\\
-Age of household head (years) & 0.377 & 0.374 & 0.025 & 2.099**\\
- & (0.875) & (0.611) & (0.380) & (1.045)\\
- & {}[0.667] & {}[0.541] & {}[0.948] & {}[0.045]\\
-Sex of household head (dummy, male=1) & -17.307 & -23.796 & -20.776 & -23.894\\
- & (29.621) & (20.843) & (17.751) & (31.850)\\
- & {}[0.559] & {}[0.254] & {}[0.242] & {}[0.453]\\
-Education level (Number of years) & 2.728 & 1.428 & 2.280* & 11.527***\\
- & (2.916) & (2.076) & (1.354) & (3.402)\\
- & {}[0.350] & {}[0.492] & {}[0.092] & {}[0.001]\\
-Household size (number of persons) & 0.104 & -1.326 & 1.023 & -9.254***\\
- & (1.852) & (1.243) & (0.641) & (2.271)\\
- & {}[0.955] & {}[0.286] & {}[0.110] & {}[0.000]\\
-Farmers group membership (dummy) & 23.024 & 19.604* & 0.668 & 32.533**\\
- & (14.530) & (10.143) & (5.411) & (16.393)\\
- & {}[0.113] & {}[0.053] & {}[0.902] & {}[0.047]\\
-Training on agriculture (dummy) & 19.017 & 8.794 & 13.199 & 17.327\\
- & (28.199) & (19.422) & (11.653) & (32.241)\\
- & {}[0.500] & {}[0.651] & {}[0.257] & {}[0.591]\\
-Training on groundnut farming (dummy) & -6.485 & -5.155 & -4.435 & 17.231\\
- & (9.625) & (6.519) & (4.090) & (10.707)\\
- & {}[0.500] & {}[0.429] & {}[0.278] & {}[0.108]\\
-Public agricultural extension service (number of visits) & -5.811 & -6.431 & -3.685 & 22.315**\\
- & (7.401) & (5.123) & (2.924) & (8.721)\\
- & {}[0.432] & {}[0.209] & {}[0.208] & {}[0.011]\\
-Private agricultural extension service (number of visits) & -10.123 & -10.434* & 6.138 & -11.055\\
- & (9.116) & (6.215) & (3.799) & (9.781)\\
- & {}[0.267] & {}[0.093] & {}[0.106] & {}[0.258]\\
-Cash credit for groundnut farming (dummy) & -87.350 & -74.251* & 8.406 & -37.003\\
- & (63.173) & (42.902) & (28.328) & (67.864)\\
- & {}[0.167] & {}[0.084] & {}[0.767] & {}[0.586]\\
-Credit in kind for groundnut farming (dummy) & -8.897 & 6.830 & -6.967 & -42.978\\
- & (50.662) & (35.263) & (20.115) & (53.109)\\
- & {}[0.861] & {}[0.846] & {}[0.729] & {}[0.418]\\
-Distance to the nearest urban market (km) & -0.735 & -0.486 & -0.196 & 3.022***\\
- & (0.826) & (0.541) & (0.363) & (0.897)\\
- & {}[0.374] & {}[0.369] & {}[0.590] & {}[0.001]\\
-Distance the nearest village market (km) & -3.326* & -2.099* & -1.568** & 0.653\\
- & (1.806) & (1.139) & (0.794) & (2.005)\\
- & {}[0.066] & {}[0.066] & {}[0.048] & {}[0.745]\\
-Crop rotation (dummy) & -42.921 & -38.056** & 0.911 & 3.933\\
- & (26.863) & (18.900) & (11.740) & (29.791)\\
- & {}[0.110] & {}[0.044] & {}[0.938] & {}[0.895]\\
-Mixed Crops (dummy) & 34.291 & 30.585** & -7.613 & 135.286***\\
- & (21.331) & (14.868) & (9.562) & (22.649)\\
- & {}[0.108] & {}[0.040] & {}[0.426] & {}[0.000]\\
-Labor force (man.day) & -4.084 & -3.021 & -2.037** & -8.433***\\
- & (2.927) & (1.994) & (0.808) & (2.576)\\
- & {}[0.163] & {}[0.130] & {}[0.012] & {}[0.001]\\
-Unit selling price (USD\/kg) & 512.083*** & 1,339.478*** & 565.109*** & 107.283\\
- & (133.797) & (96.971) & (49.594) & (147.220)\\
- & {}[0.000] & {}[0.000] & {}[0.000] & {}[0.466]\\
-Seed cost (USD\/ha) & 0.128 & 0.059 & 0.042 & -1.772***\\
- & (0.546) & (0.370) & (0.259) & (0.607)\\
- & {}[0.815] & {}[0.873] & {}[0.872] & {}[0.004]\\
-Fertilizer cost (USD\/ha) & -0.846** & -0.963*** & 0.288 & -2.406***\\
- & (0.431) & (0.312) & (0.201) & (0.473)\\
- & {}[0.050] & {}[0.002] & {}[0.153] & {}[0.000]\\
-Pesticide cost (USD\/ha) & 2.188* & 1.732* & 0.456 & -2.369**\\
- & (1.325) & (1.024) & (0.540) & (1.163)\\
- & {}[0.099] & {}[0.091] & {}[0.398] & {}[0.042]\\
-Labor cost (USD\/ha) & 0.010 & -0.006 & -0.110 & -0.846***\\
- & (0.257) & (0.179) & (0.133) & (0.245)\\
- & {}[0.968] & {}[0.974] & {}[0.410] & {}[0.001]\\
-Groundnut area (ha) & 634.557*** & 376.027*** & -11.249*** & 334.084***\\
- & (20.141) & (13.418) & (3.596) & (25.656)\\
- & {}[0.000] & {}[0.000] & {}[0.002] & {}[0.000]\\
-Off-farm income (dummy) & -3.625 & 0.179 & -17.434 & -69.193*\\
- & (38.674) & (28.513) & (18.365) & (38.584)\\
- & {}[0.925] & {}[0.995] & {}[0.342] & {}[0.073]\\
-Dependency ratio & -7.874 & -6.761 & -0.786 & -3.025\\
- & (7.614) & (5.353) & (3.592) & (8.851)\\
- & {}[0.301] & {}[0.207] & {}[0.827] & {}[0.733]\\
-Clay soil (dummy) & 28.503 & 22.644 & 6.733 & -30.927\\
- & (29.032) & (19.653) & (14.049) & (32.761)\\
- & {}[0.326] & {}[0.249] & {}[0.632] & {}[0.345]\\
-Sandy-clay soil (dummy) & 45.222* & 36.851** & 1.791 & -45.463\\
- & (24.917) & (17.077) & (11.460) & (28.606)\\
- & {}[0.070] & {}[0.031] & {}[0.876] & {}[0.112]\\
-Silty soil (dummy) & 26.747 & 20.009 & 15.403 & -30.505\\
- & (30.838) & (21.038) & (14.258) & (34.996)\\
- & {}[0.386] & {}[0.342] & {}[0.280] & {}[0.383]\\
-Observations & 8,604 & 8,604 & 8,604 & 8,604\\
-R-squared & 0.622 & 0.613 & 0.156 & 0.248\\
-F test & 64.51 & 71.32 & 16.55 & 14.65\\*
-\end{longtable}
-\end{ThreePartTable}
-\endgroup{}
-\newpage
-
-\begingroup\fontsize{7}{9}\selectfont
-
-\begin{ThreePartTable}
-\begin{TableNotes}[para]
-\item \textit{Note: } 
 \item The table provides the results of 2SLS regressions examining the relationship between adoption decision (`Adoption dummy`) and various factors related to Market participation (1), Quantity sold (2), and Sales value (3). The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
-\caption{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption and commercialization}\\
+\caption{\label{tab:unnamed-chunk-7}Full 2SLS estimates of the relationship between adoption and commercialization}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{(1)} & \multicolumn{2}{c}{(2)} & \multicolumn{2}{c}{(3)} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -838,7 +721,7 @@ F test & 64.51 & 71.32 & 16.55 & 14.65\\*
 variables & FE & RE & FE & RE & FE & RE\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption and commercialization \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-7}Full 2SLS estimates of the relationship between adoption and commercialization \textit{(continued)}}\\
 \toprule
 variables & FE & RE & FE & RE & FE & RE\\
 \midrule
@@ -955,7 +838,7 @@ Standard errors in brackets &  &  &  &  &  & \\
 \item The table provides the results of 2SLS regressions examining the relationship between area of adoption in ha (`Area under adoption`) and various factors related to Market participation (1), Quantity sold (2), and Sales value (3). The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
-\caption{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption (Area), production and yields}\\
+\caption{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption (Area), production and yields}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{(1)} & \multicolumn{2}{c}{(2)} & \multicolumn{2}{c}{(3)} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -964,7 +847,7 @@ Standard errors in brackets &  &  &  &  &  & \\
 variables & FE & RE & FE & RE & FE & RE\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption (Area), production and yields \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption (Area), production and yields \textit{(continued)}}\\
 \toprule
 variables & FE & RE & FE & RE & FE & RE\\
 \midrule
@@ -1081,7 +964,7 @@ Standard errors in brackets &  &  &  &  &  & \\
 \item The table provides the results of 2SLS regressions examining the relationship between adoption decision (`Adoption dummy`) and area of adoption in ha (`Area under adoption`) and various factors related to Yield, production and Consumption. The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
-\caption{\label{tab:unnamed-chunk-10}Full 2SLS estimates of the relationship between adoption, production , consumption and yields}\\
+\caption{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption, production , consumption and yields}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{(1)} & \multicolumn{3}{c}{(2)} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7}
@@ -1090,7 +973,7 @@ Standard errors in brackets &  &  &  &  &  & \\
 variables & Yield & Production value & Consumption & Yield & Production value & Consumption\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-10}Full 2SLS estimates of the relationship between adoption, production , consumption and yields \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption, production , consumption and yields \textit{(continued)}}\\
 \toprule
 variables & Yield & Production value & Consumption & Yield & Production value & Consumption\\
 \midrule
@@ -1210,14 +1093,14 @@ Standard errors in brackets &  &  &  &  &  & \\
 \item The table presents the results of 2SLS regressions, which were conducted to examine the relationship between continuous adoption (Three years) and various factors associated with Yield (1), Consumption (2), and quantity sold (3). The regressions employed Random Effect (RE) specifications, and robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrr}
-\caption{\label{tab:unnamed-chunk-11} Full 2SLS estimates of the relationship between continous adoption,quantity sold, consumption and yields}\\
+\caption{\label{tab:unnamed-chunk-10} Full 2SLS estimates of the relationship between continous adoption,quantity sold, consumption and yields}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
 variable & Yield & Consumption & Quantity sold\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-11} Full 2SLS estimates of the relationship between continous adoption,quantity sold, consumption and yields \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-10} Full 2SLS estimates of the relationship between continous adoption,quantity sold, consumption and yields \textit{(continued)}}\\
 \toprule
 variable & Yield & Consumption & Quantity sold\\
 \midrule
@@ -1337,14 +1220,14 @@ Standard errors in brackets &  &  & \\
 \item The table presents the results of 2SLS regressions, which examine the relationship between  adoption decision  and various factors associated with Yield (1), Consumption (2), and Sales value (3) across the three study countries. The regressions employed Random Effect (RE) specifications for the yield variable, while Fixed Effect (FE) specifications were used for the Sales value and consumption variables. Robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrrrlr}
-\caption{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization and yield across countries}\\
+\caption{\label{tab:unnamed-chunk-11}2SLS estimates of the relationship between adoption and commercialization and yield across countries}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Ghana} & \multicolumn{3}{c}{Mali} & \multicolumn{3}{c}{Nigeria} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
 variables & Yield & Consumption & Sales value & Yield & Consumption & Sales value & Yield & Consumption & Sales value\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization and yield across countries \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-11}2SLS estimates of the relationship between adoption and commercialization and yield across countries \textit{(continued)}}\\
 \toprule
 variables & Yield & Consumption & Sales value & Yield & Consumption & Sales value & Yield & Consumption & Sales value\\
 \midrule
@@ -1462,14 +1345,14 @@ Standard errors in brackets &  &  &  &  &  &  &  &  & \\
 \item The table presents the results of 2SLS regressions, which examine the relationship between  production and consumption of Groundnuts and various factors associated with Market participation (1), quantity sold (2), and Sales value (3). Robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrr}
-\caption{\label{tab:unnamed-chunk-13}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization}\\
+\caption{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
 variables & Market participation & Quantity sold & Sales value\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-13}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization \textit{(continued)}}\\
 \toprule
 variables & Market participation & Quantity sold & Sales value\\
 \midrule
@@ -1594,14 +1477,14 @@ Standard errors in brackets &  &  & \\
 \item The table provides the results of ontrol function estimations, which investigates the relationship between adoption and various factors related to Market participation, quantity sold, and Sales value under both Fixed effects (FE) and corrolated randome effect (CRE) specifications. Robust standard errors are reported in brackets to account for potential heteroscedasticity. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
-\caption{\label{tab:unnamed-chunk-14}Control function estimations of the relationship between adoption and market participation}\\
+\caption{\label{tab:unnamed-chunk-13}Control function estimations of the relationship between adoption and market participation}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Market participation} & \multicolumn{2}{c}{Quantity sold} & \multicolumn{2}{c}{Sales value} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
 variables & FE & CRE & FE & CRE & FE & CRE\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-14}Control function estimations of the relationship between adoption and market participation \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-13}Control function estimations of the relationship between adoption and market participation \textit{(continued)}}\\
 \toprule
 variables & FE & CRE & FE & CRE & FE & CRE\\
 \midrule
@@ -1721,12 +1604,12 @@ Standard errors in brackets &  &  &  &  &  & \\
 \item The table provides the results of the HAUSMAN TAYLOR IV model, which investigates the relationship between adoption and various factors related to Market participation, quantity sold, and Sales value. Robust standard errors are reported in brackets to account for potential heteroscedasticity. Two-sided t-tests were used for statistical testing, and the corresponding p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrr}
-\caption{\label{tab:unnamed-chunk-15}HAUSMAN TAYLOR IV estimations}\\
+\caption{\label{tab:unnamed-chunk-14}HAUSMAN TAYLOR IV estimations}\\
 \toprule
 variables & Market participation & Quantity sold & Sales value\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-15}HAUSMAN TAYLOR IV estimations \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-14}HAUSMAN TAYLOR IV estimations \textit{(continued)}}\\
 \toprule
 variables & Market participation & Quantity sold & Sales value\\
 \midrule
@@ -1843,14 +1726,14 @@ Standard errors in brackets &  &  & \\
 \item The table provides the results of Lewbel instrumental variable (IV) estimations, which investigate the relationship between adoption and several factors associated with market participation, quantity sold, and sales value. The Lewbel IV approach extends the standard instrumental variable technique by addressing the endogeneity issue that arises when the adoption decision and commercialization are jointly determined. Robust standard errors are reported in brackets to account for potential heteroscedasticity and model misspecification. Statistical tests were conducted using two-sided t-tests, and p-values are presented within square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). Additionally, to control for potential unobserved heterogeneity, all regressions incorporate a comprehensive set of district fixed effects, capturing the district-specific characteristics that may affect the adoption and market outcomes.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
-\caption{\label{tab:unnamed-chunk-16}Lewbel instrumental variable estimations of the relationship between adoption and commercialization}\\
+\caption{\label{tab:unnamed-chunk-15}Lewbel instrumental variable estimations of the relationship between adoption and commercialization}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Acess (IV)} \\
 \cmidrule(l{3pt}r{3pt}){5-7}
 variables & Market participation & Quantity sold & Sales value & Market participation & Quantity sold & Sales value\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-16}Lewbel instrumental variable estimations of the relationship between adoption and commercialization \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-15}Lewbel instrumental variable estimations of the relationship between adoption and commercialization \textit{(continued)}}\\
 \toprule
 variables & Market participation & Quantity sold & Sales value & Market participation & Quantity sold & Sales value\\
 \midrule
