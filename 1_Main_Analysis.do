@@ -20,7 +20,13 @@ set seed 2038947
 ****************************************************************************************************************************************************
 * SET FILE PATHS
 **************************************************
-cd "/Users/bisrat/Library/CloudStorage/Dropbox/Commercialization/Final revision/Adoption-of-Climate-Resilient-Groundnut-Varieties/"
+
+global currentuser = "`c(USERNAME)'"
+if "`currentuser'" == "bisrat" {
+   cd "D:\Dropbox\Dropbox\Commercialization\Final revision\Adoption-of-Climate-Resilient-Groundnut-Varieties\"
+}
+
+
 
 
 ** Loading the data**
@@ -457,9 +463,9 @@ outreg2 using stata_outputs/SM_tables/Table_SM7.tex, append ctitle(RE_SV)  stats
 ***Table SM8: Full 2SLS estimates of the relationship between adoption, production and yields
 xtivreg prod_value $xlist i.year i. district_1 (adopt=$iv), fe
 outreg2 using stata_outputs/SM_tables/Table_SM8.tex, replace ctitle(FE_ProdVal) stats(coef se pval) paren(se) bracket(pval) dec(3) lab tex (frag pr land) keep(improvsup adopt $xlist) addtext(District FE, YES, Year FE, YES)
-xtivreg gyield $xlist i.year i. district_1 (improvsup=$iv), re
+xtivreg gyield $xlist i.year i. district_1 (improvsup=$iv), fe
 outreg2 using stata_outputs/SM_tables/Table_SM8.tex, append ctitle(RE_YieldSup)  stats(coef se pval) paren(se) bracket(pval) dec(3) lab tex (frag pr land) keep(improvsup adopt $xlist) addtext(District FE, YES, Year FE, YES)
-xtivreg prod_value $xlist i.year i. district_1 (improvsup=$iv), re
+xtivreg prod_value $xlist i.year i. district_1 (improvsup=$iv), fe
 outreg2 using stata_outputs/SM_tables/Table_SM8.tex, append ctitle(RE_ProdValSup)  stats(coef se pval) paren(se) bracket(pval) dec(3) lab tex (frag pr land) keep(improvsup adopt $xlist) addtext(District FE, YES, Year FE, YES)
 
 xtivreg gyield $xlist i.year i. district_1 (adopt=$iv), fe 

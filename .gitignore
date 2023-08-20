@@ -5,6 +5,7 @@
 .DS_Store
 HelperUtilities/SegoeWP.ttf
 HelperUtilities/segoe.woff
+Supplementary_Information_cache/
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

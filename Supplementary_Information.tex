@@ -838,7 +838,7 @@ Standard errors in brackets &  &  &  &  &  & \\
 \item The table provides the results of 2SLS regressions examining the relationship between area of adoption in ha (`Area under adoption`) and various factors related to Market participation (1), Quantity sold (2), and Sales value (3). The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
-\caption{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption (Area), production and yields}\\
+\caption{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption (Area) and commercialization}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{(1)} & \multicolumn{2}{c}{(2)} & \multicolumn{2}{c}{(3)} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
@@ -847,7 +847,7 @@ Standard errors in brackets &  &  &  &  &  & \\
 variables & FE & RE & FE & RE & FE & RE\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption (Area), production and yields \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-8}Full 2SLS estimates of the relationship between adoption (Area) and commercialization \textit{(continued)}}\\
 \toprule
 variables & FE & RE & FE & RE & FE & RE\\
 \midrule
@@ -961,15 +961,13 @@ Standard errors in brackets &  &  &  &  &  & \\
 \begin{ThreePartTable}
 \begin{TableNotes}[para]
 \item \textit{Note: } 
-\item The table provides the results of 2SLS regressions examining the relationship between adoption decision (`Adoption dummy`) and area of adoption in ha (`Area under adoption`) and various factors related to Yield, production and Consumption. The regressions were estimated using both Random Effect (RE) and Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
+\item The table provides the results of 2SLS regressions examining the relationship between adoption decision (`Adoption dummy`) and area of adoption in ha (`Area under adoption`) and various factors related to Yield, production and Consumption. The regressions were estimated using Fixed Effect (FE) specifications, with robust standard errors shown in brackets. The statistical tests conducted were two-sided t-tests, and p-values are denoted in square brackets. Coefficients marked with an asterisk (*) indicate statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrrlrr}
 \caption{\label{tab:unnamed-chunk-9}Full 2SLS estimates of the relationship between adoption, production , consumption and yields}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{(1)} & \multicolumn{3}{c}{(2)} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7}
-\multicolumn{1}{c}{ } & \multicolumn{3}{c}{FE} & \multicolumn{2}{c}{RE} & \multicolumn{1}{c}{FE} \\
-\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-6} \cmidrule(l{3pt}r{3pt}){7-7}
 variables & Yield & Production value & Consumption & Yield & Production value & Consumption\\
 \midrule
 \endfirsthead
@@ -983,95 +981,90 @@ variables & Yield & Production value & Consumption & Yield & Production value & 
 \bottomrule
 \insertTableNotes
 \endlastfoot
-Area under adoption &  &  &  & 247.985*** & 338.019*** & 148.786***\\
- &  &  &  & (18.310) & (26.640) & (51.027)\\
- &  &  &  & {}[0.000] & {}[0.000] & 0.004\\
 Adoption dummy & 344.491*** & 476.159*** & 213.525*** &  &  & \\
  & (31.119) & (48.846) & (73.166) &  &  & \\
  & {}[0.000] & {}[0.000] & {}[0.004] &  &  & \\
-Age of household head & -1.764 & -0.649 & 24.046* & 0.103 & 0.419 & 22.497*\\
- & (5.487) & (8.612) & (12.900) & (0.460) & (0.659) & (12.954)\\
- & {}[0.748] & {}[0.940] & {}[0.062] & {}[0.823] & {}[0.525] & 0.082\\
-Sex of household head &  &  &  & -31.423 & -31.003 & \\
- &  &  &  & (22.602) & (32.367) & \\
- &  &  &  & {}[0.164] & {}[0.338] & \\
-Education level &  &  &  & 3.787*** & 2.378 & \\
- &  &  &  & (1.439) & (2.061) & \\
- &  &  &  & {}[0.008] & {}[0.249] & \\
-Household size & 1.631 & -1.605 & -9.816*** & 2.966*** & -0.090 & -8.588***\\
- & (1.119) & (1.756) & (2.630) & (0.829) & (1.202) & (2.674)\\
- & {}[0.145] & {}[0.361] & {}[0.000] & {}[0.000] & {}[0.940] & 0.001\\
-Farmers group membership & -4.339 & 17.512 & 36.037* & -3.610 & 17.237** & 34.260*\\
- & (7.999) & (12.556) & (18.808) & (5.849) & (8.476) & (18.857)\\
- & {}[0.587] & {}[0.163] & {}[0.055] & {}[0.537] & {}[0.042] & 0.069\\
-Training on agriculture & 27.801 & 12.633 & 63.381 & 12.921 & 7.400 & 64.148\\
- & (18.021) & (28.286) & (42.370) & (13.267) & (19.225) & (42.400)\\
- & {}[0.123] & {}[0.655] & {}[0.135] & {}[0.330] & {}[0.700] & 0.130\\
-Training on groundnut farming & 1.255 & 6.025 & 48.752*** & -2.858 & -3.802 & 47.725***\\
- & (5.354) & (8.404) & (12.588) & (4.512) & (6.566) & (12.579)\\
- & {}[0.815] & {}[0.473] & {}[0.000] & {}[0.526] & {}[0.563] & 0.000\\
-Public agricultural extension service & -2.771 & -4.887 & 31.133*** & -5.376* & -7.300* & 30.692***\\
- & (3.800) & (5.964) & (8.934) & (2.956) & (4.290) & (8.956)\\
- & {}[0.466] & {}[0.413] & {}[0.000] & {}[0.069] & {}[0.089] & 0.001\\
-Private agricultural extension service & -4.178 & -11.633 & -25.896** & -4.700 & -17.314*** & -25.374**\\
- & (5.470) & (8.586) & (12.862) & (4.229) & (6.137) & (12.839)\\
- & {}[0.445] & {}[0.175] & {}[0.044] & {}[0.266] & {}[0.005] & 0.048\\
-Cash credit for groundnut farming & -34.959 & -100.824* & 68.337 & 15.063 & -69.078* & 83.395\\
- & (36.180) & (56.789) & (85.065) & (28.780) & (41.794) & (85.023)\\
- & {}[0.334] & {}[0.076] & {}[0.422] & {}[0.601] & {}[0.098] & 0.327\\
-Credit in kind for groundnut farming & -11.792 & 32.827 & -16.957 & -50.645** & -20.044 & -32.844\\
- & (25.272) & (39.667) & (59.418) & (20.016) & (29.052) & (60.113)\\
- & {}[0.641] & {}[0.408] & {}[0.775] & {}[0.011] & {}[0.490] & 0.585\\
-Distance to the nearest urban market & 0.277 & -0.795 & 1.917* & -0.152 & -0.517 & 1.997*\\
- & (0.458) & (0.720) & (1.078) & (0.410) & (0.598) & (1.081)\\
- & {}[0.546] & {}[0.270] & {}[0.075] & {}[0.711] & {}[0.388] & 0.065\\
-Distance the nearest village market & -0.900 & -3.282 & -1.691 & -1.495 & -2.226 & -1.387\\
- & (1.483) & (2.328) & (3.487) & (1.107) & (1.605) & (3.488)\\
- & {}[0.544] & {}[0.159] & {}[0.628] & {}[0.177] & {}[0.166] & 0.691\\
-Crop rotation & 0.657 & -57.944** & 95.764** & 17.593 & -27.657 & 106.643***\\
- & (16.734) & (26.266) & (39.344) & (12.801) & (18.561) & (40.029)\\
- & {}[0.969] & {}[0.027] & {}[0.015] & {}[0.169] & {}[0.136] & 0.008\\
-Mixed Crops & -3.981 & -0.791 & 121.324*** & 0.592 & 33.105** & 126.313***\\
- & (14.033) & (22.026) & (32.993) & (10.421) & (15.107) & (33.096)\\
- & {}[0.777] & {}[0.971] & {}[0.000] & {}[0.955] & {}[0.028] & 0.000\\
-Labor force & -1.834* & -3.726** & -6.969*** & -0.455 & -2.104* & -6.407**\\
- & (1.086) & (1.705) & (2.553) & (0.860) & (1.248) & (2.579)\\
- & {}[0.091] & {}[0.029] & {}[0.006] & {}[0.596] & {}[0.092] & 0.013\\
-Unit selling price & -4.303 & 944.429*** & -291.865 & -43.089 & 950.849*** & -263.742\\
- & (84.567) & (132.740) & (198.831) & (74.277) & (108.314) & (191.606)\\
- & {}[0.959] & {}[0.000] & {}[0.142] & {}[0.562] & {}[0.000] & 0.169\\
-Seed cost & -0.316 & -0.706 & -3.200*** & -0.094 & -0.089 & -2.952***\\
- & (0.362) & (0.569) & (0.852) & (0.298) & (0.433) & (0.845)\\
- & {}[0.382] & {}[0.215] & {}[0.000] & {}[0.752] & {}[0.838] & 0.000\\
-Fertilizer cost & -0.326 & -1.623*** & -4.888*** & 0.182 & -1.026*** & -4.662***\\
- & (0.248) & (0.389) & (0.583) & (0.192) & (0.279) & (0.581)\\
- & {}[0.188] & {}[0.000] & {}[0.000] & {}[0.345] & {}[0.000] & 0.000\\
-Pesticide cost & 0.479 & 2.361** & 0.046 & -0.843 & 0.947 & -0.545\\
- & (0.683) & (1.072) & (1.606) & (0.552) & (0.802) & (1.665)\\
- & {}[0.483] & {}[0.028] & {}[0.977] & {}[0.127] & {}[0.238] & 0.743\\
-Labor cost & -0.132 & -0.216 & -0.937** & -0.098 & -0.036 & -0.845**\\
- & (0.180) & (0.282) & (0.423) & (0.141) & (0.205) & (0.426)\\
- & {}[0.464] & {}[0.444] & {}[0.027] & {}[0.487] & {}[0.861] & 0.047\\
-Groundnut area & 4.688 & 442.704*** & 362.297*** & -68.906*** & 339.828*** & 321.825***\\
- & (5.273) & (8.277) & (12.398) & (6.704) & (9.747) & (19.151)\\
+Area under adoption &  &  &  & 240.044*** & 331.791*** & 148.786***\\
+ &  &  &  & (22.765) & (33.348) & (51.027)\\
+ &  &  &  & {}[0.000] & {}[0.000] & 0.004\\
+Age of household head & -1.764 & -0.649 & 24.046* & -4.263 & -4.102 & 22.497*\\
+ & (5.487) & (8.612) & (12.900) & (5.779) & (8.466) & (12.954)\\
+ & {}[0.748] & {}[0.940] & {}[0.062] & {}[0.461] & {}[0.628] & 0.082\\
+Household size & 1.631 & -1.605 & -9.816*** & 3.611*** & 1.133 & -8.588***\\
+ & (1.119) & (1.756) & (2.630) & (1.193) & (1.747) & (2.674)\\
+ & {}[0.145] & {}[0.361] & {}[0.000] & {}[0.002] & {}[0.517] & 0.001\\
+Farmers group membership & -4.339 & 17.512 & 36.037* & -7.206 & 13.551 & 34.260*\\
+ & (7.999) & (12.556) & (18.808) & (8.413) & (12.324) & (18.857)\\
+ & {}[0.587] & {}[0.163] & {}[0.055] & {}[0.392] & {}[0.272] & 0.069\\
+Training on agriculture & 27.801 & 12.633 & 63.381 & 29.038 & 14.343 & 64.148\\
+ & (18.021) & (28.286) & (42.370) & (18.916) & (27.710) & (42.400)\\
+ & {}[0.123] & {}[0.655] & {}[0.135] & {}[0.125] & {}[0.605] & 0.130\\
+Training on groundnut farming & 1.255 & 6.025 & 48.752*** & -0.402 & 3.735 & 47.725***\\
+ & (5.354) & (8.404) & (12.588) & (5.612) & (8.221) & (12.579)\\
+ & {}[0.815] & {}[0.473] & {}[0.000] & {}[0.943] & {}[0.650] & 0.000\\
+Public agricultural extension service & -2.771 & -4.887 & 31.133*** & -3.482 & -5.869 & 30.692***\\
+ & (3.800) & (5.964) & (8.934) & (3.995) & (5.853) & (8.956)\\
+ & {}[0.466] & {}[0.413] & {}[0.000] & {}[0.383] & {}[0.316] & 0.001\\
+Private agricultural extension service & -4.178 & -11.633 & -25.896** & -3.336 & -10.469 & -25.374**\\
+ & (5.470) & (8.586) & (12.862) & (5.728) & (8.391) & (12.839)\\
+ & {}[0.445] & {}[0.175] & {}[0.044] & {}[0.560] & {}[0.212] & 0.048\\
+Cash credit for groundnut farming & -34.959 & -100.824* & 68.337 & -10.665 & -67.245 & 83.395\\
+ & (36.180) & (56.789) & (85.065) & (37.932) & (55.566) & (85.023)\\
+ & {}[0.334] & {}[0.076] & {}[0.422] & {}[0.779] & {}[0.226] & 0.327\\
+Credit in kind for groundnut farming & -11.792 & 32.827 & -16.957 & -37.424 & -2.602 & -32.844\\
+ & (25.272) & (39.667) & (59.418) & (26.818) & (39.286) & (60.113)\\
+ & {}[0.641] & {}[0.408] & {}[0.775] & {}[0.163] & {}[0.947] & 0.585\\
+Distance to the nearest urban market & 0.277 & -0.795 & 1.917* & 0.406 & -0.616 & 1.997*\\
+ & (0.458) & (0.720) & (1.078) & (0.482) & (0.706) & (1.081)\\
+ & {}[0.546] & {}[0.270] & {}[0.075] & {}[0.400] & {}[0.383] & 0.065\\
+Distance the nearest village market & -0.900 & -3.282 & -1.691 & -0.410 & -2.604 & -1.387\\
+ & (1.483) & (2.328) & (3.487) & (1.556) & (2.280) & (3.488)\\
+ & {}[0.544] & {}[0.159] & {}[0.628] & {}[0.792] & {}[0.253] & 0.691\\
+Crop rotation & 0.657 & -57.944** & 95.764** & 18.209 & -33.684 & 106.643***\\
+ & (16.734) & (26.266) & (39.344) & (17.858) & (26.160) & (40.029)\\
+ & {}[0.969] & {}[0.027] & {}[0.015] & {}[0.308] & {}[0.198] & 0.008\\
+Mixed Crops & -3.981 & -0.791 & 121.324*** & 4.068 & 10.334 & 126.313***\\
+ & (14.033) & (22.026) & (32.993) & (14.765) & (21.630) & (33.096)\\
+ & {}[0.777] & {}[0.971] & {}[0.000] & {}[0.783] & {}[0.633] & 0.000\\
+Labor force & -1.834* & -3.726** & -6.969*** & -0.927 & -2.472 & -6.407**\\
+ & (1.086) & (1.705) & (2.553) & (1.151) & (1.685) & (2.579)\\
+ & {}[0.091] & {}[0.029] & {}[0.006] & {}[0.420] & {}[0.142] & 0.013\\
+Unit selling price & -4.303 & 944.429*** & -291.865 & 41.071 & 1,007.144*** & -263.742\\
+ & (84.567) & (132.740) & (198.831) & (85.482) & (125.222) & (191.606)\\
+ & {}[0.959] & {}[0.000] & {}[0.142] & {}[0.631] & {}[0.000] & 0.169\\
+Seed cost & -0.316 & -0.706 & -3.200*** & 0.084 & -0.152 & -2.952***\\
+ & (0.362) & (0.569) & (0.852) & (0.377) & (0.552) & (0.845)\\
+ & {}[0.382] & {}[0.215] & {}[0.000] & {}[0.823] & {}[0.783] & 0.000\\
+Fertilizer cost & -0.326 & -1.623*** & -4.888*** & 0.038 & -1.120*** & -4.662***\\
+ & (0.248) & (0.389) & (0.583) & (0.259) & (0.380) & (0.581)\\
+ & {}[0.188] & {}[0.000] & {}[0.000] & {}[0.884] & {}[0.003] & 0.000\\
+Pesticide cost & 0.479 & 2.361** & 0.046 & -0.476 & 1.042 & -0.545\\
+ & (0.683) & (1.072) & (1.606) & (0.743) & (1.088) & (1.665)\\
+ & {}[0.483] & {}[0.028] & {}[0.977] & {}[0.522] & {}[0.338] & 0.743\\
+Labor cost & -0.132 & -0.216 & -0.937** & 0.017 & -0.010 & -0.845**\\
+ & (0.180) & (0.282) & (0.423) & (0.190) & (0.278) & (0.426)\\
+ & {}[0.464] & {}[0.444] & {}[0.027] & {}[0.929] & {}[0.970] & 0.047\\
+Groundnut area & 4.688 & 442.704*** & 362.297*** & -60.607*** & 352.452*** & 321.825***\\
+ & (5.273) & (8.277) & (12.398) & (8.544) & (12.516) & (19.151)\\
  & {}[0.374] & {}[0.000] & {}[0.000] & {}[0.000] & {}[0.000] & 0.000\\
-Off-farm income & -32.969 & -30.255 & -96.324* & -14.460 & -0.281 & -94.894*\\
- & (22.728) & (35.674) & (53.437) & (17.175) & (24.906) & (53.479)\\
- & {}[0.147] & {}[0.396] & {}[0.071] & {}[0.400] & {}[0.991] & 0.076\\
-Dependency ratio & -2.550 & -8.979 & -1.541 & 1.543 & -5.448 & 0.102\\
- & (5.046) & (7.920) & (11.863) & (3.689) & (5.345) & (11.902)\\
- & {}[0.613] & {}[0.257] & {}[0.897] & {}[0.676] & {}[0.308] & 0.993\\
-Clay soil & -8.783 & -4.912 & -89.820* & 27.891* & 36.250 & -83.404*\\
- & (20.148) & (31.625) & (47.372) & (15.434) & (22.388) & (47.514)\\
- & {}[0.663] & {}[0.877] & {}[0.058] & {}[0.071] & {}[0.105] & 0.079\\
-Sandy-clay soil & -6.730 & 23.207 & -70.619* & 16.071 & 47.385*** & -64.812*\\
- & (15.832) & (24.851) & (37.225) & (12.392) & (17.985) & (37.307)\\
- & {}[0.671] & {}[0.350] & {}[0.058] & {}[0.195] & {}[0.008] & 0.082\\
-Silty soil & 18.191 & 38.862 & -15.868 & 17.476 & 23.171 & -16.460\\
- & (20.049) & (31.470) & (47.139) & (15.291) & (22.176) & (47.184)\\
- & {}[0.364] & {}[0.217] & {}[0.736] & {}[0.253] & {}[0.296] & 0.727\\
- & (299.869) & (470.689) & (705.045) & (69.209) & (100.096) & (674.252)\\
- & {}[0.016] & {}[0.331] & {}[0.094] & {}[0.000] & {}[0.000] & 0.052\\
+Off-farm income & -32.969 & -30.255 & -96.324* & -30.662 & -27.066 & -94.894*\\
+ & (22.728) & (35.674) & (53.437) & (23.859) & (34.951) & (53.479)\\
+ & {}[0.147] & {}[0.396] & {}[0.071] & {}[0.199] & {}[0.439] & 0.076\\
+Dependency ratio & -2.550 & -8.979 & -1.541 & 0.101 & -5.315 & 0.102\\
+ & (5.046) & (7.920) & (11.863) & (5.310) & (7.778) & (11.902)\\
+ & {}[0.613] & {}[0.257] & {}[0.897] & {}[0.985] & {}[0.494] & 0.993\\
+Clay soil & -8.783 & -4.912 & -89.820* & 1.570 & 9.397 & -83.404*\\
+ & (20.148) & (31.625) & (47.372) & (21.198) & (31.052) & (47.514)\\
+ & {}[0.663] & {}[0.877] & {}[0.058] & {}[0.941] & {}[0.762] & 0.079\\
+Sandy-clay soil & -6.730 & 23.207 & -70.619* & 2.638 & 36.156 & -64.812*\\
+ & (15.832) & (24.851) & (37.225) & (16.644) & (24.382) & (37.307)\\
+ & {}[0.671] & {}[0.350] & {}[0.058] & {}[0.874] & {}[0.138] & 0.082\\
+Silty soil & 18.191 & 38.862 & -15.868 & 17.234 & 37.540 & -16.460\\
+ & (20.049) & (31.470) & (47.139) & (21.050) & (30.837) & (47.184)\\
+ & {}[0.364] & {}[0.217] & {}[0.736] & {}[0.413] & {}[0.223] & 0.727\\
+Constant & 578.046** & -644.945 & -1,294.580* & 743.725** & -415.941 & -1,191.887*\\
+ & (288.035) & (452.114) & (677.222) & (305.495) & (447.516) & (684.760)\\
+ & {}[0.045] & {}[0.154] & {}[0.056] & {}[0.015] & {}[0.353] & 0.082\\
 Observations & 8,604 & 8,604 & 8,604 & 8,604 & 8,604 & 8,604\\
 Number of id & 2,868 & 2,868 & 2,868 & 2,868 & 2,868 & 2,868\\
 District FE & YES & YES & YES & YES & YES & YES\\
@@ -1345,14 +1338,14 @@ Standard errors in brackets &  &  &  &  &  &  &  &  & \\
 \item The table presents the results of 2SLS regressions, which examine the relationship between  production and consumption of Groundnuts and various factors associated with Market participation (1), quantity sold (2), and Sales value (3). Robust standard errors are reported in brackets. Two-sided t-tests were employed for the statistical tests, and p-values are indicated within square brackets. Coefficients marked with an asterisk (*) signify statistical significance at predetermined levels of significance (*** p<0.01, ** p<0.05, * p<0.1). To account for potential unobserved heterogeneity, all regressions include a comprehensive set of district fixed effects.
 \end{TableNotes}
 \begin{longtable}[t]{lrrr}
-\caption{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization}\\
+\caption{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously}\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} \\
 \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
 variables & Market participation & Quantity sold & Sales value\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously Production, consumption and commercialization \textit{(continued)}}\\
+\caption[]{\label{tab:unnamed-chunk-12}2SLS estimates of the relationship between adoption and commercialization, production and yield simultaneously \textit{(continued)}}\\
 \toprule
 variables & Market participation & Quantity sold & Sales value\\
 \midrule
